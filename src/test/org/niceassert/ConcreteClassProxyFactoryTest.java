@@ -30,25 +30,25 @@ public class ConcreteClassProxyFactoryTest {
 
     @Test
     public void proxyExtendsTargetObject() {
-        assertThat(ExtendableClass.class.isAssignableFrom(concreteClassProxyFactory.proxyFor(ExtendableClass.class, null).getClass()), is(true));
+        assertThat(ExtendableClass.class.isAssignableFrom(concreteClassProxyFactory.proxyFor(null, ExtendableClass.class).getClass()), is(true));
     }
     
     @Test
     public void proxyInvokesPassedHandler() {
         final AtomicBoolean called = new AtomicBoolean(false);
-        concreteClassProxyFactory.proxyFor(ExtendableClass.class, new InvocationHandler() {
+        concreteClassProxyFactory.proxyFor(new InvocationHandler() {
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
                 called.set(true);
                 return null;
             }
-        }).toString();
+        }, ExtendableClass.class).toString();
         assertThat(called.get(), is(true));
 
-        assertThat(ExtendableClass.class.isAssignableFrom(concreteClassProxyFactory.proxyFor(ExtendableClass.class, null).getClass()), is(true));
+        assertThat(ExtendableClass.class.isAssignableFrom(concreteClassProxyFactory.proxyFor(null, ExtendableClass.class).getClass()), is(true));
     }
 
     private void assertFailsToImposterize(Class targetClass) {
-        concreteClassProxyFactory.proxyFor(targetClass, new FailingInvocationHandler());
+        concreteClassProxyFactory.proxyFor(new FailingInvocationHandler(), targetClass);
     }
 
     private static class FailingInvocationHandler implements InvocationHandler {

@@ -22,15 +22,15 @@ public class ConcreteClassProxyFactory {
     private ConcreteClassProxyFactory() {
     }
 
-    public <T> T proxyFor(final Class<T> targetClass, final InvocationHandler invocationHandler) {
-        if(!canImposterise(targetClass)) throw new IllegalArgumentException("Can't imposterize ");
+    public <T> T proxyFor(final InvocationHandler invocationHandler, final Class<T> concreteClass, Class... interfaces) {
+        if(!canImposterise(concreteClass)) throw new IllegalArgumentException("Can't imposterize ");
 
         try {
-            setConstructorsAccessible(targetClass, true);
-            Class<T> proxyClass = createProxyClass((Class) targetClass);
-            return (T) ((Class) targetClass).cast(createProxy(proxyClass, invocationHandler));
+            setConstructorsAccessible(concreteClass, true);
+            Class<T> proxyClass = createProxyClass((Class) concreteClass, interfaces);
+            return (T) ((Class) concreteClass).cast(createProxy(proxyClass, invocationHandler));
         } finally {
-            setConstructorsAccessible(targetClass, false);
+            setConstructorsAccessible(concreteClass, false);
         }
     }
 
@@ -66,13 +66,14 @@ public class ConcreteClassProxyFactory {
         }
     }
 
-    private static <T> Class<T> createProxyClass(Class targetClass) {
+    private static <T> Class<T> createProxyClass(Class targetClass, Class... interfaces) {
         Class<?> targetType = targetClassFor(targetClass);
 
         Enhancer enhancer = new Enhancer();
         enhancer.setClassLoader(targetType.getClassLoader());
         enhancer.setUseFactory(true);
         enhancer.setSuperclass(targetType);
+        enhancer.setInterfaces(interfaces);
         enhancer.setCallbackTypes(new Class[]{InvocationHandler.class});
         enhancer.setCallbackFilter(IGNORE_BRIDGE_METHODS);
         if (targetType.getSigners() != null) {

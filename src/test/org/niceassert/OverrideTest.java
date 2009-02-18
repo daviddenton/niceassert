@@ -15,6 +15,8 @@ public class OverrideTest {
     private final ARecordingObject proxiedObject = new ARecordingObject();
     private final ARecordingObject theTarget = override(proxiedObject);
 
+    // override(target) - returns Object
+    // throwException(blah).whenCalling(target).method();
     @Test(expected = AnException.class)
     public void throwExceptions() throws AnException {
         throwException(new AnException()).whenCalling(theTarget).aMethod();

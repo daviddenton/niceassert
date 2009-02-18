@@ -55,7 +55,7 @@ public class Expected {
         }
 
         public <T> T whenCalling(final T target) {
-            return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(target.getClass(), new InvocationHandler() {
+            return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
                 public Object invoke(Object object, Method method, Object[] args) throws Throwable {
                     try {
                         final Object o = method.invoke(target, args);
@@ -66,7 +66,7 @@ public class Expected {
                     }
                     return null;
                 }
-            });
+            }, target.getClass());
         }
     }
 }
