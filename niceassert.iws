@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project relativePaths="false" version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" name="Default" comment="">
+    <list default="true" readonly="true" name="Default" comment="dirty - build work">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.ipr" afterPath="$PROJECT_DIR$/niceassert.ipr" />
     </list>
     <ignored path="niceassert.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,9 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="45" column="57" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,9 +76,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExceptionAssertTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="17" column="0" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,7 +93,7 @@
       <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="32" selection-start="158" selection-end="158" vertical-scroll-proportion="0.03525955">
+            <state line="40" column="41" selection-start="1484" selection-end="1484" vertical-scroll-proportion="0.2934363">
               <folding />
             </state>
           </provider>
@@ -242,15 +240,19 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.searchVisible" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="false" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="options.lastSelected" value="preferences.sourceCode.General" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
   </component>
@@ -360,22 +362,6 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Ruby test">
-      <module name="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
-    </configuration>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <module name="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
@@ -392,6 +378,22 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUN_SPECS_SEPARATELY" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+    </configuration>
+    <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Ruby test">
+      <module name="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
     </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="JUnit.ExceptionAssertTest" />
@@ -454,7 +456,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881662" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24932832" sideWeight="0.66389656" order="1" side_tool="false" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24892473" sideWeight="0.66389656" order="1" side_tool="false" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.5" order="2" side_tool="false" />
@@ -518,6 +520,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="57" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExceptionAssertTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ExceptionAssert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="46" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0">
@@ -525,27 +541,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="57" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExceptionAssertTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="32" selection-start="158" selection-end="158" vertical-scroll-proportion="0.03525955">
+        <state line="40" column="41" selection-start="1484" selection-end="1484" vertical-scroll-proportion="0.2934363">
           <folding />
         </state>
       </provider>
@@ -583,7 +581,13 @@
           <value>
             <UIState>
               <option name="proportions">
-                <SplitterProportionsDataImpl />
+                <SplitterProportionsDataImpl>
+                  <option name="proportions">
+                    <list>
+                      <option value="0.2" />
+                    </list>
+                  </option>
+                </SplitterProportionsDataImpl>
               </option>
             </UIState>
           </value>
@@ -621,7 +625,13 @@
           <value>
             <UIState>
               <option name="proportions">
-                <SplitterProportionsDataImpl />
+                <SplitterProportionsDataImpl>
+                  <option name="proportions">
+                    <list>
+                      <option value="0.2" />
+                    </list>
+                  </option>
+                </SplitterProportionsDataImpl>
               </option>
             </UIState>
           </value>
