@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/ExceptionAssertTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/ExceptionAssertTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java" />
     </list>
     <ignored path="niceassert.iws" />
@@ -66,8 +65,10 @@
       <file leaf-file-name="ConcreteClassProxyFactory.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="84" selection-start="1850" selection-end="1850" vertical-scroll-proportion="0.43584722">
-              <folding />
+            <state line="14" column="7" selection-start="372" selection-end="372" vertical-scroll-proportion="0.16356513">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,8 +76,10 @@
       <file leaf-file-name="ExceptionAssertTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExceptionAssertTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="44" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="7" column="0" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1234958272000" expanded="false" signature="32:95" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -548,15 +551,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExceptionAssertTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="44" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="7" column="0" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1234958272000" expanded="false" signature="32:95" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="84" selection-start="1850" selection-end="1850" vertical-scroll-proportion="0.43584722">
-          <folding />
+        <state line="14" column="7" selection-start="372" selection-end="372" vertical-scroll-proportion="0.16356513">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

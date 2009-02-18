@@ -12,6 +12,9 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
 
+/**
+ * NB: Shamelessly "inspired" by JMock's ClassImposteriser
+ */
 public class ConcreteClassProxyFactory {
 
     public static final ConcreteClassProxyFactory INSTANCE = new ConcreteClassProxyFactory();
