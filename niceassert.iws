@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/org/niceassert/Override.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/ConcreteClassProxyFactoryTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/ConcreteClassProxyFactoryTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/org/niceassert/ExceptionAssertTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/org/niceassert/ExceptionAssert.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/Expected.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" />
     </list>
     <ignored path="niceassert.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,7 +69,7 @@
       <file leaf-file-name="ConcreteClassProxyFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="87" selection-start="1867" selection-end="1867" vertical-scroll-proportion="0.0">
+            <state line="37" column="0" selection-start="1297" selection-end="1297" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -90,7 +87,7 @@
       <file leaf-file-name="ConcreteClassProxyFactoryTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ConcreteClassProxyFactoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="0" selection-start="2184" selection-end="2184" vertical-scroll-proportion="0.0">
+            <state line="31" column="24" selection-start="967" selection-end="967" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,7 +107,7 @@
       <file leaf-file-name="ExpectedTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="13" selection-start="1068" selection-end="1239" vertical-scroll-proportion="0.0">
+            <state line="7" column="13" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OverrideTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="OverrideTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="281" selection-end="281" vertical-scroll-proportion="0.14285715">
+            <state line="31" column="42" selection-start="1194" selection-end="1194" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -140,10 +137,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Override.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Override.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Override.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="39" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
+            <state line="21" column="64" selection-start="617" selection-end="617" vertical-scroll-proportion="0.375">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -359,7 +356,7 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.OverrideTest">
-    <tempConfiguration default="false" name="OverrideTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
+    <tempConfiguration default="false" name="ConcreteClassProxyFactoryTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
       <pattern>
         <option name="PATTERN" value="org.niceassert.*" />
         <option name="ENABLED" value="true" />
@@ -368,7 +365,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.niceassert" />
-      <option name="MAIN_CLASS_NAME" value="org.niceassert.OverrideTest" />
+      <option name="MAIN_CLASS_NAME" value="org.niceassert.ConcreteClassProxyFactoryTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -525,8 +522,9 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JUnit.ExecutionTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ConcreteClassProxyFactoryTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -571,7 +569,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1909" height="1177" extended-state="0" />
+    <frame x="1926" y="34" width="1909" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
@@ -679,22 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="87" selection-start="1867" selection-end="1867" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ConcreteClassProxyFactoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="2184" selection-end="2184" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Expected.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="5" selection-start="1317" selection-end="2200" vertical-scroll-proportion="0.0">
@@ -706,16 +688,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="13" selection-start="1068" selection-end="1239" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Override.java">
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="39" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
+        <state line="37" column="0" selection-start="1297" selection-end="1297" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ConcreteClassProxyFactoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="24" selection-start="967" selection-end="967" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -724,7 +713,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="281" selection-end="281" vertical-scroll-proportion="0.14285715">
+        <state line="31" column="42" selection-start="1194" selection-end="1194" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Override.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="64" selection-start="617" selection-end="617" vertical-scroll-proportion="0.375">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
