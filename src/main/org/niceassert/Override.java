@@ -6,6 +6,14 @@ import java.lang.reflect.Method;
 
 public class Override {
 
+    public static <T> T override(final T target) {
+        return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(target.getClass(), new InvocationHandler() {
+            public Object invoke(Object object, Method method, Object[] args) throws Throwable {
+                return method.invoke(target);
+            }
+        });
+    }
+
     public static OverrideReturnValueBuilder returnValue(Object returnValue) {
         return new OverrideReturnValueBuilder(returnValue);
     }
@@ -29,6 +37,7 @@ public class Override {
             });
         }
     }
+
     public static class ThrowExceptionBuilder {
         private final Throwable throwable;
 
