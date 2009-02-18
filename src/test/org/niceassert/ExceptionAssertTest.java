@@ -7,13 +7,13 @@ public class ExceptionAssertTest {
     private static final String STRING = "String";
 
     @Test
-    public void exceptionTest() {
-        
+    public void exceptionChecked() {
+
         expect(exception(new RuntimeException())).whenCalling(new AThrowingObject()).aMethod();
     }
 
     @Test
-    public void returnedValueTest() {
+    public void returnedValueChecked() {
         expect(returnedValue(STRING)).whenCalling(new AReturningObject()).aMethod();
     }
 

@@ -1,201 +1,107 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="niceassert" default="all">
+<project name="niceassert" default="build">
+    <property name="version" value="DEV"/>
+    <property name="artifact" value="${ant.project.name}-${version}"/>
 
+    <property name="test.report.dir" location="build/reports/tests"/>
+    <property name="test.output.dir" location="build/tests/output"/>
 
-    <property file="niceassert.properties"/>
-    <property name="compiler.debug" value="on"/>
-    <property name="compiler.generate.no.warnings" value="off"/>
-    <property name="compiler.args" value=""/>
-    <property name="compiler.max.memory" value="128m"/>
-    <patternset id="ignored.files">
-        <exclude name="**/CVS/**"/>
-        <exclude name="**/SCCS/**"/>
-        <exclude name="**/RCS/**"/>
-        <exclude name="**/rcs/**"/>
-        <exclude name="**/.DS_Store/**"/>
-        <exclude name="**/.svn/**"/>
-        <exclude name="**/.sbas/**"/>
-        <exclude name="**/.IJI.*/**"/>
-        <exclude name="**/vssver.scc/**"/>
-        <exclude name="**/vssver2.scc/**"/>
-        <exclude name="**/*.pyc/**"/>
-        <exclude name="**/*.pyo/**"/>
-        <exclude name="**/.git/**"/>
-    </patternset>
-    <patternset id="library.patterns">
-        <include name="*.zip"/>
-        <include name="*.egg"/>
-        <include name="*.ear"/>
-        <include name="*.swc"/>
-        <include name="*.jar"/>
-        <include name="*.war"/>
-    </patternset>
-    <patternset id="compiler.resources">
-        <include name="**/?*.properties"/>
-        <include name="**/?*.xml"/>
-        <include name="**/?*.gif"/>
-        <include name="**/?*.png"/>
-        <include name="**/?*.jpeg"/>
-        <include name="**/?*.jpg"/>
-        <include name="**/?*.html"/>
-        <include name="**/?*.dtd"/>
-        <include name="**/?*.tld"/>
-        <include name="**/?*.ftl"/>
-    </patternset>
-
-    <!-- JDK definitions -->
-
-    <property name="jdk.bin.1.5" value="${jdk.home.1.5}/bin"/>
-    <path id="jdk.classpath.1.5">
-        <fileset dir="${jdk.home.1.5}">
-            <include name="lib/deploy.jar"/>
-            <include name="lib/dt.jar"/>
-            <include name="lib/javaws.jar"/>
-            <include name="lib/jce.jar"/>
-            <include name="lib/plugin.jar"/>
-            <include name="lib/sa-jdi.jar"/>
-            <include name="../Classes/charsets.jar"/>
-            <include name="../Classes/classes.jar"/>
-            <include name="../Classes/dt.jar"/>
-            <include name="../Classes/jce.jar"/>
-            <include name="../Classes/jconsole.jar"/>
-            <include name="../Classes/jsse.jar"/>
-            <include name="../Classes/laf.jar"/>
-            <include name="../Classes/ui.jar"/>
-            <include name="lib/ext/apple_provider.jar"/>
-            <include name="lib/ext/dnsns.jar"/>
-            <include name="lib/ext/localedata.jar"/>
-            <include name="lib/ext/sunjce_provider.jar"/>
-            <include name="lib/ext/sunpkcs11.jar"/>
-        </fileset>
+    <path id="classpath.core">
+        <fileset dir="lib"/>
+        <fileset dir="externallib"/>
     </path>
 
-    <property name="project.jdk.home" value="${jdk.home.1.5}"/>
-    <property name="project.jdk.bin" value="${jdk.bin.1.5}"/>
-    <property name="project.jdk.classpath" value="jdk.classpath.1.5"/>
+    <target name="clean">
+        <delete dir="classes"/>
+        <delete dir="build"/>
+    </target>
 
-    <!-- Modules -->
+    <target name="build" depends="clean, test, package"/>
 
+    <target name="package">
+        <zip destfile="build/${artifact}-jars.zip" update="true">
+            <zipfileset dir="lib" prefix="${artifact}-jars"/>
+            <zipfileset file="build/jars/${artifact}.jar" prefix="${artifact}-jars"/>
+        </zip>
+    </target>
 
-    <!-- Module niceassert -->
+    <macrodef name="compile-jar">
+        <attribute name="srcdir"/>
+        <attribute name="jarfile"/>
+        <attribute name="classpathref"/>
+        <attribute name="classdir" default="build/classes/@{jarfile}"/>
 
-    <dirname property="module.niceassert.basedir" file="${ant.file}"/>
+        <sequential>
+            <mkdir dir="@{classdir}"/>
+            <javac srcdir="@{srcdir}" classpathref="@{classpathref}" destdir="@{classdir}" debug="true" source="1.5"
+                   target="1.5" fork="true"/>
+            <copy todir="@{classdir}">
+                <fileset dir="@{srcdir}" excludes="**/*.java"/>
+            </copy>
 
+            <jar jarfile="build/jars/@{jarfile}" basedir="@{classdir}"/>
+        </sequential>
+    </macrodef>
 
-    <property name="module.jdk.home.niceassert" value="${project.jdk.home}"/>
-    <property name="module.jdk.bin.niceassert" value="${project.jdk.bin}"/>
-    <property name="module.jdk.classpath.niceassert" value="${project.jdk.classpath}"/>
+    <macrodef name="compile-module">
+        <attribute name="classpathref"/>
+        <sequential>
+            <path id="test-classpath">
+                <path refid="@{classpathref}"/>
+                <pathelement location="build/jars/${artifact}.jar"/>
+            </path>
 
-    <property name="compiler.args.niceassert" value="${compiler.args}"/>
+            <compile-jar srcdir="src/main" jarfile="${artifact}.jar"
+                         classpathref="@{classpathref}"/>
+            <compile-jar srcdir="src/test" jarfile="${ant.project.name}-test-${version}.jar"
+                         classpathref="test-classpath"/>
+        </sequential>
+    </macrodef>
 
-    <property name="niceassert.output.dir" value="${module.niceassert.basedir}/out/production/niceassert"/>
-    <property name="niceassert.testoutput.dir" value="${module.niceassert.basedir}/out/test/niceassert"/>
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <mkdir dir="build/jars"/>
+        <compile-module classpathref="classpath.core"/>
+    </target>
 
-    <path id="niceassert.module.bootclasspath">
-        <!-- Paths to be included in compilation bootclasspath -->
-    </path>
+    <macrodef name="run-tests">
+        <attribute name="classpathref"/>
 
-    <path id="niceassert.module.classpath">
-        <path refid="${module.jdk.classpath.niceassert}"/>
-        <pathelement location="${basedir}/lib/cglib-2.1_3-src.jar"/>
-        <pathelement location="${basedir}/lib/cglib-nodep-2.1_3.jar"/>
-        <pathelement location="${basedir}/lib/hamcrest-core-1.1.jar"/>
-        <pathelement location="${basedir}/lib/hamcrest-library-1.1.jar"/>
-        <pathelement location="${basedir}/lib/objenesis-1.0.jar"/>
-        <pathelement location="${basedir}/externallib/junit-4.4.jar"/>
-        <pathelement location="${basedir}/externallib/junit-addons-1.4.jar"/>
-    </path>
+        <sequential>
+            <junit fork="true" printsummary="yes" failureproperty="test.failure">
+                <classpath>
+                    <path refid="@{classpathref}"/>
+                    <pathelement location="build/jars/${artifact}.jar"/>
+                    <pathelement location="build/jars/${ant.project.name}-test-${version}.jar"/>
+                </classpath>
 
-    <path id="niceassert.runtime.module.classpath">
-        <pathelement location="${niceassert.output.dir}"/>
-        <pathelement location="${niceassert.testoutput.dir}"/>
-        <pathelement location="${basedir}/lib/cglib-2.1_3-src.jar"/>
-        <pathelement location="${basedir}/lib/cglib-nodep-2.1_3.jar"/>
-        <pathelement location="${basedir}/lib/hamcrest-core-1.1.jar"/>
-        <pathelement location="${basedir}/lib/hamcrest-library-1.1.jar"/>
-        <pathelement location="${basedir}/lib/objenesis-1.0.jar"/>
-        <pathelement location="${basedir}/externallib/junit-4.4.jar"/>
-        <pathelement location="${basedir}/externallib/junit-addons-1.4.jar"/>
-    </path>
+                <formatter type="xml"/>
 
+                <batchtest todir="${test.output.dir}">
+                    <fileset dir="src/test">
+                        <include name="**/*Test.java"/>
+                        <exclude name="**/Abstract*Test.java"/>
+                    </fileset>
+                </batchtest>
+            </junit>
+        </sequential>
+    </macrodef>
 
-    <patternset id="excluded.from.module.niceassert">
-        <patternset refid="ignored.files"/>
-    </patternset>
+    <target name="-test.all" depends="compile">
+        <mkdir dir="${test.output.dir}"/>
+        <run-tests classpathref="classpath.core"/>
+    </target>
 
-    <patternset id="excluded.from.compilation.niceassert">
-        <patternset refid="excluded.from.module.niceassert"/>
-    </patternset>
-
-    <path id="niceassert.module.sourcepath">
-        <dirset dir="${module.niceassert.basedir}">
-            <include name="src/main"/>
-        </dirset>
-    </path>
-
-    <path id="niceassert.module.test.sourcepath">
-        <dirset dir="${module.niceassert.basedir}">
-            <include name="src/test"/>
-        </dirset>
-    </path>
-
-
-    <target name="compile.module.niceassert"
-            depends="compile.module.niceassert.production,compile.module.niceassert.tests"
-            description="Compile module niceassert"/>
-
-    <target name="compile.module.niceassert.production" description="Compile module niceassert; production classes">
-        <mkdir dir="${niceassert.output.dir}"/>
-        <javac destdir="${niceassert.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}"
-               memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.niceassert}/javac">
-            <compilerarg line="${compiler.args.niceassert}"/>
-            <bootclasspath refid="niceassert.module.bootclasspath"/>
-            <classpath refid="niceassert.module.classpath"/>
-            <src refid="niceassert.module.sourcepath"/>
-            <patternset refid="excluded.from.compilation.niceassert"/>
-        </javac>
-
-        <copy todir="${niceassert.output.dir}">
-            <fileset dir="${module.niceassert.basedir}/src/main">
-                <patternset refid="compiler.resources"/>
-                <type type="file"/>
+    <target name="-test.report">
+        <mkdir dir="${test.report.dir}"/>
+        <junitreport todir="${test.report.dir}">
+            <fileset dir="${test.output.dir}">
+                <include name="TEST-*.xml"/>
             </fileset>
-        </copy>
+            <report format="frames" todir="${test.report.dir}"/>
+        </junitreport>
     </target>
 
-    <target name="compile.module.niceassert.tests" depends="compile.module.niceassert.production"
-            description="compile module niceassert; test classes" unless="skip.tests">
-        <mkdir dir="${niceassert.testoutput.dir}"/>
-        <javac destdir="${niceassert.testoutput.dir}" debug="${compiler.debug}"
-               nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true"
-               executable="${module.jdk.bin.niceassert}/javac">
-            <compilerarg line="${compiler.args.niceassert}"/>
-            <classpath refid="niceassert.module.classpath"/>
-            <classpath location="${niceassert.output.dir}"/>
-            <src refid="niceassert.module.test.sourcepath"/>
-            <patternset refid="excluded.from.compilation.niceassert"/>
-        </javac>
-
-        <copy todir="${niceassert.testoutput.dir}">
-            <fileset dir="${module.niceassert.basedir}/src/test">
-                <patternset refid="compiler.resources"/>
-                <type type="file"/>
-            </fileset>
-        </copy>
+    <target name="test" depends="-test.all, -test.report">
+        <fail if="test.failure" message="There were test failures. Look at file://${test.report.dir}/index.html"/>
     </target>
-
-    <target name="clean.module.niceassert" description="cleanup module">
-        <delete dir="${niceassert.output.dir}"/>
-        <delete dir="${niceassert.testoutput.dir}"/>
-    </target>
-
-    <target name="clean" depends="clean.module.niceassert" description="cleanup all"/>
-
-    <target name="run.tests" depends="compile.module.niceassert">
-    </target>
-
-    <target name="package" depends="compile.module.niceassert">
-    </target>
-
-    <target name="all" depends="clean, compile.module.niceassert, run.tests, package"/>
 </project>
