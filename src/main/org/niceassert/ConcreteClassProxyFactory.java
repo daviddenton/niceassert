@@ -22,6 +22,18 @@ public class ConcreteClassProxyFactory {
     private ConcreteClassProxyFactory() {
     }
 
+    public <T> T proxyFor(final Class<T> targetClass, final InvocationHandler invocationHandler) {
+        if(!canImposterise(targetClass)) throw new IllegalArgumentException("Can't imposterize ");
+
+        try {
+            setConstructorsAccessible(targetClass, true);
+            Class<T> proxyClass = createProxyClass((Class) targetClass);
+            return (T) ((Class) targetClass).cast(createProxy(proxyClass, invocationHandler));
+        } finally {
+            setConstructorsAccessible(targetClass, false);
+        }
+    }
+
     private static final NamingPolicy NAMING_POLICY_THAT_ALLOWS_IMPOSTERISATION_OF_CLASSES_IN_SIGNED_PACKAGES = new DefaultNamingPolicy() {
         @Override
         public String getClassName(String prefix, String source, Object key, Predicate names) {
@@ -34,18 +46,6 @@ public class ConcreteClassProxyFactory {
             return method.isBridge() ? 1 : 0;
         }
     };
-
-    public <T> T proxyFor(final Class<T> targetClass, final InvocationHandler invocationHandler) {
-        if(!canImposterise(targetClass)) throw new IllegalArgumentException("Can't imposterize ");
-
-        try {
-            setConstructorsAccessible(targetClass, true);
-            Class<T> proxyClass = createProxyClass((Class) targetClass);
-            return (T) ((Class) targetClass).cast(createProxy(proxyClass, invocationHandler));
-        } finally {
-            setConstructorsAccessible(targetClass, false);
-        }
-    }
 
     private boolean canImposterise(final Class targetClass) {
         return !targetClass.isPrimitive() && !Modifier.isFinal(targetClass.getModifiers()) && !toStringMethodIsFinal(targetClass);
@@ -98,7 +98,7 @@ public class ConcreteClassProxyFactory {
         return proxy;
     }
 
-    public static class ClassWithSuperclassToWorkAroundCglibBug {
+    private static class ClassWithSuperclassToWorkAroundCglibBug {
     }
 
 }
