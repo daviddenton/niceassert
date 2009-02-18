@@ -22,7 +22,7 @@ public class ConcreteClassProxyFactory {
     private static final NamingPolicy NAMING_POLICY_THAT_ALLOWS_IMPOSTERISATION_OF_CLASSES_IN_SIGNED_PACKAGES = new DefaultNamingPolicy() {
         @Override
         public String getClassName(String prefix, String source, Object key, Predicate names) {
-            return "com.voodoocode.codegen." + super.getClassName(prefix, source, key, names);
+            return "org.niceassert.codegen." + super.getClassName(prefix, source, key, names);
         }
     };
 

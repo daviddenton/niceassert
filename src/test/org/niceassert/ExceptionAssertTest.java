@@ -1,19 +1,20 @@
 package org.niceassert;
 
 import org.junit.Test;
-import static org.niceassert.ExceptionAssert.expect;
+import static org.niceassert.ExceptionAssert.*;
 
 public class ExceptionAssertTest {
     private static final String STRING = "String";
 
     @Test
-    public void exception() {
-        expect(ExceptionAssert.exception(new RuntimeException())).whenCalling(new AThrowingObject()).aMethod();
+    public void exceptionTest() {
+        
+        expect(exception(new RuntimeException())).whenCalling(new AThrowingObject()).aMethod();
     }
 
     @Test
-    public void returnedValue() {
-        expect(ExceptionAssert.returnedValue(STRING)).whenCalling(new AReturningObject()).aMethod();
+    public void returnedValueTest() {
+        expect(returnedValue(STRING)).whenCalling(new AReturningObject()).aMethod();
     }
 
 
