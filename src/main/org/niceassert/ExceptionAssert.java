@@ -64,14 +64,11 @@ public class ExceptionAssert {
         };
     }
 
-    public static void main(String[] args) {
-        expect(exception(new RuntimeException())).whenCalling(new It()).doSomething();
+    public static Matcher returnedValue(final Matcher matcher) {
+        return matcher;
     }
 
-    public static class It {
-        void doSomething() {
-            throw new RuntimeException();
-        }
+    public static Matcher exception(final Matcher matcher) {
+        return matcher;
     }
-
 }
