@@ -58,7 +58,6 @@ public class ConcreteClassProxyFactoryTest {
     }
 
     private class ClassWithFinalStringMethod {
-        @Override
         public final String toString() {
             return null;
         }

@@ -3,9 +3,9 @@ package org.niceassert;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import org.junit.Test;
-import static org.niceassert.ExceptionAssert.*;
+import static org.niceassert.Expected.*;
 
-public class ExceptionAssertTest {
+public class ExpectedTest {
     private static final String STRING = "String";
 
     @Test
@@ -36,7 +36,6 @@ public class ExceptionAssertTest {
     }
 
     private static class AnException extends Throwable {
-        @Override
         public boolean equals(Object obj) {
             return obj.getClass() == this.getClass();
         }
