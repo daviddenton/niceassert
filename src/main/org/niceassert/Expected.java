@@ -10,11 +10,11 @@ import java.lang.reflect.Method;
 
 public class Expected {
 
-    public static ExpectationBuilder expect(Matcher matcher) {
-        return new ExpectationBuilder(matcher);
+    public static <T> ExpectationBuilder<T> expect(final  T target) {
+        return new ExpectationBuilder<T>(target);
     }
 
-    public static Matcher exception(final Throwable t) {
+    public static Matcher throwException(final Throwable t) {
         return new BaseMatcher<Throwable>() {
 
             public boolean matches(Object o) {
@@ -27,7 +27,7 @@ public class Expected {
         };
     }
 
-    public static <T> Matcher<T> returnedValue(final T t) {
+    public static <T> Matcher<T> returnValue(final T t) {
         return new BaseMatcher<T>() {
             public boolean matches(Object o) {
                 return o.equals(t);
@@ -39,22 +39,28 @@ public class Expected {
         };
     }
 
-    public static Matcher returnedValue(final Matcher matcher) {
+    public static Matcher returnValueThat(final Matcher matcher) {
         return matcher;
     }
 
-    public static Matcher exception(final Matcher matcher) {
+    public static Matcher throwExceptionThat(final Matcher matcher) {
         return matcher;
     }
 
-    public static class ExpectationBuilder {
-        private final Matcher matcher;
+    public static class ExpectationBuilder<T> {
+        private final T target;
+        private Matcher matcher;
 
-        ExpectationBuilder(Matcher matcher) {
-            this.matcher = matcher;
+        ExpectationBuilder(T target) {
+            this.target = target;
         }
 
-        public <T> T whenCalling(final T target) {
+        public ExpectationBuilder<T> to(Matcher matcher) {
+            this.matcher = matcher;
+            return this;
+        }
+
+        public T whenCalling() {
             return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
                 public Object invoke(Object object, Method method, Object[] args) throws Throwable {
                     try {

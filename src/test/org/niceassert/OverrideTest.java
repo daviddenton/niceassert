@@ -13,12 +13,13 @@ public class OverrideTest {
     private static final String OVERRIDDEN_STRING = "overridden value";
     private final AtomicBoolean wasCalled = new AtomicBoolean(false);
     private final ARecordingObject proxiedObject = new ARecordingObject();
-    private final ARecordingObject theTarget = override(proxiedObject);
+    private final ARecordingObject theTarget = modifyForOverride(proxiedObject);
 
     // override(target) - returns Object
     // throwException(blah).whenCalling(target).method();
     @Test(expected = AnException.class)
     public void throwExceptions() throws AnException {
+
         throwException(new AnException()).whenCalling(theTarget).aMethod();
         theTarget.aMethod();
         assertThat(wasCalled.get(), is(false));

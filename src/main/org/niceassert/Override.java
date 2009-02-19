@@ -11,8 +11,39 @@ public class Override {
         void setException(Throwable t);
     }
 
-    public static <T> T override(final T target) {
-        return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverrideInvocationHandler(target), target.getClass(), OverrideInterface.class);
+    public static <T> T modifyForOverride(final T target) {
+//        return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new DelegatingInvocationHandler(), target.getClass(), DelegatingInvocationHandler.class);
+        return null;
+    }
+
+     public static <T> OverrideBuilder<T> expect(final T target) {
+        return new OverrideBuilder<T>(target);
+    }
+
+    public static <T> OverrideBuilder<T> override(T target) {
+        return new OverrideBuilder<T>(target);
+    }
+
+    private static class OverrideBuilder<T> {
+        private final T target;
+        private Action action;
+
+        public OverrideBuilder(T target) {
+            this.target = target;
+        }
+
+        public OverrideBuilder<T> to(Action action) {
+            this.action = action;
+            return this;
+        }
+
+        public T whenCalling() {
+            return target;
+        }
+    }
+
+    public static interface Action {
+        Object execute();
     }
 
     public static OverrideReturnValueBuilder returnValue(Object returnValue) {
@@ -31,11 +62,13 @@ public class Override {
         }
 
         public <T> T whenCalling(final T target) {
-            if (!OverrideInterface.class.isAssignableFrom(target.getClass())) {
-                throw new IllegalArgumentException("Cannot force behaviour on a non-overridden concrete object");
-            }
-            OverrideInterface.class.cast(target).setReturnValue(returnValue);
-            return target;
+//            return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverrideInvocationHandler(target), target.getClass(), OverrideInterface.class);
+//            if (!OverrideInterface.class.isAssignableFrom(target.getClass())) {
+//                throw new IllegalArgumentException("Cannot force behaviour on a non-overridden concrete object");
+//            }
+//            OverrideInterface.class.cast(target).setReturnValue(returnValue);
+//            return target;
+            return null;
         }
     }
 

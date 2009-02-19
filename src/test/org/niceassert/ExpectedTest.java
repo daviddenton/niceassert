@@ -10,22 +10,22 @@ public class ExpectedTest {
 
     @Test
     public void exceptionChecked() throws AnException {
-        expect(exception(new AnException())).whenCalling(new AThrowingObject()).aMethod();
+        expect(new AThrowingObject()).to(throwException(new AnException())).whenCalling().aMethod();
     }
 
     @Test
     public void exceptionCheckedWithCustomMatcher() throws AnException {
-        expect(exception(is(equalTo(new AnException())))).whenCalling(new AThrowingObject()).aMethod();
+        expect(new AThrowingObject()).to(throwExceptionThat(is(equalTo(new AnException())))).whenCalling().aMethod();
     }
 
     @Test
     public void returnedValueChecked() {
-        expect(returnedValue(STRING)).whenCalling(new AReturningObject()).aMethod();
+        expect(new AReturningObject()).to(returnValue(STRING)).whenCalling().aMethod();
     }
 
     @Test
     public void returnedValueCheckedUsingCustomAssert() {
-        expect(returnedValue(is(STRING))).whenCalling(new AReturningObject()).aMethod();
+        expect(new AReturningObject()).to(returnValueThat(is(STRING))).whenCalling().aMethod();
     }
 
 
