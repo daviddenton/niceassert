@@ -3,7 +3,7 @@ package org.niceassert;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import org.junit.Test;
-import static org.niceassert.Expected.*;
+import static org.niceassert.Expected.expect;
 
 public class ExpectedTest {
     private static final String STRING = "String";

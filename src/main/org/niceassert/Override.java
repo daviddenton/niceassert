@@ -8,7 +8,9 @@ import java.lang.reflect.Method;
 public class Override {
 
     public static <T> T modifyForOverride(final T target) {
-        return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(), target.getClass(), Overrideable.class);
+        T proxy = (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(), target.getClass(), Overrideable.class);
+        Overrideable.class.cast(proxy).setTarget(target);
+        return proxy;
     }
 
     public static <T> OverrideBuilder<T> override(T target) {
@@ -18,11 +20,11 @@ public class Override {
     }
 
     public static class OverrideBuilder<T> {
-        private final Overrideable target;
+        private final Overrideable overrideableTarget;
         private Action action;
 
-        public OverrideBuilder(Overrideable target) {
-            this.target = target;
+        public OverrideBuilder(Overrideable overrideableTarget) {
+            this.overrideableTarget = overrideableTarget;
         }
 
         public OverrideBuilder<T> to(Action action) {
@@ -34,10 +36,10 @@ public class Override {
             try {
                 return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
                     public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                        Overrideable.class.cast(target.getClass()).setOverride(method, action);
+                        Overrideable.class.cast(overrideableTarget.getClass()).setMethodAction(method, action);
                         return null;
                     }
-                }, target.getClass());
+                }, overrideableTarget.getTarget().getClass());
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;
@@ -64,9 +66,17 @@ public class Override {
     private static class OverridableInvocationHandler implements InvocationHandler {
         private Method aMethod;
         private Action anAction;
+        private Object target;
 
         public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-            if (method == Overrideable.class.getMethod("setOverride", Action.class)) {
+            if (Overrideable.class.getMethod("setTarget", Object.class).equals(method)) {
+                target = objects[0];
+                return Void.TYPE;
+            }
+            if (Overrideable.class.getMethod("getTarget").equals(method)) {
+                return target;
+            }
+            if (Overrideable.class.getMethod("setMethodAction", Method.class, Action.class).equals(method)) {
                 return setupOverride(method, objects);
             }
 
@@ -80,8 +90,7 @@ public class Override {
                 } catch (Throwable throwable) {
                     throw new InvocationTargetException(throwable);
                 }
-            }
-            else return method.invoke(objects);
+            } else return method.invoke(target, objects);
         }
 
         private Object setupOverride(Method method, Object[] objects) {
@@ -91,7 +100,9 @@ public class Override {
         }
     }
 
-    static interface Overrideable {
-        void setOverride(Method method, Action action);
+    static interface Overrideable<T> {
+        void setMethodAction(Method method, Action action);
+        void setTarget(Object target);
+        T getTarget();
     }
 }
