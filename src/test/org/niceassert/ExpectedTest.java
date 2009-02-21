@@ -50,7 +50,7 @@ public class ExpectedTest {
     }
 
 
-    public static class AThrowingObject {
+    private static class AThrowingObject {
         void aMethod() throws AnException {
             throw new AnException();
         }
@@ -62,7 +62,7 @@ public class ExpectedTest {
         }
     }
 
-    public static class AReturningObject {
+    private static class AReturningObject {
         String aMethod() {
             return STRING;
         }

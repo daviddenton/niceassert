@@ -15,14 +15,14 @@ import java.lang.reflect.Modifier;
 /**
  * NB: Shamelessly "inspired" by JMock's ClassImposteriser
  */
-public class ConcreteClassProxyFactory {
+class ConcreteClassProxyFactory {
 
-    public static final ConcreteClassProxyFactory INSTANCE = new ConcreteClassProxyFactory();
+    static final ConcreteClassProxyFactory INSTANCE = new ConcreteClassProxyFactory();
 
     private ConcreteClassProxyFactory() {
     }
 
-    public <T> T proxyFor(final InvocationHandler invocationHandler, final Class<T> concreteClass, Class... interfaces) {
+    <T> T proxyFor(final InvocationHandler invocationHandler, final Class<T> concreteClass, Class... interfaces) {
         if(!canImposterise(concreteClass)) throw new IllegalArgumentException("Can't imposterize ");
 
         try {

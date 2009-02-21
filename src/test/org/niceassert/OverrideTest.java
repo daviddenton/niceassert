@@ -40,7 +40,7 @@ public class OverrideTest {
     }
 
 
-    public class ARecordingObject {
+    private class ARecordingObject {
         String aMethod() throws AnException {
             wasCalled.set(true);
             return ORIGINAL_VALUE;

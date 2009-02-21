@@ -19,7 +19,7 @@ public class Override {
         return new OverrideBuilder<T>(Overrideable.class.cast(target));
     }
 
-    public static class OverrideBuilder<T> {
+    static class OverrideBuilder<T> {
         private final Overrideable overrideableTarget;
         private Action action;
 
