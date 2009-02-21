@@ -29,7 +29,7 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" line="23" class="org.niceassert.OverrideTest" package="org.niceassert">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" line="20" class="org.niceassert.OverrideTest" package="org.niceassert">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -115,7 +115,7 @@
       <file leaf-file-name="OverrideTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="4" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.45695364">
+            <state line="19" column="28" selection-start="786" selection-end="786" vertical-scroll-proportion="0.1986755">
               <folding />
             </state>
           </provider>
@@ -940,7 +940,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="4" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.45695364">
+        <state line="19" column="28" selection-start="786" selection-end="786" vertical-scroll-proportion="0.1986755">
           <folding />
         </state>
       </provider>
