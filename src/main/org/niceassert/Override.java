@@ -96,7 +96,7 @@ public class Override {
         }
     }
 
-    static interface Overrideable<T> {
+    private static interface Overrideable<T> {
         void setMethodAction(Method method, Action action);
         void setTarget(Object target);
         T getTarget();
