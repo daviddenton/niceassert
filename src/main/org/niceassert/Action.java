@@ -1,7 +1,7 @@
 package org.niceassert;
 
 public interface Action {
-    Object execute() throws Throwable;
+    Object execute(Object[] objects) throws Throwable;
 
     
 }
