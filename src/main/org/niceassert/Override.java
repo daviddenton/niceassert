@@ -83,13 +83,9 @@ public class Override {
             return processOverride(o, method, objects);
         }
 
-        private Object processOverride(Object o, Method method, Object[] objects) throws IllegalAccessException, InvocationTargetException {
+        private Object processOverride(Object o, Method method, Object[] objects) throws Throwable, InvocationTargetException {
             if (method.equals(aMethod)) {
-                try {
-                    return anAction.execute(objects);
-                } catch (Throwable throwable) {
-                    throw new InvocationTargetException(throwable);
-                }
+                return anAction.execute(objects);
             } else return method.invoke(target, objects);
         }
 

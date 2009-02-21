@@ -41,7 +41,7 @@ public class OverrideTest {
 
 
     public class ARecordingObject {
-        String aMethod() {
+        String aMethod() throws AnException {
             wasCalled.set(true);
             return ORIGINAL_VALUE;
         }
