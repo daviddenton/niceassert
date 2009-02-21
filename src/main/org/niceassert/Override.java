@@ -31,12 +31,17 @@ public class Override {
         }
 
         public T whenCalling() {
-            return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
-                public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                    Overrideable.class.cast(target.getClass()).setOverride(method, action);
-                    return null;
-                }
-            }, target.getClass());
+            try {
+                return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
+                    public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
+                        Overrideable.class.cast(target.getClass()).setOverride(method, action);
+                        return null;
+                    }
+                }, target.getClass());
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
         }
     }
 
