@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/Override.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/Override.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
@@ -87,7 +86,7 @@
       <file leaf-file-name="Override.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Override.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="1" selection-start="2586" selection-end="2586" vertical-scroll-proportion="0.0">
+            <state line="7" column="13" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,7 +115,7 @@
       <file leaf-file-name="OverrideTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="72" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.42384106">
+            <state line="29" column="4" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.45695364">
               <folding />
             </state>
           </provider>
@@ -932,7 +931,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Override.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="1" selection-start="2586" selection-end="2586" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -941,7 +940,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="72" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.42384106">
+        <state line="29" column="4" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.45695364">
           <folding />
         </state>
       </provider>

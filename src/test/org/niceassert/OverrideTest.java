@@ -25,6 +25,9 @@ public class OverrideTest {
         assertThat(wasCalled.get(), is(false));
     }
 
+
+    // TODO: MORE INVALID CASES - non setup causing weird results
+    
     @Test
     public void returnValueOccursForOverriddenMethod() throws AnException {
         override(theTarget).to(returnValue(OVERRIDDEN_STRING)).whenCalling().aMethod();
