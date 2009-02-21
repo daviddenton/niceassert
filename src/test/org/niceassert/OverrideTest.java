@@ -17,8 +17,8 @@ public class OverrideTest {
 
     @Test(expected = AnException.class)
     public void throwExceptions() throws AnException {
-        override(theTarget)
-                .to(throwException(new AnException()))
+        override(theTarget).
+               to(throwException(new AnException()))
                 .whenCalling()
                 .aMethod();
         theTarget.aMethod();

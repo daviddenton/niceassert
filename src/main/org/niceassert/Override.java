@@ -36,7 +36,7 @@ public class Override {
             try {
                 return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
                     public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                        Overrideable.class.cast(overrideableTarget.getClass()).setMethodAction(method, action);
+                        overrideableTarget.setMethodAction(method, action);
                         return null;
                     }
                 }, overrideableTarget.getTarget().getClass());
@@ -84,7 +84,7 @@ public class Override {
         }
 
         private Object processOverride(Object o, Method method, Object[] objects) throws IllegalAccessException, InvocationTargetException {
-            if (method == aMethod) {
+            if (method.equals(aMethod)) {
                 try {
                     return anAction.execute(objects);
                 } catch (Throwable throwable) {
