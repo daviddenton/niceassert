@@ -15,26 +15,25 @@ public class OverrideTest {
     private final ARecordingObject proxiedObject = new ARecordingObject();
     private final ARecordingObject theTarget = modifyForOverride(proxiedObject);
 
-    // override(target) - returns Object
-    // throwException(blah).whenCalling(target).method();
     @Test(expected = AnException.class)
     public void throwExceptions() throws AnException {
 
-        throwException(new AnException()).whenCalling(theTarget).aMethod();
+        override(theTarget).to(throwException(new AnException())).whenCalling().aMethod();
         theTarget.aMethod();
         assertThat(wasCalled.get(), is(false));
     }
 
     @Test
     public void returnValueOccursForOverriddenMethod() throws AnException {
-        returnValue(OVERRIDDEN_STRING).whenCalling(proxiedObject).aMethod();
-        assertThat(proxiedObject.aMethod(), is(equalTo(OVERRIDDEN_STRING)));
+        override(theTarget).to(returnValue(OVERRIDDEN_STRING)).whenCalling().aMethod();
+
+        assertThat(theTarget.aMethod(), is(equalTo(OVERRIDDEN_STRING)));
         assertThat(wasCalled.get(), is(false));
     }
 
     @Test
     public void originalMethodCalledForNonOverriddenMethod() throws AnException {
-        returnValue(OVERRIDDEN_STRING).whenCalling(proxiedObject).anotherMethod();
+        override(theTarget).to(returnValue(OVERRIDDEN_STRING)).whenCalling().anotherMethod();
         assertThat(proxiedObject.aMethod(), is(equalTo(ORIGINAL_VALUE)));
         assertThat(wasCalled.get(), is(true));
     }
