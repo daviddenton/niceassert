@@ -17,7 +17,6 @@ public class OverrideTest {
 
     @Test(expected = AnException.class)
     public void throwExceptions() throws AnException {
-
         override(theTarget).to(throwException(new AnException())).whenCalling().aMethod();
         theTarget.aMethod();
         assertThat(wasCalled.get(), is(false));
@@ -26,7 +25,6 @@ public class OverrideTest {
     @Test
     public void returnValueOccursForOverriddenMethod() throws AnException {
         override(theTarget).to(returnValue(OVERRIDDEN_STRING)).whenCalling().aMethod();
-
         assertThat(theTarget.aMethod(), is(equalTo(OVERRIDDEN_STRING)));
         assertThat(wasCalled.get(), is(false));
     }
