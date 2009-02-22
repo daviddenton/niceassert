@@ -22,6 +22,7 @@
         <zip destfile="build/${artifact}-jars.zip" update="true">
             <zipfileset dir="lib" prefix="${artifact}-jars"/>
             <zipfileset file="build/jars/${artifact}.jar" prefix="${artifact}-jars"/>
+            <zipfileset dir="build/doc" prefix="${artifact}-jars/doc"/>
         </zip>
     </target>
 
@@ -107,7 +108,7 @@
 
     <target name="document">
         <javadoc
-                destdir="doc"
+                destdir="build/doc"
                 author="false"
                 version="false"
                 use="true"
