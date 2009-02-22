@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class OverrideTest {
     private static final String ORIGINAL_VALUE = "original value";
     private static final String OVERRIDDEN_STRING = "overridden value";
-    private final AtomicBoolean wasCalled = new AtomicBoolean(false);
+    private final AtomicBoolean originalTargetWasCalled = new AtomicBoolean(false);
     private final ARecordingObject proxiedObject = new ARecordingObject();
     private final ARecordingObject theTarget = modifyForOverride(proxiedObject);
 
@@ -19,7 +19,7 @@ public class OverrideTest {
     public void throwExceptions() throws AnException {
         override(theTarget).to(throwException(new AnException())).whenCalling().aMethod();
         theTarget.aMethod();
-        assertThat(wasCalled.get(), is(false));
+        assertThat(originalTargetWasCalled.get(), is(false));
     }
 
 
@@ -29,20 +29,20 @@ public class OverrideTest {
     public void returnValueOccursForOverriddenMethod() throws AnException {
         override(theTarget).to(returnValue(OVERRIDDEN_STRING)).whenCalling().aMethod();
         assertThat(theTarget.aMethod(), is(equalTo(OVERRIDDEN_STRING)));
-        assertThat(wasCalled.get(), is(false));
+        assertThat(originalTargetWasCalled.get(), is(false));
     }
 
     @Test
     public void originalMethodCalledForNonOverriddenMethod() throws AnException {
         override(theTarget).to(returnValue(OVERRIDDEN_STRING)).whenCalling().anotherMethod();
         assertThat(proxiedObject.aMethod(), is(equalTo(ORIGINAL_VALUE)));
-        assertThat(wasCalled.get(), is(true));
+        assertThat(originalTargetWasCalled.get(), is(true));
     }
 
 
     private class ARecordingObject {
         String aMethod() throws AnException {
-            wasCalled.set(true);
+            originalTargetWasCalled.set(true);
             return ORIGINAL_VALUE;
         }
 
