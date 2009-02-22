@@ -12,10 +12,11 @@
 
     <target name="clean">
         <delete dir="classes"/>
+        <delete dir="doc"/>
         <delete dir="build"/>
     </target>
 
-    <target name="build" depends="clean, test, package"/>
+    <target name="build" depends="clean, test, document, package"/>
 
     <target name="package">
         <zip destfile="build/${artifact}-jars.zip" update="true">
@@ -32,7 +33,8 @@
 
         <sequential>
             <mkdir dir="@{classdir}"/>
-            <javac srcdir="@{srcdir}" classpathref="@{classpathref}" destdir="@{classdir}" debug="true" source="1.5" target="1.5" fork="true"/>
+            <javac srcdir="@{srcdir}" classpathref="@{classpathref}" destdir="@{classdir}" debug="true" source="1.5"
+                   target="1.5" fork="true"/>
             <copy todir="@{classdir}">
                 <fileset dir="@{srcdir}" excludes="**/*.java"/>
             </copy>
@@ -101,5 +103,18 @@
 
     <target name="test" depends="-test.all, -test.report">
         <fail if="test.failure" message="There were test failures. Look at file://${test.report.dir}/index.html"/>
+    </target>
+
+    <target name="document">
+        <javadoc
+                destdir="doc"
+                author="false"
+                version="false"
+                use="true"
+                windowtitle="Nice Assert">
+            <packageset dir="src/main" defaultexcludes="yes">
+                <include name="**"/>
+            </packageset>
+        </javadoc>
     </target>
 </project>
