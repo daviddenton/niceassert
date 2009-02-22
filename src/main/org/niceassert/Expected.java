@@ -16,8 +16,8 @@ public class Expected<T> {
     }
 
     private final T target;
-    private Matcher returnMatcher;
-    private Matcher throwsMatcher;
+    private Matcher returnMatcher = new FailureMatcher("Exception to be thrown");
+    private Matcher throwsMatcher = new FailureMatcher("No exception to be thrown");
     private boolean matcherSet;
 
     private Expected(T target) {
@@ -85,4 +85,18 @@ public class Expected<T> {
         }, target.getClass());
     }
 
+    private static class FailureMatcher extends BaseMatcher {
+        private final String message;
+
+        public FailureMatcher(String message) {
+            this.message = message;
+        }
+
+        public boolean matches(Object o) {
+            return false;        }
+
+        public void describeTo(Description description) {
+            description.appendText(message);
+        }
+    }
 }

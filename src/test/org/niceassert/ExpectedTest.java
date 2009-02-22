@@ -6,7 +6,9 @@ import org.junit.Test;
 import static org.niceassert.Expected.expect;
 
 public class ExpectedTest {
+    
     private static final String STRING = "String";
+    private static final AnException AN_EXCEPTION = new AnException();
 
     @Test (expected = IllegalArgumentException.class)
     public void whenExceptionThrownAndNoExpectationSet() throws AnException {
@@ -18,6 +20,16 @@ public class ExpectedTest {
         expect(new AReturningObject()).whenCalling().aMethod();
     }
 
+    @Test (expected = AssertionError.class)
+    public void unexpectedException() throws AnException {
+        expect(new AThrowingObject()).toReturnValue(STRING).whenCalling().aMethod();
+    }
+
+
+    @Test (expected = AssertionError.class)
+    public void expectedExceptionNotThrown() throws AnException {
+        expect(new AReturningObject()).toThrowException(AN_EXCEPTION).whenCalling().aMethod();
+    }
 
     @Test (expected = IllegalArgumentException.class)
     public void attemptToSetSameExpectationTwice() throws AnException {
@@ -26,17 +38,17 @@ public class ExpectedTest {
     
     @Test (expected = IllegalArgumentException.class)
     public void attemptToSetCompetingExpectationTwice() throws AnException {
-        expect(new AReturningObject()).toReturnValue(STRING).toThrowException(new AnException()).whenCalling().aMethod();
+        expect(new AReturningObject()).toReturnValue(STRING).toThrowException(AN_EXCEPTION).whenCalling().aMethod();
     }
 
     @Test
     public void exceptionChecked() throws AnException {
-        expect(new AThrowingObject()).toThrowException(new AnException()).whenCalling().aMethod();
+        expect(new AThrowingObject()).toThrowException(AN_EXCEPTION).whenCalling().aMethod();
     }
 
     @Test
     public void exceptionCheckedWithCustomMatcher() throws AnException {
-        expect(new AThrowingObject()).toThrowExceptionThat(is(equalTo(new AnException()))).whenCalling().aMethod();
+        expect(new AThrowingObject()).toThrowExceptionThat(is(equalTo(AN_EXCEPTION))).whenCalling().aMethod();
     }
 
     @Test
@@ -49,10 +61,10 @@ public class ExpectedTest {
         expect(new AReturningObject()).toReturnValueThat(is(STRING)).whenCalling().aMethod();
     }
 
-
     private static class AThrowingObject {
+
         void aMethod() throws AnException {
-            throw new AnException();
+            throw AN_EXCEPTION;
         }
     }
 
