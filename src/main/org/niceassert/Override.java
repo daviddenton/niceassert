@@ -2,7 +2,6 @@ package org.niceassert;
 
 import net.sf.cglib.proxy.InvocationHandler;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class Override {
@@ -80,13 +79,28 @@ public class Override {
                 return setupOverride(method, objects);
             }
 
-            return processOverride(o, method, objects);
+            return processOverriddenCall(method, objects);
         }
 
-        private Object processOverride(Object o, Method method, Object[] objects) throws Throwable, InvocationTargetException {
+        private Object processOverriddenCall(Method method, Object[] objects) throws Throwable {
             if (method.equals(aMethod)) {
-                return anAction.execute(objects);
+                try {
+                    Object result = anAction.execute(objects);
+                    validateClassCompabitility(aMethod.getReturnType(), result.getClass());
+                    return result;
+                } catch (Throwable throwable) {
+                    for (Class exceptionClass : method.getExceptionTypes()) {
+                        if (exceptionClass.isAssignableFrom(throwable.getClass())) throw throwable;
+                    }
+                    throw new ClassCastException("Can't override method " + aMethod.getName() + " to throw incompatible exception " + throwable.getClass());
+
+                }
             } else return method.invoke(target, objects);
+        }
+
+        private void validateClassCompabitility(Class<?> expected, Class<? extends Object> actual) {
+            if (!expected.isAssignableFrom(actual))
+                throw new ClassCastException("Can't override method to return incompatible class (expected=" + expected + ", got=" + actual + ")");
         }
 
         private Object setupOverride(Method method, Object[] objects) {
@@ -98,7 +112,9 @@ public class Override {
 
     private static interface Overrideable<T> {
         void setMethodAction(Method method, Action action);
+
         void setTarget(Object target);
+
         T getTarget();
     }
 }

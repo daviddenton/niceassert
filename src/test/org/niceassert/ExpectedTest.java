@@ -60,8 +60,7 @@ public class ExpectedTest {
         expect(new AReturningObject()).toReturnValueThat(is(RESULT)).whenCalling().aMethod();
     }
 
-    private static class AThrowingObject {
-
+    private class AThrowingObject {
         void aMethod() throws AnException {
             throw AN_EXCEPTION;
         }
@@ -73,11 +72,9 @@ public class ExpectedTest {
         }
     }
 
-    private static class AReturningObject {
+    private class AReturningObject {
         String aMethod() {
             return RESULT;
         }
-
-        void aVoidMethod() {}
     }
 }

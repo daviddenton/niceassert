@@ -29,7 +29,25 @@ public class OverrideTest {
         assertThat(originalTargetWasCalled.get(), is(false));
     }
 
-    // TODO: MORE INVALID CASES - non setup causing weird results
+    @Test (expected = ClassCastException.class)
+    public void overrideToReturnIncompatibleValue() throws AnException {
+        override(proxy).to(returnValue(new Object())).whenCalling().aMethod();
+        proxy.aMethod();
+    }
+
+    @Test (expected = ClassCastException.class)
+    public void overrideToReturnIncompatibleValueForVoidMethod() throws AnException {
+        override(proxy).to(returnValue(new Object())).whenCalling().aVoidMethod();
+        proxy.aVoidMethod();
+    }
+
+    @Test (expected = ClassCastException.class)
+    public void overrideToThrowIncompatibleException() throws AnException {
+        override(proxy).to(throwException(new AnotherException())).whenCalling().aMethod();
+        proxy.aMethod();
+    }
+
+    // TODO: MORE INVALID CASES - non setup causing weird results - check args list and record against action - use matchers as in JMock
     
 
     @Test (expected = IllegalArgumentException.class)
@@ -54,11 +72,16 @@ public class OverrideTest {
         String anotherMethod() {
             return ORIGINAL_VALUE;
         }
+
+        void aVoidMethod() {}
     }
 
     private class AnException extends Throwable {
         public boolean equals(Object obj) {
             return obj.getClass() == this.getClass();
         }
+    }
+
+    private class AnotherException extends Throwable {
     }
 }
