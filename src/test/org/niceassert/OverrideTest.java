@@ -29,28 +29,35 @@ public class OverrideTest {
         assertThat(originalTargetWasCalled.get(), is(false));
     }
 
-    @Test (expected = ClassCastException.class)
+    @Test
+    public void overrideToReturnValueOnMatchedCallOnly() throws AnException {
+        override(proxy).to(returnValue(OVERRIDDEN_STRING)).whenCalling().methodWithArgs(OVERRIDDEN_STRING);
+        assertThat(proxy.aMethod(), is(equalTo(ORIGINAL_VALUE)));
+        assertThat(originalTargetWasCalled.get(), is(false));
+        assertThat(proxy.aMethod(), is(equalTo(OVERRIDDEN_STRING)));
+    }
+
+    @Test(expected = ClassCastException.class)
     public void overrideToReturnIncompatibleValue() throws AnException {
         override(proxy).to(returnValue(new Object())).whenCalling().aMethod();
         proxy.aMethod();
     }
 
-    @Test (expected = ClassCastException.class)
+    @Test(expected = ClassCastException.class)
     public void overrideToReturnIncompatibleValueForVoidMethod() throws AnException {
         override(proxy).to(returnValue(new Object())).whenCalling().aVoidMethod();
         proxy.aVoidMethod();
     }
 
-    @Test (expected = ClassCastException.class)
+    @Test(expected = ClassCastException.class)
     public void overrideToThrowIncompatibleException() throws AnException {
         override(proxy).to(throwException(new AnotherException())).whenCalling().aMethod();
         proxy.aMethod();
     }
 
     // TODO: MORE INVALID CASES - non setup causing weird results - check args list and record against action - use matchers as in JMock
-    
 
-    @Test (expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void attemptToOverrideANonModifiedObject() throws AnException {
         override(originalTarget);
     }
@@ -73,7 +80,12 @@ public class OverrideTest {
             return ORIGINAL_VALUE;
         }
 
-        void aVoidMethod() {}
+        String methodWithArgs(String arg) {
+            return ORIGINAL_VALUE;
+        }
+
+        void aVoidMethod() {
+        }
     }
 
     private class AnException extends Throwable {

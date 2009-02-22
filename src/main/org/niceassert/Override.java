@@ -74,7 +74,7 @@ public class Override {
             }
             if (Overrideable.class.getMethod("getTarget").equals(method)) {
                 return target;
-            }
+            }                         
             if (Overrideable.class.getMethod("setMethodAction", Method.class, Action.class).equals(method)) {
                 return setupOverride(method, objects);
             }
