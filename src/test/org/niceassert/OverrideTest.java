@@ -35,7 +35,7 @@ public class OverrideTest {
     @Test
     public void originalMethodCalledForNonOverriddenMethod() throws AnException {
         override(proxy).to(returnValue(OVERRIDDEN_STRING)).whenCalling().anotherMethod();
-        assertThat(originalTarget.aMethod(), is(equalTo(ORIGINAL_VALUE)));
+        assertThat(proxy.aMethod(), is(equalTo(ORIGINAL_VALUE)));
         assertThat(originalTargetWasCalled.get(), is(true));
     }
 
