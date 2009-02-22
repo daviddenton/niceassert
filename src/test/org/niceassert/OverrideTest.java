@@ -12,13 +12,13 @@ public class OverrideTest {
     private static final String ORIGINAL_VALUE = "original value";
     private static final String OVERRIDDEN_STRING = "overridden value";
     private final AtomicBoolean originalTargetWasCalled = new AtomicBoolean(false);
-    private final ARecordingObject proxiedObject = new ARecordingObject();
-    private final ARecordingObject theTarget = modifyForOverride(proxiedObject);
+    private final ARecordingObject originalTarget = new ARecordingObject();
+    private final ARecordingObject proxy = modifyForOverride(originalTarget);
 
     @Test(expected = AnException.class)
     public void throwExceptions() throws AnException {
-        override(theTarget).to(throwException(new AnException())).whenCalling().aMethod();
-        theTarget.aMethod();
+        override(proxy).to(throwException(new AnException())).whenCalling().aMethod();
+        proxy.aMethod();
         assertThat(originalTargetWasCalled.get(), is(false));
     }
 
@@ -27,15 +27,15 @@ public class OverrideTest {
     
     @Test
     public void returnValueOccursForOverriddenMethod() throws AnException {
-        override(theTarget).to(returnValue(OVERRIDDEN_STRING)).whenCalling().aMethod();
-        assertThat(theTarget.aMethod(), is(equalTo(OVERRIDDEN_STRING)));
+        override(proxy).to(returnValue(OVERRIDDEN_STRING)).whenCalling().aMethod();
+        assertThat(proxy.aMethod(), is(equalTo(OVERRIDDEN_STRING)));
         assertThat(originalTargetWasCalled.get(), is(false));
     }
 
     @Test
     public void originalMethodCalledForNonOverriddenMethod() throws AnException {
-        override(theTarget).to(returnValue(OVERRIDDEN_STRING)).whenCalling().anotherMethod();
-        assertThat(proxiedObject.aMethod(), is(equalTo(ORIGINAL_VALUE)));
+        override(proxy).to(returnValue(OVERRIDDEN_STRING)).whenCalling().anotherMethod();
+        assertThat(originalTarget.aMethod(), is(equalTo(ORIGINAL_VALUE)));
         assertThat(originalTargetWasCalled.get(), is(true));
     }
 
