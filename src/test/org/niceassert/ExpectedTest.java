@@ -7,12 +7,12 @@ import static org.niceassert.Expected.expect;
 
 public class ExpectedTest {
     
-    private static final String STRING = "String";
+    private static final String RESULT = "String";
     private static final AnException AN_EXCEPTION = new AnException();
 
-    @Test (expected = IllegalArgumentException.class)
+    @Test (expected = AssertionError.class)
     public void whenExceptionThrownAndNoExpectationSet() throws AnException {
-        expect(new AThrowingObject()).whenCalling().aMethod();
+        expect(new AThrowingObject()).toReturnValue(RESULT).whenCalling().aMethod();
     }
 
     @Test (expected = IllegalArgumentException.class)
@@ -22,9 +22,8 @@ public class ExpectedTest {
 
     @Test (expected = AssertionError.class)
     public void unexpectedException() throws AnException {
-        expect(new AThrowingObject()).toReturnValue(STRING).whenCalling().aMethod();
+        expect(new AThrowingObject()).toReturnValue(RESULT).whenCalling().aMethod();
     }
-
 
     @Test (expected = AssertionError.class)
     public void expectedExceptionNotThrown() throws AnException {
@@ -33,12 +32,12 @@ public class ExpectedTest {
 
     @Test (expected = IllegalArgumentException.class)
     public void attemptToSetSameExpectationTwice() throws AnException {
-        expect(new AReturningObject()).toReturnValue(STRING).toReturnValue(STRING).whenCalling().aMethod();
+        expect(new AReturningObject()).toReturnValue(RESULT).toReturnValue(RESULT).whenCalling().aMethod();
     }
     
     @Test (expected = IllegalArgumentException.class)
     public void attemptToSetCompetingExpectationTwice() throws AnException {
-        expect(new AReturningObject()).toReturnValue(STRING).toThrowException(AN_EXCEPTION).whenCalling().aMethod();
+        expect(new AReturningObject()).toReturnValue(RESULT).toThrowException(AN_EXCEPTION).whenCalling().aMethod();
     }
 
     @Test
@@ -53,12 +52,12 @@ public class ExpectedTest {
 
     @Test
     public void returnedValueChecked() {
-        expect(new AReturningObject()).toReturnValue(STRING).whenCalling().aMethod();
+        expect(new AReturningObject()).toReturnValue(RESULT).whenCalling().aMethod();
     }
 
     @Test
     public void returnedValueCheckedUsingCustomAssert() {
-        expect(new AReturningObject()).toReturnValueThat(is(STRING)).whenCalling().aMethod();
+        expect(new AReturningObject()).toReturnValueThat(is(RESULT)).whenCalling().aMethod();
     }
 
     private static class AThrowingObject {
@@ -76,7 +75,9 @@ public class ExpectedTest {
 
     private static class AReturningObject {
         String aMethod() {
-            return STRING;
+            return RESULT;
         }
+
+        void aVoidMethod() {}
     }
 }

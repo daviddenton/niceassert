@@ -16,20 +16,25 @@ public class OverrideTest {
     private final ARecordingObject proxy = modifyForOverride(originalTarget);
 
     @Test(expected = AnException.class)
-    public void throwExceptions() throws AnException {
+    public void overrideToThrowException() throws AnException {
         override(proxy).to(throwException(new AnException())).whenCalling().aMethod();
         proxy.aMethod();
         assertThat(originalTargetWasCalled.get(), is(false));
     }
 
-
-    // TODO: MORE INVALID CASES - non setup causing weird results
-    
     @Test
-    public void returnValueOccursForOverriddenMethod() throws AnException {
+    public void overrideToReturnValue() throws AnException {
         override(proxy).to(returnValue(OVERRIDDEN_STRING)).whenCalling().aMethod();
         assertThat(proxy.aMethod(), is(equalTo(OVERRIDDEN_STRING)));
         assertThat(originalTargetWasCalled.get(), is(false));
+    }
+
+    // TODO: MORE INVALID CASES - non setup causing weird results
+    
+
+    @Test (expected = IllegalArgumentException.class)
+    public void attemptToOverrideANonModifiedObject() throws AnException {
+        override(originalTarget);
     }
 
     @Test

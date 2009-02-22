@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/Expected.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/Expected.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java" />
     </list>
     <ignored path="niceassert.iws" />
@@ -82,7 +82,7 @@
       <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="24" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
+            <state line="12" column="24" selection-start="433" selection-end="433" vertical-scroll-proportion="-0.6315789">
               <folding />
             </state>
           </provider>
@@ -100,7 +100,7 @@
       <file leaf-file-name="Expected.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Expected.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="32" selection-start="2062" selection-end="2062" vertical-scroll-proportion="0.0">
+            <state line="60" column="0" selection-start="1808" selection-end="1808" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,7 +111,7 @@
       <file leaf-file-name="OverrideTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="7" selection-start="674" selection-end="951" vertical-scroll-proportion="0.0">
+            <state line="32" column="4" selection-start="1323" selection-end="1323" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -120,7 +120,7 @@
       <file leaf-file-name="ExpectedTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="87" selection-start="940" selection-end="940" vertical-scroll-proportion="0.25331125">
+            <state line="26" column="0" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0397351">
               <folding />
             </state>
           </provider>
@@ -455,7 +455,7 @@
     <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="dirty - work on documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="dirty - work on further test cases" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -471,6 +471,7 @@
     <MESSAGE value="dirty - expanded testcases" />
     <MESSAGE value="dirty - work on override" />
     <MESSAGE value="dirty - work on documentation" />
+    <MESSAGE value="dirty - work on further test cases" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -552,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="24" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/externallib/junit-4.4.jar!/org/junit/internal/runners/JUnit4ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="19" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.0">
@@ -580,16 +574,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="24" selection-start="433" selection-end="433" vertical-scroll-proportion="-0.6315789">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="7" selection-start="674" selection-end="951" vertical-scroll-proportion="0.0">
+        <state line="32" column="4" selection-start="1323" selection-end="1323" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Expected.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="32" selection-start="2062" selection-end="2062" vertical-scroll-proportion="0.0">
+        <state line="60" column="0" selection-start="1808" selection-end="1808" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -598,7 +599,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="87" selection-start="940" selection-end="940" vertical-scroll-proportion="0.25331125">
+        <state line="26" column="0" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0397351">
           <folding />
         </state>
       </provider>
