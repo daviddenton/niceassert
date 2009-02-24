@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="dirty - work on further test cases">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.ipr" afterPath="$PROJECT_DIR$/niceassert.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="niceassert.iws" />
@@ -31,6 +30,21 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java" line="51" class="org.niceassert.MatchingOverrideTest" package="org.niceassert">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -101,8 +115,10 @@
       <file leaf-file-name="MatchingOverride.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="77" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.47457626">
-              <folding />
+            <state line="34" column="131" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.23305085">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,7 +126,7 @@
       <file leaf-file-name="MatchingOverrideTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0">
+            <state line="51" column="0" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -269,8 +285,8 @@
       <recent name="org.niceassert.Override.OverridableInvocationHandler" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MatchingOverrideTest.overrideToThrowException">
-    <tempConfiguration default="false" name="MatchingOverrideTest.overrideToThrowException" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
+  <component name="RunManager" selected="JUnit.MatchingOverrideTest.overrideToReturnValueOnMatchedCallOnlyUsingMatchers">
+    <tempConfiguration default="false" name="MatchingOverrideTest.overrideToReturnValueOnMatchedCallOnlyUsingMatchers" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
       <pattern>
         <option name="PATTERN" value="org.niceassert.*" />
         <option name="ENABLED" value="true" />
@@ -280,7 +296,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.niceassert" />
       <option name="MAIN_CLASS_NAME" value="org.niceassert.MatchingOverrideTest" />
-      <option name="METHOD_NAME" value="overrideToThrowException" />
+      <option name="METHOD_NAME" value="overrideToReturnValueOnMatchedCallOnlyUsingMatchers" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -293,7 +309,7 @@
       </option>
       <envs />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50832" />
+        <option name="DEBUG_PORT" value="50927" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
@@ -452,7 +468,7 @@
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JUnit.Override2Test" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.MatchingOverrideTest.overrideToReturnValue" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MatchingOverrideTest.overrideToThrowException" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MatchingOverrideTest.overrideToReturnValueOnMatchedCallOnlyUsingMatchers" />
     </list>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <module name="" />
@@ -664,13 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/SimpleOverrideTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="0" selection-start="1147" selection-end="1520" vertical-scroll-proportion="0.0">
@@ -678,17 +687,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/SimpleOverrideTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0">
+        <state line="51" column="0" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="77" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.47457626">
-          <folding />
+        <state line="34" column="131" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.23305085">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

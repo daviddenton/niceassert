@@ -24,7 +24,6 @@ public class MatchingOverrideTest {
 
     @Test
     public void overrideToReturnValue() throws AnException {
-
         ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
             returnValue(OVERRIDDEN_STRING).whenCalling().aMethod();
         }}.proxy();

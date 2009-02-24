@@ -11,11 +11,12 @@ public class MatchingOverride<T> {
     private final Overrideable proxy;
     private final List<Matcher> parameterMatchers = new ArrayList<Matcher>();
     private final OverridableInvocationHandler invocationHandler;
+    private Class clazz;
 
     public <T> MatchingOverride(T target) {
+        this.clazz = target.getClass();
         invocationHandler = new OverridableInvocationHandler(parameterMatchers, target);
         proxy = (Overrideable) ConcreteClassProxyFactory.INSTANCE.proxyFor(invocationHandler, target.getClass(), Overrideable.class);
-        Overrideable.class.cast(proxy).setTarget(target);
     }
 
     public T proxy() {
@@ -47,11 +48,13 @@ public class MatchingOverride<T> {
 
     public T whenCalling() {
         return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
+            private boolean isUnset = true;
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                invocationHandler.setMethod(method);
+                if(isUnset) invocationHandler.setMethod(method);
+                isUnset = false;
                 return null;
             }
-        }, proxy.getClass());
+        }, clazz);
     }
 
     private static class OverridableInvocationHandler implements InvocationHandler {
@@ -97,11 +100,6 @@ public class MatchingOverride<T> {
                 throw new ClassCastException("Can't override method to return incompatible class (expected=" + expected + ", got=" + actual + ")");
         }
 
-        private Object setupOverride(Method method, Object[] objects) {
-            aMethod = (Method) objects[0];
-            return method.getReturnType() == Void.TYPE ? Void.TYPE : null;
-        }
-
         public void setAction(Action action) {
             this.action = action;
         }
@@ -111,8 +109,7 @@ public class MatchingOverride<T> {
         }
     }
 
-    private static interface Overrideable<T> {
+    private static interface Overrideable {
         void setMethod(Method method);
-        void setTarget(Object target);
     }
 }
