@@ -1,10 +1,8 @@
 package org.niceassert;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
-import static org.niceassert.Override.*;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -13,7 +11,6 @@ public class ADifferentOverrideTest {
     private static final String OVERRIDDEN_STRING = "overridden value";
     private final AtomicBoolean originalTargetWasCalled = new AtomicBoolean(false);
     private final ARecordingObject originalTarget = new ARecordingObject();
-    private final ARecordingObject proxy = modifyForOverride(originalTarget);
 
     @Test(expected = AnException.class)
     public void overrideToThrowException() throws AnException {
@@ -40,6 +37,17 @@ public class ADifferentOverrideTest {
     public void overrideToReturnValueOnMatchedCallOnly() throws AnException {
         ARecordingObject proxy = new ADifferentOverride<ARecordingObject>(originalTarget) {{
             returnValue(OVERRIDDEN_STRING).whenCalling().methodWithArgs(OVERRIDDEN_STRING);
+        }}.proxy();
+
+        assertThat(proxy.methodWithArgs(ORIGINAL_VALUE), is(equalTo(ORIGINAL_VALUE)));
+        assertThat(originalTargetWasCalled.get(), is(false));
+        assertThat(proxy.methodWithArgs(OVERRIDDEN_STRING), is(equalTo(OVERRIDDEN_STRING)));
+    }
+
+    @Test
+    public void overrideToReturnValueOnMatchedCallOnlyUsingMatchers() throws AnException {
+        ARecordingObject proxy = new ADifferentOverride<ARecordingObject>(originalTarget) {{
+            returnValue(OVERRIDDEN_STRING).whenCalling().methodWithArgs(with(any(String.class)));
         }}.proxy();
 
         assertThat(proxy.methodWithArgs(ORIGINAL_VALUE), is(equalTo(ORIGINAL_VALUE)));
@@ -76,7 +84,10 @@ public class ADifferentOverrideTest {
 
     @Test
     public void originalMethodCalledForNonOverriddenMethod() throws AnException {
-        override(proxy).to(returnValue(OVERRIDDEN_STRING)).whenCalling().anotherMethod();
+        ARecordingObject proxy = new ADifferentOverride<ARecordingObject>(originalTarget) {{
+            returnValue(OVERRIDDEN_STRING).whenCalling().anotherMethod();
+        }}.proxy();
+
         assertThat(proxy.aMethod(), is(equalTo(ORIGINAL_VALUE)));
         assertThat(originalTargetWasCalled.get(), is(true));
     }

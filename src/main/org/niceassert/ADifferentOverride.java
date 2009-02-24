@@ -1,6 +1,7 @@
 package org.niceassert;
 
 import net.sf.cglib.proxy.InvocationHandler;
+import org.hamcrest.Matcher;
 
 import java.lang.reflect.Method;
 
@@ -8,13 +9,18 @@ public class ADifferentOverride<T> {
     private final Overrideable proxy;
     private Action action;
 
-    public ADifferentOverride(T target) {
+    public <T> ADifferentOverride(T target) {
         proxy = (Overrideable) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(), target.getClass(), Overrideable.class);
         Overrideable.class.cast(proxy).setTarget(target);
     }
 
     public T proxy() {
         return (T) proxy;
+    }
+
+    public <T> T with(Matcher<T> matcher) {
+//            addParameterMatcher(matcher);
+        return null;
     }
 
     public ADifferentOverride<T> returnValue(final Object returnValue) {
