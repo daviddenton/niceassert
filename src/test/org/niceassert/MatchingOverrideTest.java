@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class ADifferentOverrideTest {
+public class MatchingOverrideTest {
     private static final String ORIGINAL_VALUE = "original value";
     private static final String OVERRIDDEN_STRING = "overridden value";
     private final AtomicBoolean originalTargetWasCalled = new AtomicBoolean(false);
@@ -14,7 +14,7 @@ public class ADifferentOverrideTest {
 
     @Test(expected = AnException.class)
     public void overrideToThrowException() throws AnException {
-        ARecordingObject proxy = new ADifferentOverride<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
             throwException(new AnException()).whenCalling().aMethod();
         }}.proxy();
 
@@ -25,7 +25,7 @@ public class ADifferentOverrideTest {
     @Test
     public void overrideToReturnValue() throws AnException {
 
-        ARecordingObject proxy = new ADifferentOverride<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
             returnValue(OVERRIDDEN_STRING).whenCalling().aMethod();
         }}.proxy();
 
@@ -35,7 +35,7 @@ public class ADifferentOverrideTest {
 
     @Test
     public void overrideToReturnValueOnMatchedCallOnly() throws AnException {
-        ARecordingObject proxy = new ADifferentOverride<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
             returnValue(OVERRIDDEN_STRING).whenCalling().methodWithArgs(OVERRIDDEN_STRING);
         }}.proxy();
 
@@ -46,7 +46,7 @@ public class ADifferentOverrideTest {
 
     @Test
     public void overrideToReturnValueOnMatchedCallOnlyUsingMatchers() throws AnException {
-        ARecordingObject proxy = new ADifferentOverride<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
             returnValue(OVERRIDDEN_STRING).whenCalling().methodWithArgs(with(any(String.class)));
         }}.proxy();
 
@@ -57,7 +57,7 @@ public class ADifferentOverrideTest {
 
     @Test(expected = ClassCastException.class)
     public void overrideToReturnIncompatibleValue() throws AnException {
-        ARecordingObject proxy = new ADifferentOverride<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
             returnValue(new Object()).whenCalling().aMethod();
         }}.proxy();
 
@@ -66,7 +66,7 @@ public class ADifferentOverrideTest {
 
     @Test(expected = ClassCastException.class)
     public void overrideToReturnIncompatibleValueForVoidMethod() throws AnException {
-        ARecordingObject proxy = new ADifferentOverride<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
             returnValue(new Object()).whenCalling().aVoidMethod();
         }}.proxy();
 
@@ -75,7 +75,7 @@ public class ADifferentOverrideTest {
 
     @Test(expected = ClassCastException.class)
     public void overrideToThrowIncompatibleException() throws AnException {
-        ARecordingObject proxy = new ADifferentOverride<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
             throwException(new AnotherException()).whenCalling().aMethod();
         }}.proxy();
 
@@ -84,7 +84,7 @@ public class ADifferentOverrideTest {
 
     @Test
     public void originalMethodCalledForNonOverriddenMethod() throws AnException {
-        ARecordingObject proxy = new ADifferentOverride<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
             returnValue(OVERRIDDEN_STRING).whenCalling().anotherMethod();
         }}.proxy();
 

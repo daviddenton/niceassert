@@ -4,11 +4,11 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
-import static org.niceassert.Override.*;
+import static org.niceassert.SimpleOverride.*;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class OverrideTest {
+public class SimpleOverrideTest {
     private static final String ORIGINAL_VALUE = "original value";
     private static final String OVERRIDDEN_STRING = "overridden value";
     private final AtomicBoolean originalTargetWasCalled = new AtomicBoolean(false);
@@ -29,15 +29,6 @@ public class OverrideTest {
         assertThat(originalTargetWasCalled.get(), is(false));
     }
 
-    @Test
-    public void overrideToReturnValueOnMatchedCallOnly() throws AnException {
-        override(proxy).to(returnValue(OVERRIDDEN_STRING)).whenCalling().methodWithArgs(OVERRIDDEN_STRING);
-
-        assertThat(proxy.methodWithArgs(ORIGINAL_VALUE), is(equalTo(ORIGINAL_VALUE)));
-        assertThat(originalTargetWasCalled.get(), is(false));
-        assertThat(proxy.methodWithArgs(OVERRIDDEN_STRING), is(equalTo(OVERRIDDEN_STRING)));
-    }
-
     @Test(expected = ClassCastException.class)
     public void overrideToReturnIncompatibleValue() throws AnException {
         override(proxy).to(returnValue(new Object())).whenCalling().aMethod();
@@ -55,8 +46,6 @@ public class OverrideTest {
         override(proxy).to(throwException(new AnotherException())).whenCalling().aMethod();
         proxy.aMethod();
     }
-
-    // TODO: MORE INVALID CASES - non setup causing weird results - check args list and record against action - use matchers as in JMock
 
     @Test(expected = IllegalArgumentException.class)
     public void attemptToOverrideANonModifiedObject() throws AnException {

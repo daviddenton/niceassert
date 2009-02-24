@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/ADifferentOverrideTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/ADifferentOverrideTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/org/niceassert/Override.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/org/niceassert/ADifferentOverrideTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/ADifferentOverride.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/ADifferentOverride.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/SimpleOverrideTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/org/niceassert/ADifferentOverride.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="niceassert.iws" />
@@ -70,19 +72,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Override.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Override.java">
+      <file leaf-file-name="SimpleOverride.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="43" selection-start="880" selection-end="892" vertical-scroll-proportion="0.0">
+            <state line="8" column="24" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ADifferentOverride.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ADifferentOverride.java">
+      <file leaf-file-name="MatchingOverride.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
+            <state line="7" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,19 +119,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OverrideTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
+      <file leaf-file-name="SimpleOverrideTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/SimpleOverrideTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="51" selection-start="2636" selection-end="2671" vertical-scroll-proportion="0.0">
+            <state line="40" column="29" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.46022728">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ADifferentOverrideTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ADifferentOverrideTest.java">
+      <file leaf-file-name="MatchingOverrideTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="12" selection-start="3033" selection-end="3038" vertical-scroll-proportion="1.1931819">
+            <state line="7" column="36" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -290,19 +292,15 @@
       <recent name="org.niceassert.Override.OverridableInvocationHandler" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ADifferentOverrideTest">
-    <tempConfiguration default="false" name="ADifferentOverrideTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
-      <pattern>
-        <option name="PATTERN" value="org.niceassert.*" />
-        <option name="ENABLED" value="true" />
-      </pattern>
+  <component name="RunManager" selected="JUnit.org.niceassert in niceassert">
+    <tempConfiguration default="false" name="org.niceassert in niceassert" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
       <module name="niceassert" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.niceassert" />
-      <option name="MAIN_CLASS_NAME" value="org.niceassert.ADifferentOverrideTest" />
+      <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -396,7 +394,7 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration default="false" name="ADifferentOverrideTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
+    <configuration default="false" name="MatchingOverrideTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
       <pattern>
         <option name="PATTERN" value="org.niceassert.*" />
         <option name="ENABLED" value="true" />
@@ -405,7 +403,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.niceassert" />
-      <option name="MAIN_CLASS_NAME" value="org.niceassert.ADifferentOverrideTest" />
+      <option name="MAIN_CLASS_NAME" value="org.niceassert.MatchingOverrideTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -424,8 +422,9 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JUnit.Override2Test" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.org.niceassert in niceassert" />
     </list>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <module name="" />
@@ -637,35 +636,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ADifferentOverride.java">
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Override.java">
+    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="43" selection-start="880" selection-end="892" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="51" selection-start="2636" selection-end="2671" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ADifferentOverrideTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="12" selection-start="3033" selection-end="3038" vertical-scroll-proportion="1.1931819">
+        <state line="7" column="36" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="24" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/SimpleOverrideTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="29" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.46022728">
+          <folding />
         </state>
       </provider>
     </entry>

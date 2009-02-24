@@ -1,48 +1,65 @@
 package org.niceassert;
 
 import net.sf.cglib.proxy.InvocationHandler;
-import org.hamcrest.Matcher;
 
 import java.lang.reflect.Method;
 
-public class ADifferentOverride<T> {
-    private final Overrideable proxy;
-    private Action action;
+public class SimpleOverride {
 
-    public <T> ADifferentOverride(T target) {
-        proxy = (Overrideable) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(), target.getClass(), Overrideable.class);
+    public static <T> T modifyForOverride(final T target) {
+        T proxy = (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(), target.getClass(), Overrideable.class);
         Overrideable.class.cast(proxy).setTarget(target);
+        return proxy;
     }
 
-    public T proxy() {
-        return (T) proxy;
+    public static <T> OverrideBuilder<T> override(T target) {
+        if (!Overrideable.class.isAssignableFrom(target.getClass()))
+            throw new IllegalArgumentException("Target object must be modified for override");
+        return new OverrideBuilder<T>(Overrideable.class.cast(target));
     }
 
-    public <T> T with(Matcher<T> matcher) {
-//            addParameterMatcher(matcher);
-        return null;
+    static class OverrideBuilder<T> {
+        private final Overrideable overrideableTarget;
+        private Action action;
+
+        public OverrideBuilder(Overrideable overrideableTarget) {
+            this.overrideableTarget = overrideableTarget;
+        }
+
+        public OverrideBuilder<T> to(Action action) {
+            this.action = action;
+            return this;
+        }
+
+        public T whenCalling() {
+            try {
+                return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
+                    public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
+                        overrideableTarget.setMethodAction(method, action);
+                        return null;
+                    }
+                }, overrideableTarget.getTarget().getClass());
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
     }
 
-    public ADifferentOverride<T> returnValue(final Object returnValue) {
-        action = new Action() {
+    public static Action returnValue(final Object returnValue) {
+        return new Action() {
             public Object execute(Object[] objects) {
                 return returnValue;
             }
         };
-        return this;
     }
 
-    public ADifferentOverride<T> throwException(final Throwable t) {
-        action = new Action() {
+    public static Action throwException(final Throwable t) {
+        return new Action() {
             public Object execute(Object[] objects) throws Throwable {
                 throw t;
             }
         };
-        return this;
-    }
-
-    public T whenCalling() {
-        return proxy();
     }
 
     private static class OverridableInvocationHandler implements InvocationHandler {
@@ -57,7 +74,7 @@ public class ADifferentOverride<T> {
             }
             if (Overrideable.class.getMethod("getTarget").equals(method)) {
                 return target;
-            }
+            }                         
             if (Overrideable.class.getMethod("setMethodAction", Method.class, Action.class).equals(method)) {
                 return setupOverride(method, objects);
             }
