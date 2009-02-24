@@ -4,13 +4,17 @@ import net.sf.cglib.proxy.InvocationHandler;
 import org.hamcrest.Matcher;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MatchingOverride<T> {
     private final Overrideable proxy;
-    private Action action;
+    private final List<Matcher> parameterMatchers = new ArrayList<Matcher>();
+    private final OverridableInvocationHandler invocationHandler;
 
     public <T> MatchingOverride(T target) {
-        proxy = (Overrideable) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(), target.getClass(), Overrideable.class);
+        invocationHandler = new OverridableInvocationHandler(parameterMatchers, target);
+        proxy = (Overrideable) ConcreteClassProxyFactory.INSTANCE.proxyFor(invocationHandler, target.getClass(), Overrideable.class);
         Overrideable.class.cast(proxy).setTarget(target);
     }
 
@@ -19,66 +23,73 @@ public class MatchingOverride<T> {
     }
 
     public <T> T with(Matcher<T> matcher) {
-//            addParameterMatcher(matcher);
+        parameterMatchers.add(matcher);
         return null;
     }
 
     public MatchingOverride<T> returnValue(final Object returnValue) {
-        action = new Action() {
+        invocationHandler.setAction(new Action() {
             public Object execute(Object[] objects) {
                 return returnValue;
             }
-        };
+        });
         return this;
     }
 
     public MatchingOverride<T> throwException(final Throwable t) {
-        action = new Action() {
+        invocationHandler.setAction(new Action() {
             public Object execute(Object[] objects) throws Throwable {
                 throw t;
             }
-        };
+        });
         return this;
     }
 
     public T whenCalling() {
-        return proxy();
+        return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
+            public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
+                invocationHandler.setMethod(method);
+                return null;
+            }
+        }, proxy.getClass());
     }
 
     private static class OverridableInvocationHandler implements InvocationHandler {
         private Method aMethod;
-        private Action anAction;
-        private Object target;
+        private final Object target;
+        private final List<Matcher> parameterMatchers;
+        private Action action;
+
+        public OverridableInvocationHandler(List<Matcher> parameterMatchers, Object target) {
+            this.parameterMatchers = parameterMatchers;
+            this.target = target;
+        }
 
         public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-            if (Overrideable.class.getMethod("setTarget", Object.class).equals(method)) {
-                target = objects[0];
-                return Void.TYPE;
-            }
-            if (Overrideable.class.getMethod("getTarget").equals(method)) {
-                return target;
-            }
-            if (Overrideable.class.getMethod("setMethodAction", Method.class, Action.class).equals(method)) {
-                return setupOverride(method, objects);
-            }
+            return isMethodCallMatched(method, objects) ? processOverriddenCall(method, objects) : method.invoke(target, objects);
+        }
 
-            return processOverriddenCall(method, objects);
+        private boolean isMethodCallMatched(Method method, Object[] objects) {
+            if (!method.equals(aMethod)) {
+                return false;
+            }
+            for (int i = 0; i < parameterMatchers.size(); i++) {
+                if (!parameterMatchers.get(i).matches(objects[i])) return false;
+            }
+            return true;
         }
 
         private Object processOverriddenCall(Method method, Object[] objects) throws Throwable {
-            if (method.equals(aMethod)) {
-                try {
-                    Object result = anAction.execute(objects);
-                    validateClassCompabitility(aMethod.getReturnType(), result.getClass());
-                    return result;
-                } catch (Throwable throwable) {
-                    for (Class exceptionClass : method.getExceptionTypes()) {
-                        if (exceptionClass.isAssignableFrom(throwable.getClass())) throw throwable;
-                    }
-                    throw new ClassCastException("Can't override method " + aMethod.getName() + " to throw incompatible exception " + throwable.getClass());
-
+            try {
+                Object result = action.execute(objects);
+                validateClassCompabitility(aMethod.getReturnType(), result.getClass());
+                return result;
+            } catch (Throwable throwable) {
+                for (Class exceptionClass : method.getExceptionTypes()) {
+                    if (exceptionClass.isAssignableFrom(throwable.getClass())) throw throwable;
                 }
-            } else return method.invoke(target, objects);
+                throw new ClassCastException("Can't override method " + aMethod.getName() + " to throw incompatible exception " + throwable.getClass());
+            }
         }
 
         private void validateClassCompabitility(Class<?> expected, Class<? extends Object> actual) {
@@ -88,16 +99,20 @@ public class MatchingOverride<T> {
 
         private Object setupOverride(Method method, Object[] objects) {
             aMethod = (Method) objects[0];
-            anAction = (Action) objects[1];
             return method.getReturnType() == Void.TYPE ? Void.TYPE : null;
+        }
+
+        public void setAction(Action action) {
+            this.action = action;
+        }
+
+        public void setMethod(Method method) {
+            aMethod = method;
         }
     }
 
     private static interface Overrideable<T> {
-        void setMethodAction(Method method, Action action);
-
+        void setMethod(Method method);
         void setTarget(Object target);
-
-        T getTarget();
     }
 }

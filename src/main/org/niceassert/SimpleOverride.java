@@ -32,17 +32,12 @@ public class SimpleOverride {
         }
 
         public T whenCalling() {
-            try {
-                return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
-                    public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                        overrideableTarget.setMethodAction(method, action);
-                        return null;
-                    }
-                }, overrideableTarget.getTarget().getClass());
-            } catch (Exception e) {
-                e.printStackTrace();
-                return null;
-            }
+            return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
+                public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
+                    overrideableTarget.setMethodAction(method, action);
+                    return null;
+                }
+            }, overrideableTarget.getTarget().getClass());
         }
     }
 
@@ -74,7 +69,7 @@ public class SimpleOverride {
             }
             if (Overrideable.class.getMethod("getTarget").equals(method)) {
                 return target;
-            }                         
+            }
             if (Overrideable.class.getMethod("setMethodAction", Method.class, Action.class).equals(method)) {
                 return setupOverride(method, objects);
             }
