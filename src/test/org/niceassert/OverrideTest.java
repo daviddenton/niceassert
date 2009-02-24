@@ -32,9 +32,10 @@ public class OverrideTest {
     @Test
     public void overrideToReturnValueOnMatchedCallOnly() throws AnException {
         override(proxy).to(returnValue(OVERRIDDEN_STRING)).whenCalling().methodWithArgs(OVERRIDDEN_STRING);
-        assertThat(proxy.aMethod(), is(equalTo(ORIGINAL_VALUE)));
+
+        assertThat(proxy.methodWithArgs(ORIGINAL_VALUE), is(equalTo(ORIGINAL_VALUE)));
         assertThat(originalTargetWasCalled.get(), is(false));
-        assertThat(proxy.aMethod(), is(equalTo(OVERRIDDEN_STRING)));
+        assertThat(proxy.methodWithArgs(OVERRIDDEN_STRING), is(equalTo(OVERRIDDEN_STRING)));
     }
 
     @Test(expected = ClassCastException.class)
