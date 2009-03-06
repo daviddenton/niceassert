@@ -52,7 +52,7 @@ public class OverrideInvocationMatcher {
     }
 
     private void validateReturnValueCompatability(Class<?> expected, Object returnValue) {
-        if(returnValue == null) return;
+        if (returnValue == null) return;
         if (!expected.isAssignableFrom(returnValue.getClass()))
             throw new ClassCastException("Can't override method to return incompatible class (expected=" + expected + ", got=" + returnValue + ")");
     }

@@ -14,11 +14,12 @@ public class MatchingOverride<T> {
 
     public MatchingOverride(final T target) {
         clazz = target.getClass();
-         newMatcher();
+        newMatcher();
         proxy = (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
                 for (OverrideInvocationMatcher invocationMatcher : invocationMatchers) {
-                    if(invocationMatcher.isMethodCallMatched(method, objects)) return invocationMatcher.processOverriddenCall(method, objects);
+                    if (invocationMatcher.isMethodCallMatched(method, objects))
+                        return invocationMatcher.processOverriddenCall(method, objects);
                 }
                 return method.invoke(target, objects);
             }
@@ -51,14 +52,15 @@ public class MatchingOverride<T> {
     }
 
     private OverrideInvocationMatcher currentMatcher() {
-        return invocationMatchers.get(invocationMatchers.size()-1);
+        return invocationMatchers.get(invocationMatchers.size() - 1);
     }
 
     public T whenCalling() {
         return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
             private boolean set;
+
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                if(!set) currentMatcher().recordInvocation(method, objects);
+                if (!set) currentMatcher().recordInvocation(method, objects);
                 set = true;
                 return null;
             }

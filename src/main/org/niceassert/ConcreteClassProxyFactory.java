@@ -23,7 +23,7 @@ class ConcreteClassProxyFactory {
     }
 
     <T> T proxyFor(final InvocationHandler invocationHandler, final Class<T> concreteClass, Class... interfaces) {
-        if(!canImposterise(concreteClass)) throw new IllegalArgumentException("Can't imposterize ");
+        if (!canImposterise(concreteClass)) throw new IllegalArgumentException("Can't imposterize ");
 
         try {
             setConstructorsAccessible(concreteClass, true);

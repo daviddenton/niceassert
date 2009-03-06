@@ -37,7 +37,7 @@ public class Expected<T> {
     }
 
     private void validateExpectedBehaviour() {
-        if(matcherSet) throw new IllegalArgumentException("Expected behaviour already set");
+        if (matcherSet) throw new IllegalArgumentException("Expected behaviour already set");
         this.matcherSet = true;
     }
 
@@ -70,7 +70,7 @@ public class Expected<T> {
 
     public T whenCalling() {
 
-        if(!matcherSet) throw new IllegalArgumentException("No expectation set");
+        if (!matcherSet) throw new IllegalArgumentException("No expectation set");
         return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
             public Object invoke(Object object, Method method, Object[] args) throws Throwable {
                 try {
@@ -93,7 +93,8 @@ public class Expected<T> {
         }
 
         public boolean matches(Object o) {
-            return false;        }
+            return false;
+        }
 
         public void describeTo(Description description) {
             description.appendText(message);
