@@ -7,8 +7,7 @@ import java.lang.reflect.Method;
 public class SimpleOverride {
 
     public static <T> T modifyForOverride(final T target) {
-        T proxy = (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(target), target.getClass(), Overrideable.class);
-        return proxy;
+        return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(target), target.getClass(), Overrideable.class);
     }
 
     public static <T> OverrideBuilder<T> override(T target) {
@@ -22,7 +21,7 @@ public class SimpleOverride {
         private final OverrideInvocationMatcher matcher = new OverrideInvocationMatcher();
 
         public OverrideBuilder(Overrideable overrideableTarget) {
-            this.overrideableTarget = overrideableTarget;;
+            this.overrideableTarget = overrideableTarget;
             overrideableTarget.setMatcher(matcher);
         }
 
