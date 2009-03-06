@@ -20,21 +20,22 @@ public class SimpleOverride {
 
     static class OverrideBuilder<T> {
         private final Overrideable overrideableTarget;
-        private Action action;
+        private final OverrideInvocationMatcher matcher = new OverrideInvocationMatcher();
 
         public OverrideBuilder(Overrideable overrideableTarget) {
-            this.overrideableTarget = overrideableTarget;
+            this.overrideableTarget = overrideableTarget;;
+            overrideableTarget.setMatcher(matcher);
         }
 
         public OverrideBuilder<T> to(Action action) {
-            this.action = action;
+            matcher.setAction(action);
             return this;
         }
 
         public T whenCalling() {
             return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
                 public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                    overrideableTarget.setMethodAction(method, action);
+                    matcher.recordInvocation(method, objects);
                     return null;
                 }
             }, overrideableTarget.getTarget().getClass());
@@ -58,9 +59,8 @@ public class SimpleOverride {
     }
 
     private static class OverridableInvocationHandler implements InvocationHandler {
-        private Method aMethod;
-        private Action anAction;
         private Object target;
+        private OverrideInvocationMatcher matcher = new OverrideInvocationMatcher();
 
         public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
             if (Overrideable.class.getMethod("setTarget", Object.class).equals(method)) {
@@ -70,46 +70,18 @@ public class SimpleOverride {
             if (Overrideable.class.getMethod("getTarget").equals(method)) {
                 return target;
             }
-            if (Overrideable.class.getMethod("setMethodAction", Method.class, Action.class).equals(method)) {
-                return setupOverride(method, objects);
+            if (Overrideable.class.getMethod("setMatcher", OverrideInvocationMatcher.class).equals(method)) {
+                matcher = (OverrideInvocationMatcher) objects[0];
+                return method.getReturnType() == Void.TYPE ? Void.TYPE : null;
             }
 
-            return processOverriddenCall(method, objects);
-        }
-
-        private Object processOverriddenCall(Method method, Object[] objects) throws Throwable {
-            if (method.equals(aMethod)) {
-                try {
-                    Object result = anAction.execute(objects);
-                    validateClassCompabitility(aMethod.getReturnType(), result.getClass());
-                    return result;
-                } catch (Throwable throwable) {
-                    for (Class exceptionClass : method.getExceptionTypes()) {
-                        if (exceptionClass.isAssignableFrom(throwable.getClass())) throw throwable;
-                    }
-                    throw new ClassCastException("Can't override method " + aMethod.getName() + " to throw incompatible exception " + throwable.getClass());
-
-                }
-            } else return method.invoke(target, objects);
-        }
-
-        private void validateClassCompabitility(Class<?> expected, Class<? extends Object> actual) {
-            if (!expected.isAssignableFrom(actual))
-                throw new ClassCastException("Can't override method to return incompatible class (expected=" + expected + ", got=" + actual + ")");
-        }
-
-        private Object setupOverride(Method method, Object[] objects) {
-            aMethod = (Method) objects[0];
-            anAction = (Action) objects[1];
-            return method.getReturnType() == Void.TYPE ? Void.TYPE : null;
+            return matcher.isMethodCallMatched(method, objects) ? matcher.processOverriddenCall(method, objects) : method.invoke(target, objects);
         }
     }
 
     private static interface Overrideable<T> {
-        void setMethodAction(Method method, Action action);
-
         void setTarget(Object target);
-
         T getTarget();
+        void setMatcher(OverrideInvocationMatcher matcher);
     }
 }
