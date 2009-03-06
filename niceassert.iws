@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="niceassert.iws" />
@@ -77,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleOverride.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SimpleOverride.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="79" selection-start="480" selection-end="480" vertical-scroll-proportion="0.21854305">
+            <state line="26" column="48" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -104,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchingOverride.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MatchingOverride.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="54" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0">
+            <state line="24" column="16" selection-start="1023" selection-end="1023" vertical-scroll-proportion="-0.11258278">
               <folding />
             </state>
           </provider>
@@ -656,16 +656,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="54" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0">
+        <state line="26" column="48" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java">
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="79" selection-start="480" selection-end="480" vertical-scroll-proportion="0.21854305">
+        <state line="24" column="16" selection-start="1023" selection-end="1023" vertical-scroll-proportion="-0.11258278">
           <folding />
         </state>
       </provider>

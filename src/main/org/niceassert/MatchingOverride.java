@@ -22,7 +22,7 @@ public class MatchingOverride<T> {
                 }
                 return method.invoke(target, objects);
             }
-        }, target.getClass());
+        }, clazz);
     }
 
     public T proxy() {
