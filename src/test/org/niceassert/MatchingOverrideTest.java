@@ -1,6 +1,7 @@
 package org.niceassert;
 
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
 
@@ -46,7 +47,7 @@ public class MatchingOverrideTest {
     @Test
     public void overrideToReturnValueOnMatchedCallOnlyUsingMatchers() throws AnException {
         ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
-            returnValue(OVERRIDDEN_STRING).whenCalling().methodWithArgs(with(any(String.class)));
+            returnValue(OVERRIDDEN_STRING).whenCalling().methodWithArgs(with(equalTo(OVERRIDDEN_STRING)));
         }}.proxy();
 
         assertThat(proxy.methodWithArgs(ORIGINAL_VALUE), is(equalTo(ORIGINAL_VALUE)));

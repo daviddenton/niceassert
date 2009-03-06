@@ -1,6 +1,7 @@
 package org.niceassert;
 
 import net.sf.cglib.proxy.InvocationHandler;
+import static org.hamcrest.CoreMatchers.equalTo;
 import org.hamcrest.Matcher;
 
 import java.lang.reflect.Method;
@@ -50,7 +51,7 @@ public class MatchingOverride<T> {
         return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
             private boolean isUnset = true;
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                if(isUnset) invocationHandler.setMethod(method);
+                if(isUnset) invocationHandler.recordInvocation(method, objects);
                 isUnset = false;
                 return null;
             }
@@ -104,8 +105,13 @@ public class MatchingOverride<T> {
             this.action = action;
         }
 
-        public void setMethod(Method method) {
-            aMethod = method;
+        public void recordInvocation(Method method, Object[] objects) {
+            this.aMethod = method;
+            if(parameterMatchers.isEmpty()) {
+                for (Object object : objects) {
+                    parameterMatchers.add(equalTo(object));
+                }
+            }
         }
     }
 
