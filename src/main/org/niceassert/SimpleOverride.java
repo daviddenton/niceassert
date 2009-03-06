@@ -4,7 +4,7 @@ import net.sf.cglib.proxy.InvocationHandler;
 
 import java.lang.reflect.Method;
 
-public class SimpleOverride<T> {
+public class SimpleOverride<T> extends AbstractOverride<T> {
 
     public static <T> T modifyForOverride(final T target) {
         return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(target), target.getClass(), Overrideable.class);
@@ -16,26 +16,14 @@ public class SimpleOverride<T> {
         return new SimpleOverride<T>(Overrideable.class.cast(target));
     }
 
-    private final Overrideable overrideableTarget;
-    private final OverrideInvocationMatcher matcher = new OverrideInvocationMatcher();
-
     public SimpleOverride(Overrideable overrideableTarget) {
-        this.overrideableTarget = overrideableTarget;
-        overrideableTarget.setMatcher(matcher);
+        super(overrideableTarget.getTarget().getClass());
+        overrideableTarget.setMatcher(currentMatcher());
     }
 
     public SimpleOverride<T> to(Action action) {
-        matcher.setAction(action);
+        currentMatcher().setAction(action);
         return this;
-    }
-
-    public T whenCalling() {
-        return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
-            public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                matcher.recordInvocation(method, objects);
-                return null;
-            }
-        }, overrideableTarget.getTarget().getClass());
     }
 
     public static Action returnValue(final Object returnValue) {
@@ -77,7 +65,6 @@ public class SimpleOverride<T> {
 
     private static interface Overrideable<T> {
         T getTarget();
-
         void setMatcher(OverrideInvocationMatcher matcher);
     }
 }

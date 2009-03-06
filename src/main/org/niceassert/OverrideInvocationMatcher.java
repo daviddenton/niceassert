@@ -6,11 +6,11 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-class OverrideInvocationMatcher {
+public class OverrideInvocationMatcher {
     private final List<Matcher> parameterMatchers = new ArrayList<Matcher>();
     private Method aMethod;
     private Action action;
-    
+
     void addNextParameterMatcher(Matcher parameterMatcher) {
         this.parameterMatchers.add(parameterMatcher);
     }

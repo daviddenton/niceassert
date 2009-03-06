@@ -4,17 +4,13 @@ import net.sf.cglib.proxy.InvocationHandler;
 import org.hamcrest.Matcher;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
 
-public class MatchingOverride<T> {
+public class MatchingOverride<T> extends AbstractOverride<T> {
     private final T proxy;
-    private final Class clazz;
-    private final List<OverrideInvocationMatcher> invocationMatchers = new ArrayList<OverrideInvocationMatcher>();
 
     public MatchingOverride(final T target) {
-        newMatcher();
-        this.clazz = target.getClass();
+        super(target.getClass());
+                newMatcher();
         proxy = (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
                 for (OverrideInvocationMatcher invocationMatcher : invocationMatchers) {
@@ -22,7 +18,7 @@ public class MatchingOverride<T> {
                 }
                 return method.invoke(target, objects);
             }
-        }, clazz);
+        }, target.getClass());
     }
 
     public T proxy() {
@@ -51,24 +47,5 @@ public class MatchingOverride<T> {
             }
         });
         return this;
-    }
-
-    public T whenCalling() {
-        return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
-            private boolean set;
-            public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                if(!set) currentMatcher().recordInvocation(method, objects);
-                set = true;
-                return null;
-            }
-        }, clazz);
-    }
-
-    private void newMatcher() {
-        invocationMatchers.add(new OverrideInvocationMatcher());
-    }
-
-    private OverrideInvocationMatcher currentMatcher() {
-        return invocationMatchers.get(invocationMatchers.size()-1);
     }
 }
