@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MatchingOverride<T> {
     private final T proxy;
-    private Class clazz;
+    private final Class clazz;
     private final List<OverrideInvocationMatcher> invocationMatchers = new ArrayList<OverrideInvocationMatcher>();
 
     public MatchingOverride(final T target) {

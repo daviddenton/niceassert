@@ -4,9 +4,9 @@
     <editor_bookmark url="file://$PROJECT_DIR$/src/test/org/niceassert/ConcreteClassProxyFactoryTest.java" line="29" number="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" readonly="true" name="Default" comment="dirty - multiple override calls now work ok">
+    <list default="true" readonly="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="niceassert.iws" />
@@ -99,7 +99,7 @@
       <file leaf-file-name="MatchingOverride.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="22" selection-start="954" selection-end="954" vertical-scroll-proportion="0.375">
+            <state line="11" column="18" selection-start="265" selection-end="265" vertical-scroll-proportion="-0.17613636">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,7 +119,7 @@
       <file leaf-file-name="OverrideInvocationMatcher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="6" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
+            <state line="11" column="12" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -591,7 +591,7 @@
     <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="dirty - multiple override calls now work ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="dirty - removed overrideable interface" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -609,6 +609,7 @@
     <MESSAGE value="dirty - work on documentation" />
     <MESSAGE value="dirty - work on further test cases" />
     <MESSAGE value="dirty - multiple override calls now work ok" />
+    <MESSAGE value="dirty - removed overrideable interface" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -700,15 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="6" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="31" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
@@ -725,9 +717,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="12" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="22" selection-start="954" selection-end="954" vertical-scroll-proportion="0.375">
+        <state line="11" column="18" selection-start="265" selection-end="265" vertical-scroll-proportion="-0.17613636">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

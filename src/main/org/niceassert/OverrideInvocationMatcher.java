@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class OverrideInvocationMatcher {
-    private Method aMethod;
     private final List<Matcher> parameterMatchers = new ArrayList<Matcher>();
+    private Method aMethod;
     private Action action;
     
     void addNextParameterMatcher(Matcher parameterMatcher) {
