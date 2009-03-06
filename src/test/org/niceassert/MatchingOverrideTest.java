@@ -5,6 +5,8 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
+import static org.niceassert.MatchingOverride.modifyForOverride;
+import static org.niceassert.MatchingOverride.override;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -13,6 +15,14 @@ public class MatchingOverrideTest {
     private static final String OVERRIDDEN_VALUE = "overridden value";
     private final AtomicBoolean originalTargetWasCalled = new AtomicBoolean(false);
     private final ARecordingObject originalTarget = new ARecordingObject();
+
+    @Test(expected = AnException.class)
+    public void overrideToThrowExceptionWithAlternativeSyntax() throws AnException {
+        final MatchingOverride<ARecordingObject> overrideBuilder = modifyForOverride(originalTarget);
+        override(overrideBuilder).to().throwException(new AnException()).whenCalling().aMethod();
+        overrideBuilder.proxy().aMethod();
+        assertThat(originalTargetWasCalled.get(), is(false));
+    }
 
     @Test(expected = AnException.class)
     public void overrideToThrowException() throws AnException {

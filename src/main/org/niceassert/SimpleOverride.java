@@ -3,8 +3,12 @@ package org.niceassert;
 import net.sf.cglib.proxy.InvocationHandler;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
-public class SimpleOverride<T> extends AbstractOverride<T> {
+public class SimpleOverride<T> {
+    private final Class clazz;
+    protected final List<OverrideInvocationMatcher> invocationMatchers = new ArrayList<OverrideInvocationMatcher>();
 
     public static <T> T modifyForOverride(final T target) {
         return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(target), target.getClass(), Overrideable.class);
@@ -17,7 +21,7 @@ public class SimpleOverride<T> extends AbstractOverride<T> {
     }
 
     public SimpleOverride(Overrideable overrideableTarget) {
-        super(overrideableTarget.getTarget().getClass());
+        clazz = overrideableTarget.getTarget().getClass();
         overrideableTarget.setMatcher(currentMatcher());
     }
 
@@ -40,6 +44,25 @@ public class SimpleOverride<T> extends AbstractOverride<T> {
                 throw t;
             }
         };
+    }
+
+    protected void newMatcher() {
+        invocationMatchers.add(new OverrideInvocationMatcher());
+    }
+
+    protected OverrideInvocationMatcher currentMatcher() {
+        return invocationMatchers.get(invocationMatchers.size()-1);
+    }
+
+    public T whenCalling() {
+        return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
+            private boolean set;
+            public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
+                if(!set) currentMatcher().recordInvocation(method, objects);
+                set = true;
+                return null;
+            }
+        }, clazz);
     }
 
     private static class OverridableInvocationHandler<T> implements InvocationHandler {
