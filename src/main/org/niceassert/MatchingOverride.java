@@ -8,25 +8,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MatchingOverride<T> {
-    private final Overrideable proxy;
+    private final T proxy;
     private Class clazz;
     private final List<OverrideInvocationMatcher> invocationMatchers = new ArrayList<OverrideInvocationMatcher>();
 
-    public <T> MatchingOverride(final T target) {
+    public MatchingOverride(final T target) {
         newMatcher();
         this.clazz = target.getClass();
-        proxy = (Overrideable) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
+        proxy = (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
                 for (OverrideInvocationMatcher invocationMatcher : invocationMatchers) {
                     if(invocationMatcher.isMethodCallMatched(method, objects)) return invocationMatcher.processOverriddenCall(method, objects);
                 }
                 return method.invoke(target, objects);
             }
-        }, target.getClass(), Overrideable.class);
+        }, target.getClass());
     }
 
     public T proxy() {
-        return (T) proxy;
+        return proxy;
     }
 
     public <T> T with(Matcher<T> matcher) {
@@ -70,9 +70,5 @@ public class MatchingOverride<T> {
 
     private OverrideInvocationMatcher currentMatcher() {
         return invocationMatchers.get(invocationMatchers.size()-1);
-    }
-
-    private static interface Overrideable {
-        void setMethod(Method method);
     }
 }
