@@ -49,10 +49,10 @@ public class MatchingOverride<T> {
 
     public T whenCalling() {
         return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
-            private boolean isUnset = true;
+            private boolean set;
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                if(isUnset) invocationHandler.recordInvocation(method, objects);
-                isUnset = false;
+                if(!set) invocationHandler.recordInvocation(method, objects);
+                set = true;
                 return null;
             }
         }, clazz);
