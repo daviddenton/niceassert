@@ -4,10 +4,8 @@
     <editor_bookmark url="file://$PROJECT_DIR$/src/test/org/niceassert/ConcreteClassProxyFactoryTest.java" line="29" number="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" readonly="true" name="Default" comment="dirty - removed overrideable interface">
+    <list default="true" readonly="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.ipr" afterPath="$PROJECT_DIR$/niceassert.ipr" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="niceassert.iws" />
@@ -82,7 +80,7 @@
       <file leaf-file-name="SimpleOverride.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="15" selection-start="1646" selection-end="1646" vertical-scroll-proportion="0.5960265">
+            <state line="18" column="69" selection-start="677" selection-end="677" vertical-scroll-proportion="0.046357617">
               <folding />
             </state>
           </provider>
@@ -515,7 +513,7 @@
     <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="dirty - removed overrideable interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="dirty - refactor of simpleoverride. towards unification" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -534,6 +532,7 @@
     <MESSAGE value="dirty - work on further test cases" />
     <MESSAGE value="dirty - multiple override calls now work ok" />
     <MESSAGE value="dirty - removed overrideable interface" />
+    <MESSAGE value="dirty - refactor of simpleoverride. towards unification" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -650,7 +649,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="15" selection-start="1646" selection-end="1646" vertical-scroll-proportion="0.5960265">
+        <state line="18" column="69" selection-start="677" selection-end="677" vertical-scroll-proportion="0.046357617">
           <folding />
         </state>
       </provider>

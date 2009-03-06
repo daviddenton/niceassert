@@ -7,8 +7,7 @@ import java.lang.reflect.Method;
 public class SimpleOverride {
 
     public static <T> T modifyForOverride(final T target) {
-        T proxy = (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(), target.getClass(), Overrideable.class);
-        Overrideable.class.cast(proxy).setTarget(target);
+        T proxy = (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new OverridableInvocationHandler(target), target.getClass(), Overrideable.class);
         return proxy;
     }
 
@@ -58,15 +57,15 @@ public class SimpleOverride {
         };
     }
 
-    private static class OverridableInvocationHandler implements InvocationHandler {
-        private Object target;
+    private static class OverridableInvocationHandler<T> implements InvocationHandler {
+        private T target;
         private OverrideInvocationMatcher matcher = new OverrideInvocationMatcher();
 
+        public OverridableInvocationHandler(T target) {
+            this.target = target;
+        }
+
         public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-            if (Overrideable.class.getMethod("setTarget", Object.class).equals(method)) {
-                target = objects[0];
-                return Void.TYPE;
-            }
             if (Overrideable.class.getMethod("getTarget").equals(method)) {
                 return target;
             }
@@ -80,7 +79,6 @@ public class SimpleOverride {
     }
 
     private static interface Overrideable<T> {
-        void setTarget(Object target);
         T getTarget();
         void setMatcher(OverrideInvocationMatcher matcher);
     }
