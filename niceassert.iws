@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="niceassert.iws" />
@@ -31,7 +32,7 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java" line="62" class="Class at MatchingOverrideTest.java:48" package="org.niceassert">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java" line="42" class="org.niceassert.OverrideInvocationMatcher" package="org.niceassert">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -115,7 +116,7 @@
       <file leaf-file-name="MatchingOverride.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="56" selection-start="824" selection-end="824" vertical-scroll-proportion="0.0">
+            <state line="36" column="31" selection-start="1303" selection-end="1303" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,10 +124,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OverrideInvocationMatcher.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="OverrideInvocationMatcher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="31" selection-start="1295" selection-end="1295" vertical-scroll-proportion="0.64204544">
+            <state line="43" column="76" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,10 +135,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchingOverrideTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MatchingOverrideTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1918" selection-end="1918" vertical-scroll-proportion="0.0">
+            <state line="72" column="0" selection-start="3062" selection-end="3062" vertical-scroll-proportion="1.1704545">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -504,7 +505,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24857375" sideWeight="0.66205835" order="1" side_tool="false" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" sideWeight="0.5" order="2" side_tool="false" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22636485" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.399348" sideWeight="0.5" order="0" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47270307" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" />
@@ -612,23 +613,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="10" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/externallib/hamcrest-library-1.1.jar!/org/hamcrest/Matchers.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="101" column="63" selection-start="5764" selection-end="5764" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/SimpleOverrideTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -640,18 +627,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1918" selection-end="1918" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="24" column="10" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/SimpleOverrideTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="56" selection-start="824" selection-end="824" vertical-scroll-proportion="0.0">
+        <state line="36" column="31" selection-start="1303" selection-end="1303" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -660,7 +652,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="31" selection-start="1295" selection-end="1295" vertical-scroll-proportion="0.64204544">
+        <state line="43" column="76" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="0" selection-start="3062" selection-end="3062" vertical-scroll-proportion="1.1704545">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

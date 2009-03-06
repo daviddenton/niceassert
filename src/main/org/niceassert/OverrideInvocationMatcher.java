@@ -41,7 +41,7 @@ class OverrideInvocationMatcher {
     Object processOverriddenCall(Method method, Object[] objects) throws Throwable {
         try {
             Object result = action.execute(objects);
-            validateReturnClassCompatability(aMethod.getReturnType(), result.getClass());
+            validateReturnValueCompatability(aMethod.getReturnType(), result);
             return result;
         } catch (Throwable throwable) {
             for (Class exceptionClass : method.getExceptionTypes()) {
@@ -51,8 +51,9 @@ class OverrideInvocationMatcher {
         }
     }
 
-    private void validateReturnClassCompatability(Class<?> expected, Class<? extends Object> actual) {
-        if (!expected.isAssignableFrom(actual))
-            throw new ClassCastException("Can't override method to return incompatible class (expected=" + expected + ", got=" + actual + ")");
+    private void validateReturnValueCompatability(Class<?> expected, Object returnValue) {
+        if(returnValue == null) return;
+        if (!expected.isAssignableFrom(returnValue.getClass()))
+            throw new ClassCastException("Can't override method to return incompatible class (expected=" + expected + ", got=" + returnValue + ")");
     }
 }

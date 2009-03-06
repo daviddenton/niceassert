@@ -35,6 +35,16 @@ public class MatchingOverrideTest {
     }
 
     @Test
+    public void overrideToReturnNull() throws AnException {
+        ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
+            returnValue(null).whenCalling().aMethod();
+        }}.proxy();
+
+        assertThat(proxy.aMethod(), is(nullValue()));
+        assertThat(originalTargetWasCalled.get(), is(false));
+    }
+
+    @Test
     public void overrideToReturnValueOnMatchedCallOnly() throws AnException {
         ARecordingObject proxy = new MatchingOverride<ARecordingObject>(originalTarget) {{
             returnValue(OVERRIDDEN_VALUE).whenCalling().methodWithArgs(OVERRIDDEN_VALUE);
