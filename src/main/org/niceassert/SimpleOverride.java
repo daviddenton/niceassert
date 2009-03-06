@@ -21,6 +21,7 @@ public class SimpleOverride<T> {
     }
 
     public SimpleOverride(Overrideable overrideableTarget) {
+        newMatcher();
         clazz = overrideableTarget.getTarget().getClass();
         overrideableTarget.setMatcher(currentMatcher());
     }
@@ -46,11 +47,11 @@ public class SimpleOverride<T> {
         };
     }
 
-    protected void newMatcher() {
+    private void newMatcher() {
         invocationMatchers.add(new OverrideInvocationMatcher());
     }
 
-    protected OverrideInvocationMatcher currentMatcher() {
+    private OverrideInvocationMatcher currentMatcher() {
         return invocationMatchers.get(invocationMatchers.size()-1);
     }
 

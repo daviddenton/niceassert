@@ -4,11 +4,10 @@
     <editor_bookmark url="file://$PROJECT_DIR$/src/test/org/niceassert/ConcreteClassProxyFactoryTest.java" line="29" number="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" readonly="true" name="Default" comment="dirty - refactor of simpleoverride. towards unification">
+    <list default="true" readonly="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/org/niceassert/AbstractOverride.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="niceassert.iws" />
@@ -71,28 +70,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MatchingOverride.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MatchingOverride.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="20" selection-start="1042" selection-end="1042" vertical-scroll-proportion="0.52971137">
+            <state line="26" column="0" selection-start="1042" selection-end="1042" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1236380162000" expanded="true" signature="440:1041" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="588:1014" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="683:1004" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="1119:1174" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="1257:1289" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="1327:1355" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="1378:1407" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="1451:1538" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="1572:1644" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="1703:1778" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="1807:2198" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="1896:2183" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="2024:2173" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="2269:2485" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="2341:2456" placeholder="{...}" />
-                <marker date="1236380162000" expanded="true" signature="2395:2446" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="32:183" placeholder="..." />
+                <marker date="1236380550000" expanded="true" signature="440:1041" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="588:1014" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="683:1004" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="1119:1174" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="1257:1289" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="1327:1355" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="1378:1407" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="1451:1538" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="1570:1642" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="1699:1774" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="1803:2194" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="1892:2179" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="2020:2169" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="2265:2481" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="2337:2452" placeholder="{...}" />
+                <marker date="1236380550000" expanded="true" signature="2391:2442" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -102,17 +101,15 @@
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="8" column="7" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleOverride.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SimpleOverride.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="31" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0">
+            <state line="41" column="61" selection-start="1457" selection-end="1457" vertical-scroll-proportion="0.20373514">
               <folding />
             </state>
           </provider>
@@ -121,7 +118,7 @@
       <file leaf-file-name="SimpleOverrideTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/SimpleOverrideTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="80" selection-start="612" selection-end="685" vertical-scroll-proportion="0.0">
+            <state line="18" column="16" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,9 +128,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="17" column="0" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -268,11 +263,11 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="false" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -310,7 +305,13 @@
         <value defaultName="moduleWithDependencies" />
       </option>
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52982" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
@@ -552,7 +553,7 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17967479" sideWeight="0.6635945" order="0" side_tool="false" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17886178" sideWeight="0.7357911" order="0" side_tool="false" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718894" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" />
@@ -563,7 +564,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25345623" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.399348" sideWeight="0.5" order="0" side_tool="false" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47270307" sideWeight="0.5" order="3" side_tool="false" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47158217" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" />
@@ -682,15 +683,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="7" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/SimpleOverrideTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="80" selection-start="612" selection-end="685" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -698,41 +690,46 @@
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/MatchingOverrideTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="0" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="31" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/MatchingOverride.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="20" selection-start="1042" selection-end="1042" vertical-scroll-proportion="0.52971137">
+        <state line="26" column="0" selection-start="1042" selection-end="1042" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1236380162000" expanded="true" signature="440:1041" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="588:1014" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="683:1004" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="1119:1174" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="1257:1289" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="1327:1355" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="1378:1407" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="1451:1538" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="1572:1644" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="1703:1778" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="1807:2198" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="1896:2183" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="2024:2173" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="2269:2485" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="2341:2456" placeholder="{...}" />
-            <marker date="1236380162000" expanded="true" signature="2395:2446" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="32:183" placeholder="..." />
+            <marker date="1236380550000" expanded="true" signature="440:1041" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="588:1014" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="683:1004" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="1119:1174" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="1257:1289" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="1327:1355" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="1378:1407" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="1451:1538" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="1570:1642" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="1699:1774" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="1803:2194" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="1892:2179" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="2020:2169" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="2265:2481" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="2337:2452" placeholder="{...}" />
+            <marker date="1236380550000" expanded="true" signature="2391:2442" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/SimpleOverrideTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="16" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/SimpleOverride.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="61" selection-start="1457" selection-end="1457" vertical-scroll-proportion="0.20373514">
+          <folding />
         </state>
       </provider>
     </entry>
