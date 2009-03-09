@@ -7,12 +7,12 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MatchingOverride<T> {
+public class Override<T> {
     private final T proxy;
     private final Class clazz;
     protected final List<OverrideInvocationMatcher> invocationMatchers = new ArrayList<OverrideInvocationMatcher>();
 
-    public MatchingOverride(final T target) {
+    public Override(final T target) {
         clazz = target.getClass();
         newMatcher();
         proxy = (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
@@ -26,15 +26,15 @@ public class MatchingOverride<T> {
         }, target.getClass());
     }
 
-    public static <T> MatchingOverride<T> modifyForOverride(final T target) {
-        return new MatchingOverride<T>(target);
+    public static <T> Override<T> modifyForOverride(final T target) {
+        return new Override<T>(target);
     }
 
-    public static <T> MatchingOverride<T> override(MatchingOverride<T> override) {
+    public static <T> Override<T> override(Override<T> override) {
         return override;
     }
 
-    public MatchingOverride<T> to() {
+    public Override<T> to() {
         return this;
     }
 
@@ -67,7 +67,7 @@ public class MatchingOverride<T> {
         }, clazz);
     }
 
-    public MatchingOverride<T> returnValue(final Object returnValue) {
+    public Override<T> returnValue(final Object returnValue) {
         newMatcher();
         currentMatcher().setAction(new Action() {
             public Object execute(Object[] objects) {
@@ -77,7 +77,7 @@ public class MatchingOverride<T> {
         return this;
     }
 
-    public MatchingOverride<T> throwException(final Throwable t) {
+    public Override<T> throwException(final Throwable t) {
         currentMatcher().setAction(new Action() {
             public Object execute(Object[] objects) throws Throwable {
                 throw t;
