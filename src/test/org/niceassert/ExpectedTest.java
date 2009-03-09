@@ -12,7 +12,7 @@ public class ExpectedTest {
 
     @Test (expected = AssertionError.class)
     public void whenExceptionThrownAndNoExpectationSet() throws AnException {
-        expect(new AThrowingObject()).toReturnValue(RESULT).whenCalling().aMethod();
+        expect(new AThrowingObject()).toReturn(RESULT).whenCalling().aMethod();
     }
 
     @Test (expected = IllegalArgumentException.class)
@@ -22,27 +22,27 @@ public class ExpectedTest {
 
     @Test (expected = AssertionError.class)
     public void unexpectedException() throws AnException {
-        expect(new AThrowingObject()).toReturnValue(RESULT).whenCalling().aMethod();
+        expect(new AThrowingObject()).toReturn(RESULT).whenCalling().aMethod();
     }
 
     @Test (expected = AssertionError.class)
     public void expectedExceptionNotThrown() throws AnException {
-        expect(new AReturningObject()).toThrowException(AN_EXCEPTION).whenCalling().aMethod();
+        expect(new AReturningObject()).toThrow(AN_EXCEPTION).whenCalling().aMethod();
     }
 
     @Test (expected = IllegalArgumentException.class)
     public void attemptToSetSameExpectationTwice() throws AnException {
-        expect(new AReturningObject()).toReturnValue(RESULT).toReturnValue(RESULT).whenCalling().aMethod();
+        expect(new AReturningObject()).toReturn(RESULT).toReturn(RESULT).whenCalling().aMethod();
     }
     
     @Test (expected = IllegalArgumentException.class)
     public void attemptToSetCompetingExpectationTwice() throws AnException {
-        expect(new AReturningObject()).toReturnValue(RESULT).toThrowException(AN_EXCEPTION).whenCalling().aMethod();
+        expect(new AReturningObject()).toReturn(RESULT).toThrow(AN_EXCEPTION).whenCalling().aMethod();
     }
 
     @Test
     public void exceptionChecked() throws AnException {
-        expect(new AThrowingObject()).toThrowException(AN_EXCEPTION).whenCalling().aMethod();
+        expect(new AThrowingObject()).toThrow(AN_EXCEPTION).whenCalling().aMethod();
     }
 
     @Test
@@ -52,7 +52,7 @@ public class ExpectedTest {
 
     @Test
     public void returnedValueChecked() {
-        expect(new AReturningObject()).toReturnValue(RESULT).whenCalling().aMethod();
+        expect(new AReturningObject()).toReturn(RESULT).whenCalling().aMethod();
     }
 
     @Test

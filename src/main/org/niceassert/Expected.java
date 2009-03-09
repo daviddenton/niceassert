@@ -41,7 +41,7 @@ public class Expected<T> {
         this.matcherSet = true;
     }
 
-    public Expected<T> toThrowException(final Throwable t) {
+    public Expected<T> toThrow(final Throwable t) {
         toThrowExceptionThat(new BaseMatcher<Throwable>() {
 
             public boolean matches(Object o) {
@@ -55,7 +55,7 @@ public class Expected<T> {
         return this;
     }
 
-    public Expected<T> toReturnValue(final Object t) {
+    public Expected<T> toReturn(final Object t) {
         toReturnValueThat(new BaseMatcher<T>() {
             public boolean matches(Object o) {
                 return o.equals(t);

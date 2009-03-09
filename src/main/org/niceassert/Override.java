@@ -45,14 +45,6 @@ public class Override<T> {
         return null;
     }
 
-    private void newMatcher() {
-        invocationMatchers.add(new OverrideInvocationMatcher());
-    }
-
-    private OverrideInvocationMatcher currentMatcher() {
-        return invocationMatchers.get(invocationMatchers.size() - 1);
-    }
-
     public T whenCalling() {
         return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
             private boolean set;
@@ -79,5 +71,14 @@ public class Override<T> {
                 throw t;
             }
         };
+    }
+
+
+    private void newMatcher() {
+        invocationMatchers.add(new OverrideInvocationMatcher());
+    }
+
+    private OverrideInvocationMatcher currentMatcher() {
+        return invocationMatchers.get(invocationMatchers.size() - 1);
     }
 }

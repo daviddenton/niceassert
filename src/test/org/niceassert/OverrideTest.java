@@ -20,7 +20,7 @@ public class OverrideTest {
     @Test(expected = AnException.class)
     public void overrideToThrowException() throws AnException {
         ARecordingObject proxy = new Override<ARecordingObject>(originalTarget) {{
-            will(throwException(new AnException())).whenCalling().aMethod();
+            will(throwException(new AnException())).whenCalling().aMethod();                                        
         }}.proxy();
 
         try {
