@@ -30,7 +30,9 @@ public class Override<T> {
         return new Override<T>(target);
     }
 
-    public Override<T> will() {
+    public Override<T> will(Action action) {
+        newMatcher();
+        currentMatcher().setAction(action);
         return this;
     }
 
@@ -63,22 +65,19 @@ public class Override<T> {
         }, clazz);
     }
 
-    public Override<T> returnValue(final Object returnValue) {
-        newMatcher();
-        currentMatcher().setAction(new Action() {
+    public static Action returnValue(final Object returnValue) {
+        return new Action() {
             public Object execute(Object[] objects) {
                 return returnValue;
             }
-        });
-        return this;
+        };
     }
 
-    public Override<T> throwException(final Throwable t) {
-        currentMatcher().setAction(new Action() {
+    public static Action throwException(final Throwable t) {
+        return new Action() {
             public Object execute(Object[] objects) throws Throwable {
                 throw t;
             }
-        });
-        return this;
+        };
     }
 }

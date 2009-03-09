@@ -72,24 +72,24 @@
       <file leaf-file-name="Override.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Override.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="39" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
+            <state line="75" column="24" selection-start="2389" selection-end="2389" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1236633584000" expanded="true" signature="424:1049" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="571:1022" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="666:1012" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="1117:1164" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="1196:1224" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="1247:1276" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="1320:1407" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="1439:1511" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="1568:1645" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="1674:2067" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="1763:2052" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="1892:2042" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="2130:2346" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="2202:2317" placeholder="{...}" />
-                <marker date="1236633584000" expanded="true" signature="2256:2307" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="424:1049" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="571:1022" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="666:1012" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="1117:1164" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="1209:1303" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="1326:1355" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="1399:1486" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="1518:1590" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="1647:1724" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="1753:2146" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="1842:2131" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="1971:2121" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="2211:2363" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="2243:2356" placeholder="{...}" />
+                <marker date="1236634136000" expanded="true" signature="2295:2346" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -107,8 +107,10 @@
       <file leaf-file-name="OverrideTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="-0.0016051364">
-              <folding />
+            <state line="32" column="83" selection-start="1335" selection-end="1335" vertical-scroll-proportion="0.3515249">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,84 +137,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectPane">
-    <subPane>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="niceassert" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-    </subPane>
+    <subPane />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
@@ -559,7 +484,7 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17804877" sideWeight="0.7357911" order="0" side_tool="false" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17804877" sideWeight="0.7357911" order="0" side_tool="false" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718894" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" />
@@ -696,32 +621,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Override.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="39" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
+        <state line="75" column="24" selection-start="2389" selection-end="2389" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1236633584000" expanded="true" signature="424:1049" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="571:1022" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="666:1012" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="1117:1164" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="1196:1224" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="1247:1276" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="1320:1407" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="1439:1511" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="1568:1645" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="1674:2067" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="1763:2052" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="1892:2042" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="2130:2346" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="2202:2317" placeholder="{...}" />
-            <marker date="1236633584000" expanded="true" signature="2256:2307" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="424:1049" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="571:1022" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="666:1012" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="1117:1164" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="1209:1303" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="1326:1355" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="1399:1486" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="1518:1590" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="1647:1724" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="1753:2146" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="1842:2131" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="1971:2121" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="2211:2363" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="2243:2356" placeholder="{...}" />
+            <marker date="1236634136000" expanded="true" signature="2295:2346" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="-0.0016051364">
-          <folding />
+        <state line="32" column="83" selection-start="1335" selection-end="1335" vertical-scroll-proportion="0.3515249">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
