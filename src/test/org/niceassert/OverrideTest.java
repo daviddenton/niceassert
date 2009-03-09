@@ -6,8 +6,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import org.junit.Test;
-import static org.niceassert.Override.modifyForOverride;
-import static org.niceassert.Override.override;
+import static org.niceassert.Override.wrapForOverride;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -16,7 +15,7 @@ public class OverrideTest {
     private static final String OVERRIDDEN_VALUE = "overridden value";
     private final AtomicBoolean originalTargetWasCalled = new AtomicBoolean(false);
     private final ARecordingObject originalTarget = new ARecordingObject();
-    private final Override<ARecordingObject> override = modifyForOverride(originalTarget);
+    private final Override<ARecordingObject> override = wrapForOverride(originalTarget);
 
     @Test(expected = AnException.class)
     public void overrideToThrowException() throws AnException {
@@ -127,7 +126,7 @@ public class OverrideTest {
 
     @Test
     public void overrideToThrowExceptionAlt() throws AnException {
-        override(override).to().throwException(new AnException()).whenCalling().methodWithArgs(OVERRIDDEN_VALUE);
+        override.will().throwException(new AnException()).whenCalling().methodWithArgs(OVERRIDDEN_VALUE);
 
         try {
             override.proxy().methodWithArgs(OVERRIDDEN_VALUE);
@@ -142,32 +141,32 @@ public class OverrideTest {
 
     @Test
     public void overrideToReturnValueAlt() throws AnException {
-        override(override).to().returnValue(OVERRIDDEN_VALUE).whenCalling().aMethod();
+        override.will().returnValue(OVERRIDDEN_VALUE).whenCalling().aMethod();
         assertThat(override.proxy().aMethod(), is(equalTo(OVERRIDDEN_VALUE)));
         assertThat(originalTargetWasCalled.get(), is(false));
     }
 
     @Test(expected = ClassCastException.class)
     public void overrideToReturnIncompatibleValueAlt() throws AnException {
-        override(override).to().returnValue(new Object()).whenCalling().aMethod();
+        override.will().returnValue(new Object()).whenCalling().aMethod();
         override.proxy().aMethod();
     }
 
     @Test(expected = ClassCastException.class)
     public void overrideToReturnIncompatibleValueForVoidMethodAlt() throws AnException {
-        override(override).to().returnValue(new Object()).whenCalling().aVoidMethod();
+        override.will().returnValue(new Object()).whenCalling().aVoidMethod();
         override.proxy().aVoidMethod();
     }
 
     @Test(expected = ClassCastException.class)
     public void overrideToThrowIncompatibleExceptionAlt() throws AnException {
-        override(override).to().throwException(new AnotherException()).whenCalling().aMethod();
+        override.will().throwException(new AnotherException()).whenCalling().aMethod();
         override.proxy().aMethod();
     }
 
     @Test
     public void originalMethodCalledForNonOverriddenMethodAlt() throws AnException {
-        override(override).to().returnValue(OVERRIDDEN_VALUE).whenCalling().anotherMethod();
+        override.will().returnValue(OVERRIDDEN_VALUE).whenCalling().anotherMethod();
         assertThat(override.proxy().aMethod(), is(equalTo(ORIGINAL_VALUE)));
         assertThat(originalTargetWasCalled.get(), is(true));
     }

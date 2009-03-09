@@ -26,15 +26,11 @@ public class Override<T> {
         }, target.getClass());
     }
 
-    public static <T> Override<T> modifyForOverride(final T target) {
+    public static <T> Override<T> wrapForOverride(final T target) {
         return new Override<T>(target);
     }
 
-    public static <T> Override<T> override(Override<T> override) {
-        return override;
-    }
-
-    public Override<T> to() {
+    public Override<T> will() {
         return this;
     }
 
