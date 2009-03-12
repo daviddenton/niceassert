@@ -6,20 +6,20 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import org.junit.Test;
-import static org.niceassert.Override.*;
+import static org.niceassert.Overrider.*;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class OverrideTest {
+public class OverriderTest {
     private static final String ORIGINAL_VALUE = "original value";
     private static final String OVERRIDDEN_VALUE = "overridden value";
     private final AtomicBoolean originalTargetWasCalled = new AtomicBoolean(false);
     private final ARecordingObject originalTarget = new ARecordingObject();
-    private final Override<ARecordingObject> override = wrapForOverride(originalTarget);
+    private final Overrider<ARecordingObject> override = wrapForOverride(originalTarget);
 
     @Test(expected = AnException.class)
     public void overrideToThrowException() throws AnException {
-        ARecordingObject proxy = new Override<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
             will(throwException(new AnException())).whenCalling().aMethod();                                        
         }}.proxy();
 
@@ -33,7 +33,7 @@ public class OverrideTest {
 
     @Test
     public void overrideToReturnValue() throws AnException {
-        ARecordingObject proxy = new Override<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
             will(returnValue(OVERRIDDEN_VALUE)).whenCalling().aMethod();
         }}.proxy();
 
@@ -43,7 +43,7 @@ public class OverrideTest {
 
     @Test
     public void overrideToReturnNull() throws AnException {
-        ARecordingObject proxy = new Override<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
             will(returnValue(null)).whenCalling().aMethod();
         }}.proxy();
 
@@ -53,7 +53,7 @@ public class OverrideTest {
 
     @Test
     public void overrideToReturnValueOnMatchedCallOnly() throws AnException {
-        ARecordingObject proxy = new Override<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
             will(returnValue(OVERRIDDEN_VALUE)).whenCalling().methodWithArgs(OVERRIDDEN_VALUE);
         }}.proxy();
 
@@ -65,7 +65,7 @@ public class OverrideTest {
 
     @Test
     public void overrideToMatchMultipleCalls() throws AnException {
-        ARecordingObject proxy = new Override<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
             will(returnValue(null)).whenCalling().methodWithArgs(ORIGINAL_VALUE);
             will(returnValue(OVERRIDDEN_VALUE)).whenCalling().methodWithArgs(OVERRIDDEN_VALUE);
         }}.proxy();
@@ -77,7 +77,7 @@ public class OverrideTest {
 
     @Test
     public void overrideToReturnValueOnMatchedCallOnlyUsingMatchers() throws AnException {
-        ARecordingObject proxy = new Override<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
             will(returnValue(OVERRIDDEN_VALUE)).whenCalling().methodWithArgs(with(equalTo(OVERRIDDEN_VALUE)));
         }}.proxy();
 
@@ -89,7 +89,7 @@ public class OverrideTest {
 
     @Test(expected = ClassCastException.class)
     public void overrideToReturnIncompatibleValue() throws AnException {
-        ARecordingObject proxy = new Override<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
             will(returnValue(new Object())).whenCalling().aMethod();
         }}.proxy();
 
@@ -98,7 +98,7 @@ public class OverrideTest {
 
     @Test(expected = ClassCastException.class)
     public void overrideToReturnIncompatibleValueForVoidMethod() throws AnException {
-        ARecordingObject proxy = new Override<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
             will(returnValue(new Object())).whenCalling().aVoidMethod();
         }}.proxy();
 
@@ -107,7 +107,7 @@ public class OverrideTest {
 
     @Test(expected = ClassCastException.class)
     public void overrideToThrowIncompatibleException() throws AnException {
-        ARecordingObject proxy = new Override<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
             will(throwException(new AnotherException())).whenCalling().aMethod();
         }}.proxy();
 
@@ -116,7 +116,7 @@ public class OverrideTest {
 
     @Test
     public void originalMethodCalledForNonOverriddenMethod() throws AnException {
-        ARecordingObject proxy = new Override<ARecordingObject>(originalTarget) {{
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
             will(returnValue(OVERRIDDEN_VALUE)).whenCalling().anotherMethod();
         }}.proxy();
 

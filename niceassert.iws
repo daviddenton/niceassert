@@ -4,15 +4,25 @@
     <editor_bookmark url="file://$PROJECT_DIR$/src/test/org/niceassert/ConcreteClassProxyFactoryTest.java" line="29" number="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" readonly="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/Override.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/Override.java" />
+    <list default="true" readonly="true" name="Default" comment="dirty - tweak">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/example/org/niceassert/example/OverriderExampleWithAlternativeSyntaxTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iml" afterPath="$PROJECT_DIR$/niceassert.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/Expected.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/Expected.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/OverriderInvocationMatcher.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/OverriderTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/example/org" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/example" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/ExpectationTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.ipr" afterPath="$PROJECT_DIR$/niceassert.ipr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/example/org/niceassert/example/OverriderExampleTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/example/org/niceassert/example/ExpectationExampleTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/org/niceassert/Expected.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/Expectation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/example/org/niceassert/example" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/org/niceassert/Override.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/Overrider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/example/org/niceassert" />
     </list>
-    <ignored path=".idea/workspace.xml" />
     <ignored path="niceassert.iws" />
+    <ignored path=".idea/workspace.xml" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="Commander">
@@ -32,6 +42,21 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/example/org/niceassert/example/ExpectationExampleTest.java" line="15" class="org.niceassert.example.ExpectationExampleTest" package="org.niceassert.example">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -72,10 +97,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OverrideTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
+      <file leaf-file-name="Overrider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Overrider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="19" selection-start="792" selection-end="792" vertical-scroll-proportion="0.0">
+            <state line="12" column="25" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Expectation.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Expectation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="0" selection-start="2365" selection-end="2365" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExpectationTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="22" selection-start="1611" selection-end="1611" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoreMatchers.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/externallib/junit-4.4.jar!/org/hamcrest/CoreMatchers.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="57" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Matchers.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/externallib/hamcrest-library-1.1.jar!/org/hamcrest/Matchers.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="18" selection-start="744" selection-end="744" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExpectationExampleTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/example/org/niceassert/example/ExpectationExampleTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="0" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,46 +153,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Expected.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Expected.java">
+      <file leaf-file-name="OverriderExampleTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/example/org/niceassert/example/OverriderExampleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0">
+            <state line="15" column="0" selection-start="523" selection-end="2595" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OverriderExampleWithAlternativeSyntaxTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/example/org/niceassert/example/OverriderExampleWithAlternativeSyntaxTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="35" selection-start="470" selection-end="470" vertical-scroll-proportion="0.20454545">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Override.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar!/java/lang/Override.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="167" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExpectedTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java">
+      <file leaf-file-name="OverriderTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverriderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="35" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.38523275">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Error.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/classes.jar!/java/lang/Error.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Exception.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/classes.jar!/java/lang/Exception.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Throwable.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/classes.jar!/java/lang/Throwable.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
+            <state line="12" column="16" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -165,7 +230,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="&lt; 1.6 &gt;" />
+          <option name="myItemId" value="&lt; 1.5 &gt;" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -183,7 +248,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="&lt; 1.6 &gt;" />
+          <option name="myItemId" value="&lt; 1.5 &gt;" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -205,7 +270,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="&lt; 1.6 &gt;" />
+          <option name="myItemId" value="&lt; 1.5 &gt;" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -231,7 +296,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="&lt; 1.6 &gt;" />
+          <option name="myItemId" value="&lt; 1.5 &gt;" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -327,6 +392,32 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="niceassert" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="niceassert" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="niceassert" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="example" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="example" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
     </subPane>
   </component>
   <component name="ProjectReloadState">
@@ -350,7 +441,7 @@
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.searchVisible" value="true" />
     <property name="MemberChooser.sorted" value="false" />
@@ -374,19 +465,26 @@
       <recent name="org.niceassert.ExpectedTest" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.niceassert.example" />
       <recent name="org.niceassert" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
+      <recent name="org.niceassert.example.OverriderExampleWithAlternativeSyntaxTest.MyObject" />
+      <recent name="org.niceassert.example.expectation.ExpectationExampleTest" />
       <recent name="org.niceassert.ExpectedTest.AThrowingObject" />
       <recent name="org.niceassert.Override.OverridableInvocationHandler" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.niceassert.example" />
+      <recent name="org.niceassert" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.org.niceassert in niceassert">
-    <tempConfiguration default="false" name="org.niceassert in niceassert" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
+  <component name="RunManager" selected="JUnit.org.niceassert.example in niceassert">
+    <tempConfiguration default="false" name="org.niceassert.example in niceassert" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
       <module name="niceassert" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.niceassert" />
+      <option name="PACKAGE_NAME" value="org.niceassert.example" />
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
@@ -551,7 +649,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="OverrideTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
+    <configuration default="false" name="ExpectationTest.exceptionCheckedWithCustomMatcher" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
       <pattern>
         <option name="PATTERN" value="org.niceassert.*" />
         <option name="ENABLED" value="true" />
@@ -560,9 +658,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.niceassert" />
-      <option name="MAIN_CLASS_NAME" value="org.niceassert.OverrideTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="org.niceassert.ExpectationTest" />
+      <option name="METHOD_NAME" value="exceptionCheckedWithCustomMatcher" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -582,8 +680,8 @@
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JUnit.ArgumentMatchingOverrideTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.ArgumentMatchingOverrideTest.overrideToReturnValue" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MatchingOverrideTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.org.niceassert in niceassert" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ExpectedTest.exceptionCheckedWithCustomMatcher" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.org.niceassert.example in niceassert" />
     </list>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <module name="" />
@@ -638,7 +736,7 @@
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
     <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
     <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <configuration useDefault="true">/Users/david/.subversion</configuration>
+    <configuration useDefault="true">/Users/dev/.subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="TodoView" selected-index="0">
@@ -662,7 +760,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1279" height="774" extended-state="0" />
+    <frame x="-1" y="23" width="1441" height="874" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
@@ -671,18 +769,18 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17804877" sideWeight="0.7357911" order="0" side_tool="false" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718894" sideWeight="0.5" order="1" side_tool="false" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18031609" sideWeight="0.5792277" order="0" side_tool="false" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32565284" sideWeight="0.5" order="8" side_tool="false" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262317" sideWeight="0.5" order="8" side_tool="false" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24857375" sideWeight="0.66205835" order="1" side_tool="false" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25345623" sideWeight="0.5" order="2" side_tool="false" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4114514" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.399348" sideWeight="0.5" order="0" side_tool="false" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47158217" sideWeight="0.5" order="3" side_tool="false" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47270307" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" />
@@ -701,7 +799,7 @@
     <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="dirty - langauge reengineer." />
+    <option name="LAST_COMMIT_MESSAGE" value="dirty - tweak" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -720,9 +818,7 @@
     <MESSAGE value="dirty - work on further test cases" />
     <MESSAGE value="dirty - multiple override calls now work ok" />
     <MESSAGE value="dirty - removed overrideable interface" />
-    <MESSAGE value="dirty - refactor of simpleoverride. towards unification" />
-    <MESSAGE value="dirty - removal of simple override and replacement with manual override" />
-    <MESSAGE value="dirty - langauge reengineer." />
+    <MESSAGE value="dirty - tweak" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -744,6 +840,13 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar://$PROJECT_DIR$/externallib/junit-4.4.jar!/org/junit/internal/runners/ClassRoadie.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="17" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$PROJECT_DIR$/externallib/junit-4.4.jar!/org/junit/internal/runners/MethodRoadie.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="17" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.0">
@@ -765,6 +868,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/OverriderInvocationMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="12" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ConcreteClassProxyFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="10" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0">
@@ -772,90 +884,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/externallib/junit-4.4.jar!/org/hamcrest/CoreMatchers.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="57" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$PROJECT_DIR$/externallib/hamcrest-library-1.1.jar!/org/hamcrest/Matchers.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="63" selection-start="5808" selection-end="5808" vertical-scroll-proportion="0.0">
+        <state line="19" column="18" selection-start="744" selection-end="744" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/classes.jar!/java/lang/IllegalArgumentException.class">
+    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0">
+        <state line="42" column="22" selection-start="1611" selection-end="1611" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/OverrideInvocationMatcher.java">
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Expectation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0">
+        <state line="76" column="0" selection-start="2365" selection-end="2365" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Override.java">
+    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/../Classes/classes.jar!/java/lang/Override.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="24" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0">
+        <state line="5" column="167" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Overrider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="25" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverriderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="16" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/example/org/niceassert/example/ExpectationExampleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1236634603000" expanded="true" signature="424:1049" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="571:1022" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="666:1012" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="1117:1164" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="1209:1303" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="1326:1355" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="1399:1486" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="1515:1908" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="1604:1893" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="1733:1883" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="1973:2125" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="2005:2118" placeholder="{...}" />
-            <marker date="1236634603000" expanded="true" signature="2057:2108" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverrideTest.java">
+    <entry file="file://$PROJECT_DIR$/src/example/org/niceassert/example/OverriderExampleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="19" selection-start="792" selection-end="792" vertical-scroll-proportion="0.0">
+        <state line="15" column="0" selection-start="523" selection-end="2595" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Expected.java">
+    <entry file="file://$PROJECT_DIR$/src/example/org/niceassert/example/OverriderExampleWithAlternativeSyntaxTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/classes.jar!/java/lang/Throwable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/classes.jar!/java/lang/Exception.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/classes.jar!/java/lang/Error.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectedTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="35" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.38523275">
-          <folding />
+        <state line="12" column="35" selection-start="470" selection-end="470" vertical-scroll-proportion="0.20454545">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

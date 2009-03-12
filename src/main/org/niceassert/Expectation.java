@@ -9,10 +9,10 @@ import static org.junit.Assert.assertThat;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class Expected<T> {
+public class Expectation<T> {
 
-    public static <T> Expected<T> expect(final T target) {
-        return new Expected<T>(target);
+    public static <T> Expectation<T> expect(final T target) {
+        return new Expectation<T>(target);
     }
 
     private final T target;
@@ -20,17 +20,17 @@ public class Expected<T> {
     private Matcher throwsMatcher = new FailureMatcher("No exception to be thrown");
     private boolean matcherSet;
 
-    private Expected(T target) {
+    private Expectation(T target) {
         this.target = target;
     }
 
-    public Expected<T> toThrowExceptionThat(Matcher matcher) {
+    public Expectation<T> toThrowExceptionThat(Matcher matcher) {
         validateExpectedBehaviour();
         this.throwsMatcher = matcher;
         return this;
     }
 
-    public Expected<T> toReturnValueThat(Matcher matcher) {
+    public Expectation<T> toReturnValueThat(Matcher matcher) {
         validateExpectedBehaviour();
         this.returnMatcher = matcher;
         return this;
@@ -41,7 +41,7 @@ public class Expected<T> {
         this.matcherSet = true;
     }
 
-    public Expected<T> toThrow(final Throwable t) {
+    public Expectation<T> toThrow(final Throwable t) {
         toThrowExceptionThat(new BaseMatcher<Throwable>() {
 
             public boolean matches(Object o) {
@@ -55,7 +55,7 @@ public class Expected<T> {
         return this;
     }
 
-    public Expected<T> toReturn(final Object t) {
+    public Expectation<T> toReturn(final Object t) {
         toReturnValueThat(new BaseMatcher<T>() {
             public boolean matches(Object o) {
                 return o.equals(t);

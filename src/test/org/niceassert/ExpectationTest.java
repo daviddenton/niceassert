@@ -1,11 +1,10 @@
 package org.niceassert;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
 import org.junit.Test;
-import static org.niceassert.Expected.expect;
+import static org.niceassert.Expectation.expect;
 
-public class ExpectedTest {
+public class ExpectationTest {
     
     private static final String RESULT = "String";
     private static final AnException AN_EXCEPTION = new AnException();
@@ -48,6 +47,7 @@ public class ExpectedTest {
     @Test
     public void exceptionCheckedWithCustomMatcher() throws AnException {
         expect(new AThrowingObject()).toThrowExceptionThat(is(equalTo(AN_EXCEPTION))).whenCalling().aMethod();
+        expect(new AThrowingObject()).toThrowExceptionThat(is(any(Exception.class))).whenCalling().aMethod();
     }
 
     @Test

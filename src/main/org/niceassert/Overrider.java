@@ -7,17 +7,17 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Override<T> {
+public class Overrider<T> {
     private final T proxy;
     private final Class clazz;
-    protected final List<OverrideInvocationMatcher> invocationMatchers = new ArrayList<OverrideInvocationMatcher>();
+    protected final List<OverriderInvocationMatcher> invocationMatchers = new ArrayList<OverriderInvocationMatcher>();
 
-    public Override(final T target) {
+    public Overrider(final T target) {
         clazz = target.getClass();
         newMatcher();
         proxy = (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                for (OverrideInvocationMatcher invocationMatcher : invocationMatchers) {
+                for (OverriderInvocationMatcher invocationMatcher : invocationMatchers) {
                     if (invocationMatcher.isMethodCallMatched(method, objects))
                         return invocationMatcher.processOverriddenCall(method, objects);
                 }
@@ -26,11 +26,11 @@ public class Override<T> {
         }, target.getClass());
     }
 
-    public static <T> Override<T> wrapForOverride(final T target) {
-        return new Override<T>(target);
+    public static <T> Overrider<T> wrapForOverride(final T target) {
+        return new Overrider<T>(target);
     }
 
-    public Override<T> will(Action action) {
+    public Overrider<T> will(Action action) {
         newMatcher();
         currentMatcher().setAction(action);
         return this;
@@ -75,10 +75,10 @@ public class Override<T> {
 
 
     private void newMatcher() {
-        invocationMatchers.add(new OverrideInvocationMatcher());
+        invocationMatchers.add(new OverriderInvocationMatcher());
     }
 
-    private OverrideInvocationMatcher currentMatcher() {
+    private OverriderInvocationMatcher currentMatcher() {
         return invocationMatchers.get(invocationMatchers.size() - 1);
     }
 }
