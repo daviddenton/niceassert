@@ -123,7 +123,7 @@
       <file leaf-file-name="ExpectationTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="31" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.375">
+            <state line="76" column="53" selection-start="3044" selection-end="3044" vertical-scroll-proportion="0.35795453">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -827,7 +827,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="31" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.375">
+        <state line="76" column="53" selection-start="3044" selection-end="3044" vertical-scroll-proportion="0.35795453">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -73,6 +73,12 @@ public class ExpectationTest {
         expect(object).to(resultIn(new UpdatedTheStateOf(object))).whenCalling().aMethod();
     }
 
+    @Test(expected = AssertionError.class)
+    public void stateOfTheObjectNotUpdated() throws AnException {
+        final AReturningObject object = new AReturningObject();
+        expect(object).to(resultIn(new UpdatedTheStateOf(new AStateUpdatingObject()))).whenCalling().aMethod();
+    }
+
     private class AThrowingObject {
         void aMethod() throws AnException {
             throw AN_EXCEPTION;
@@ -90,7 +96,6 @@ public class ExpectationTest {
             return RESULT;
         }
     }
-
 
     public static class AStateUpdatingObject {
         private boolean called;
