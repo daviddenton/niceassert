@@ -10,7 +10,7 @@ import java.util.List;
 public class Overrider<T> {
     private final T proxy;
     private final Class clazz;
-    protected final List<OverriderInvocationMatcher> invocationMatchers = new ArrayList<OverriderInvocationMatcher>();
+    private final List<OverriderInvocationMatcher> invocationMatchers = new ArrayList<OverriderInvocationMatcher>();
 
     public Overrider(final T target) {
         clazz = target.getClass();

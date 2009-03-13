@@ -55,6 +55,8 @@
             <compile-jar srcdir="src/main" jarfile="${artifact}.jar" classpathref="@{classpathref}"/>
             <compile-jar srcdir="src/test" jarfile="${ant.project.name}-test-${version}.jar"
                          classpathref="test-classpath"/>
+            <javac srcdir="src/example" classpathref="test-classpath" destdir="build/classes" debug="true" source="1.5"
+                   target="1.5" fork="true"/>
         </sequential>
     </macrodef>
 
@@ -72,6 +74,7 @@
                 <classpath>
                     <path refid="@{classpathref}"/>
                     <pathelement location="build/jars/${artifact}.jar"/>
+                    <pathelement location="build/classes"/>
                     <pathelement location="build/jars/${ant.project.name}-test-${version}.jar"/>
                 </classpath>
 
@@ -79,6 +82,10 @@
 
                 <batchtest todir="${test.output.dir}">
                     <fileset dir="src/test">
+                        <include name="**/*Test.java"/>
+                        <exclude name="**/Abstract*Test.java"/>
+                    </fileset>
+                    <fileset dir="src/example">
                         <include name="**/*Test.java"/>
                         <exclude name="**/Abstract*Test.java"/>
                     </fileset>
@@ -112,10 +119,12 @@
                 author="false"
                 version="false"
                 use="true"
-                windowtitle="Nice Assert">
+                windowtitle="Nice Assert"
+                classpathref="test-classpath">
             <packageset dir="src/main" defaultexcludes="yes">
                 <include name="**"/>
             </packageset>
+            
         </javadoc>
     </target>
 </project>
