@@ -9,6 +9,8 @@ import java.util.List;
 
 /**
  * Provides the ability to override (or partially mock) the behaviour of a target object.
+ * <p/>
+ * For usage examples, please see the wiki documentation at: http://code.google.com/p/niceassert/
  *
  * @param <T> the class that's behaviour is being overridden.
  */

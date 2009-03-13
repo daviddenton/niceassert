@@ -10,10 +10,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * An readable assertion API used to check the expected behaviour of a particular method call .
+ * An readable assertion API used to check the expected behaviour of a particular method call.
  * <p/>
  * The expected behaviour of the target call is built up using the DSL of this class. Assertions can
  * be made on either a return value, or an exception thrown.
+ * <p/>
+ * For usage examples, please see the wiki documentation at: http://code.google.com/p/niceassert/
  *
  * @param <T> the class that's behaviour is being checked.
  */
