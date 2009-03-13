@@ -97,10 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Overrider.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Overrider.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Overrider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="3" selection-start="282" selection-end="286" vertical-scroll-proportion="0.0">
+            <state line="18" column="52" selection-start="535" selection-end="535" vertical-scroll-proportion="0.3068182">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,10 +108,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Expectation.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Expectation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Expectation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="80" selection-start="401" selection-end="401" vertical-scroll-proportion="0.2215909">
+            <state line="17" column="93" selection-start="633" selection-end="665" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -834,18 +834,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Overrider.java">
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Expectation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="3" selection-start="282" selection-end="286" vertical-scroll-proportion="0.0">
+        <state line="17" column="93" selection-start="633" selection-end="665" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Expectation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Overrider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="80" selection-start="401" selection-end="401" vertical-scroll-proportion="0.2215909">
+        <state line="18" column="52" selection-start="535" selection-end="535" vertical-scroll-proportion="0.3068182">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

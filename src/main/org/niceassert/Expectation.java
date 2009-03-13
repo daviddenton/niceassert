@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
  * The expected behaviour of the target call is built up using the DSL of this class. Assertions can
  * be made on either a return value, or an exception thrown.
  * <p/>
- * For usage examples, please see the wiki documentation at: http://code.google.com/p/niceassert/
+ * For usage examples, please see the wiki documentation at: http://niceassert.googlecode.com
  *
  * @param <T> the class that's behaviour is being checked.
  */
