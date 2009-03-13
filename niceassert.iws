@@ -4,10 +4,8 @@
     <editor_bookmark url="file://$PROJECT_DIR$/src/test/org/niceassert/ConcreteClassProxyFactoryTest.java" line="29" number="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" readonly="true" name="Default" comment="">
+    <list default="true" readonly="true" name="Default" comment="dirty - doc">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/artifacts" />
     </list>
     <ignored path="niceassert.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,7 +71,7 @@
       <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="81" selection-start="637" selection-end="637" vertical-scroll-proportion="0.31532848">
+            <state line="25" column="42" selection-start="861" selection-end="861" vertical-scroll-proportion="0.4379562">
               <folding />
             </state>
           </provider>
@@ -831,7 +829,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="81" selection-start="637" selection-end="637" vertical-scroll-proportion="0.31532848">
+        <state line="25" column="42" selection-start="861" selection-end="861" vertical-scroll-proportion="0.4379562">
           <folding />
         </state>
       </provider>

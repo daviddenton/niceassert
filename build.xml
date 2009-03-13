@@ -23,7 +23,7 @@
 
     <target name="package">
         <zip destfile="build/${artifact}-jars.zip" update="true">
-            <zipfileset dir="lib" prefix="externallib"/>
+            <zipfileset dir="lib" prefix="lib"/>
             <zipfileset file="build/jars/${artifact}.jar"/>
             <zipfileset dir="build/doc" prefix="doc"/>
             <zipfileset dir="src/example" prefix="example"/>
