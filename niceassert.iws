@@ -7,6 +7,7 @@
     <list default="true" readonly="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/artifacts" />
     </list>
     <ignored path="niceassert.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,7 +73,7 @@
       <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="0" selection-start="4695" selection-end="4695" vertical-scroll-proportion="0.87737226">
+            <state line="18" column="81" selection-start="637" selection-end="637" vertical-scroll-proportion="0.31532848">
               <folding />
             </state>
           </provider>
@@ -830,7 +831,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="0" selection-start="4695" selection-end="4695" vertical-scroll-proportion="0.87737226">
+        <state line="18" column="81" selection-start="637" selection-end="637" vertical-scroll-proportion="0.31532848">
           <folding />
         </state>
       </provider>

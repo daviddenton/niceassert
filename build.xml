@@ -15,13 +15,18 @@
         <delete dir="build"/>
     </target>
 
+    <target name="release" depends="build">
+        <copy file="build/jars/${artifact}.jar" tofile="artifacts/${artifact}.jar"/>
+    </target>
+
     <target name="build" depends="clean, test, document, package"/>
 
     <target name="package">
         <zip destfile="build/${artifact}-jars.zip" update="true">
-            <zipfileset dir="lib" prefix="${artifact}-jars"/>
-            <zipfileset file="build/jars/${artifact}.jar" prefix="${artifact}-jars"/>
-            <zipfileset dir="build/doc" prefix="${artifact}-jars/doc"/>
+            <zipfileset dir="lib" prefix="externallib"/>
+            <zipfileset file="build/jars/${artifact}.jar"/>
+            <zipfileset dir="build/doc" prefix="doc"/>
+            <zipfileset dir="src/example" prefix="example"/>
         </zip>
     </target>
 
@@ -125,4 +130,5 @@
             </packageset>
         </javadoc>
     </target>
+
 </project>
