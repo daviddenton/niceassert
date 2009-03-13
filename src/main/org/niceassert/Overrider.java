@@ -7,6 +7,11 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Provides the ability to override (or partially mock) the behaviour of a target object.
+ *
+ * @param <T> the class that's behaviour is being overridden.
+ */
 public class Overrider<T> {
     private final T proxy;
     private final Class clazz;
@@ -72,7 +77,6 @@ public class Overrider<T> {
             }
         };
     }
-
 
     private void newMatcher() {
         invocationMatchers.add(new OverriderInvocationMatcher());

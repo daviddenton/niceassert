@@ -2,7 +2,7 @@ package org.niceassert;
 
 import static org.hamcrest.CoreMatchers.*;
 import org.junit.Test;
-import static org.niceassert.Expectation.expect;
+import static org.niceassert.Expectation.*;
 
 public class ExpectationTest {
     
@@ -11,7 +11,7 @@ public class ExpectationTest {
 
     @Test (expected = AssertionError.class)
     public void whenExceptionThrownAndNoExpectationSet() throws AnException {
-        expect(new AThrowingObject()).toReturn(RESULT).whenCalling().aMethod();
+        expect(new AThrowingObject()).to(returnValue(RESULT)).whenCalling().aMethod();
     }
 
     @Test (expected = IllegalArgumentException.class)
@@ -21,43 +21,43 @@ public class ExpectationTest {
 
     @Test (expected = AssertionError.class)
     public void unexpectedException() throws AnException {
-        expect(new AThrowingObject()).toReturn(RESULT).whenCalling().aMethod();
+        expect(new AThrowingObject()).to(returnValue(RESULT)).whenCalling().aMethod();
     }
 
     @Test (expected = AssertionError.class)
     public void expectedExceptionNotThrown() throws AnException {
-        expect(new AReturningObject()).toThrow(AN_EXCEPTION).whenCalling().aMethod();
+        expect(new AReturningObject()).to(throwException(AN_EXCEPTION)).whenCalling().aMethod();
     }
 
     @Test (expected = IllegalArgumentException.class)
     public void attemptToSetSameExpectationTwice() throws AnException {
-        expect(new AReturningObject()).toReturn(RESULT).toReturn(RESULT).whenCalling().aMethod();
+        expect(new AReturningObject()).to(returnValue(RESULT)).to(returnValue(RESULT)).whenCalling().aMethod();
     }
     
     @Test (expected = IllegalArgumentException.class)
     public void attemptToSetCompetingExpectationTwice() throws AnException {
-        expect(new AReturningObject()).toReturn(RESULT).toThrow(AN_EXCEPTION).whenCalling().aMethod();
+        expect(new AReturningObject()).to(returnValue(RESULT)).to(throwException(AN_EXCEPTION)).whenCalling().aMethod();
     }
 
     @Test
     public void exceptionChecked() throws AnException {
-        expect(new AThrowingObject()).toThrow(AN_EXCEPTION).whenCalling().aMethod();
+        expect(new AThrowingObject()).to(throwException(AN_EXCEPTION)).whenCalling().aMethod();
     }
 
     @Test
     public void exceptionCheckedWithCustomMatcher() throws AnException {
-        expect(new AThrowingObject()).toThrowExceptionThat(is(equalTo(AN_EXCEPTION))).whenCalling().aMethod();
-        expect(new AThrowingObject()).toThrowExceptionThat(is(any(Exception.class))).whenCalling().aMethod();
+        expect(new AThrowingObject()).to(throwExceptionThat(is(equalTo(AN_EXCEPTION)))).whenCalling().aMethod();
+        expect(new AThrowingObject()).to(throwExceptionThat(is(any(Exception.class)))).whenCalling().aMethod();
     }
 
     @Test
     public void returnedValueChecked() {
-        expect(new AReturningObject()).toReturn(RESULT).whenCalling().aMethod();
+        expect(new AReturningObject()).to(returnValue(RESULT)).whenCalling().aMethod();
     }
 
     @Test
     public void returnedValueCheckedUsingCustomAssert() {
-        expect(new AReturningObject()).toReturnValueThat(is(RESULT)).whenCalling().aMethod();
+        expect(new AReturningObject()).to(returnValueThat(is(RESULT))).whenCalling().aMethod();
     }
 
     private class AThrowingObject {

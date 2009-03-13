@@ -1,12 +1,13 @@
 package org.niceassert;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import org.hamcrest.Matcher;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OverriderInvocationMatcher {
+class OverriderInvocationMatcher {
     private final List<Matcher> parameterMatchers = new ArrayList<Matcher>();
     private Method aMethod;
     private Action action;
@@ -29,7 +30,7 @@ public class OverriderInvocationMatcher {
         aMethod = method;
         if (parameterMatchers.isEmpty()) {
             for (Object object : objects) {
-                parameterMatchers.add(org.hamcrest.CoreMatchers.equalTo(object));
+                parameterMatchers.add(equalTo(object));
             }
         }
     }
