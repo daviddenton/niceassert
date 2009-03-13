@@ -124,7 +124,11 @@
             <packageset dir="src/main" defaultexcludes="yes">
                 <include name="**"/>
             </packageset>
-            
         </javadoc>
+        <delete dir="doc">
+            <fileset dir="doc">
+                <include name="**/*"/>
+            </fileset>
+        </delete>
     </target>
 </project>
