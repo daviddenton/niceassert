@@ -12,7 +12,6 @@
 
     <target name="clean">
         <delete dir="classes"/>
-        <delete dir="doc"/>
         <delete dir="build"/>
     </target>
 
@@ -125,7 +124,7 @@
                 <include name="**"/>
             </packageset>
         </javadoc>
-        <delete dir="doc">
+        <delete failonerror="false" dir="doc">
             <fileset dir="doc">
                 <include name="**/*"/>
             </fileset>
