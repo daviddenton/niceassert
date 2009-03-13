@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/Action.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/Action.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
     </list>
     <ignored path="niceassert.iws" />
@@ -69,10 +69,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="40" selection-start="649" selection-end="649" vertical-scroll-proportion="0.22773723">
+            <state line="20" column="40" selection-start="649" selection-end="649" vertical-scroll-proportion="-7.5789475">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Action.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Action.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="20" selection-start="49" selection-end="49" vertical-scroll-proportion="0.051136363">
               <folding />
             </state>
           </provider>
@@ -830,7 +839,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="40" selection-start="649" selection-end="649" vertical-scroll-proportion="0.22773723">
+        <state line="20" column="40" selection-start="649" selection-end="649" vertical-scroll-proportion="-7.5789475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="20" selection-start="49" selection-end="49" vertical-scroll-proportion="0.051136363">
           <folding />
         </state>
       </provider>
