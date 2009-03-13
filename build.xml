@@ -130,5 +130,10 @@
                 <include name="**/*"/>
             </fileset>
         </delete>
+        <copy todir="doc">
+            <fileset dir="build/doc">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
     </target>
 </project>
