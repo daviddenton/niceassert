@@ -123,7 +123,7 @@
       <file leaf-file-name="ExpectationTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="5" selection-start="2496" selection-end="2496" vertical-scroll-proportion="1.0568181">
+            <state line="33" column="31" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.375">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -346,17 +346,17 @@
       <recent name="org.niceassert" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ExpectationExampleTest">
-    <tempConfiguration default="false" name="ExpectationExampleTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
+  <component name="RunManager" selected="JUnit.ExpectationTest">
+    <tempConfiguration default="false" name="ExpectationTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
       <pattern>
-        <option name="PATTERN" value="org.niceassert.example.*" />
+        <option name="PATTERN" value="org.niceassert.*" />
         <option name="ENABLED" value="true" />
       </pattern>
       <module name="niceassert" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.niceassert.example" />
-      <option name="MAIN_CLASS_NAME" value="org.niceassert.example.ExpectationExampleTest" />
+      <option name="PACKAGE_NAME" value="org.niceassert" />
+      <option name="MAIN_CLASS_NAME" value="org.niceassert.ExpectationTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -557,7 +557,7 @@
       <item index="0" class="java.lang.String" itemvalue="JUnit.ExpectationTest.exceptionCheckedWithCustomMatcher" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.ArgumentMatchingOverrideTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.ArgumentMatchingOverrideTest.overrideToReturnValue" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ExpectationExampleTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ExpectationTest" />
     </list>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <module name="" />
@@ -827,7 +827,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/ExpectationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="5" selection-start="2496" selection-end="2496" vertical-scroll-proportion="1.0568181">
+        <state line="33" column="31" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.375">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

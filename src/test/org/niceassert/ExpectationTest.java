@@ -30,6 +30,11 @@ public class ExpectationTest {
     public void expectedExceptionNotThrown() throws AnException {
         expect(new AReturningObject()).to(throwException(AN_EXCEPTION)).whenCalling().aMethod();
     }
+    
+    @Test (expected = AssertionError.class)
+    public void expectedResultNotReturned() throws AnException {
+        expect(new AReturningObject()).to(returnValue(null)).whenCalling().aMethod();
+    }
 
     @Test (expected = IllegalArgumentException.class)
     public void attemptToSetSameExpectationTwice() throws AnException {
