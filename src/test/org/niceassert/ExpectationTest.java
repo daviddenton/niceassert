@@ -1,6 +1,8 @@
 package org.niceassert;
 
+import org.hamcrest.BaseMatcher;
 import static org.hamcrest.CoreMatchers.*;
+import org.hamcrest.Description;
 import org.junit.Test;
 import static org.niceassert.Expectation.*;
 
@@ -60,6 +62,12 @@ public class ExpectationTest {
         expect(new AReturningObject()).to(returnValueThat(is(RESULT))).whenCalling().aMethod();
     }
 
+    @Test
+    public void stateOfTheObjectUpdated() throws AnException {
+        final AStateUpdatingObject object = new AStateUpdatingObject();
+        expect(object).to(resultIn(new UpdatedTheStateOf(object))).whenCalling().aMethod();
+    }
+
     private class AThrowingObject {
         void aMethod() throws AnException {
             throw AN_EXCEPTION;
@@ -75,6 +83,33 @@ public class ExpectationTest {
     private class AReturningObject {
         String aMethod() {
             return RESULT;
+        }
+    }
+
+
+    public static class AStateUpdatingObject {
+        private boolean called;
+        public void aMethod() {
+            called = true;
+        }
+
+        public boolean isCalled() {
+            return called;
+        }
+    }
+
+    private static class UpdatedTheStateOf extends BaseMatcher {
+        private final AStateUpdatingObject object;
+
+        public UpdatedTheStateOf(AStateUpdatingObject object) {
+            this.object = object;
+        }
+
+        public boolean matches(Object o) {
+            return object.isCalled();
+        }
+
+        public void describeTo(Description description) {
         }
     }
 }
