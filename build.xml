@@ -15,10 +15,6 @@
         <delete dir="build"/>
     </target>
 
-    <target name="release" depends="build">
-        <copy file="build/jars/${artifact}.jar" tofile="artifacts/${artifact}.jar"/>
-    </target>
-
     <target name="build" depends="clean, test, document, package"/>
 
     <target name="package">
