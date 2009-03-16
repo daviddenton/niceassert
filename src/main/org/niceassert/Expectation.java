@@ -5,6 +5,7 @@ import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import static org.junit.Assert.assertThat;
+import static org.niceassert.NiceMatchers.isInstanceOf;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -73,15 +74,7 @@ public class Expectation<T> {
     }
 
     public static ExpectedAction throwException(final Throwable t) {
-        return throwExceptionThat(new BaseMatcher<Throwable>() {
-            public boolean matches(Object o) {
-                return o.getClass().equals(t.getClass());
-            }
-
-            public void describeTo(Description description) {
-                description.appendText(t.getClass().getName());
-            }
-        });
+        return throwExceptionThat(isInstanceOf(t.getClass()));
     }
 
     public static ExpectedAction resultIn(final Matcher matcher) {
