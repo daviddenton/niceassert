@@ -4,7 +4,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
 
-class InfiniteInvocationCounterTest {
+public class InfiniteInvocationCounterTest {
     private final InfiniteInvocationCounter invocationCounter = new InfiniteInvocationCounter();
 
     @Test

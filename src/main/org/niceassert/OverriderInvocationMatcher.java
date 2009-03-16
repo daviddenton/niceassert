@@ -9,9 +9,13 @@ import java.util.List;
 
 class OverriderInvocationMatcher {
     private final List<Matcher> parameterMatchers = new ArrayList<Matcher>();
+    private final Action action;
     private InvocationCounter invocationCounter;
     private Method aMethod;
-    private Action action;
+
+    public OverriderInvocationMatcher(Action action) {
+        this.action = action;
+    }
 
     void addNextParameterMatcher(Matcher parameterMatcher) {
         this.parameterMatchers.add(parameterMatcher);
@@ -36,10 +40,6 @@ class OverriderInvocationMatcher {
                 parameterMatchers.add(equalTo(object));
             }
         }
-    }
-
-    void setAction(Action action) {
-        this.action = action;
     }
 
     Object processOverriddenCall(Method method, Object[] objects) throws Throwable {

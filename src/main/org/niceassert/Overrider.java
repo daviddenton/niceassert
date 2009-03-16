@@ -21,7 +21,6 @@ public class Overrider<T> {
 
     public Overrider(final T target) {
         clazz = target.getClass();
-        newMatcher();
         proxy = (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
                 for (OverriderInvocationMatcher invocationMatcher : invocationMatchers) {
@@ -38,8 +37,7 @@ public class Overrider<T> {
     }
 
     public Overrider<T> will(Action action) {
-        newMatcher();
-        currentMatcher().setAction(action);
+        invocationMatchers.add(new OverriderInvocationMatcher(action));
         return this;
     }
 
@@ -52,23 +50,8 @@ public class Overrider<T> {
         return null;
     }
 
-
     public T whenCalling(final int calls) {
         return whenCalling(new SimpleInvocationCounter(calls));
-    }
-
-    private T whenCalling(final InvocationCounter counter) {
-        return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
-            private boolean set;
-
-            public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                if (!set) {
-                    currentMatcher().recordInvocation(counter, method, objects);
-                }
-                set = true;
-                return null;
-            }
-        }, clazz);
     }
 
     public T whenCalling() {
@@ -91,8 +74,18 @@ public class Overrider<T> {
         };
     }
 
-    private void newMatcher() {
-        invocationMatchers.add(new OverriderInvocationMatcher());
+    private T whenCalling(final InvocationCounter counter) {
+        return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
+            private boolean set;
+
+            public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
+                if (!set) {
+                    currentMatcher().recordInvocation(counter, method, objects);
+                }
+                set = true;
+                return null;
+            }
+        }, clazz);
     }
 
     private OverriderInvocationMatcher currentMatcher() {
