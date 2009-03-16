@@ -16,6 +16,7 @@ class ActionInvocationHandler implements InvocationHandler {
             validateReturnValueCompatability(method.getReturnType(), result);
             return result;
         } catch (Throwable throwable) {
+            if(RuntimeException.class.isAssignableFrom(throwable.getClass())) throw throwable;
             for (Class exceptionClass : method.getExceptionTypes()) {
                 if (exceptionClass.isAssignableFrom(throwable.getClass())) throw throwable;
             }

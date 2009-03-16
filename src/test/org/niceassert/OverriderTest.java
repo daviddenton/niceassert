@@ -127,6 +127,15 @@ public class OverriderTest {
         proxy.aMethod();
     }
 
+    @Test(expected = NullPointerException.class)
+    public void overrideToThrowRuntimeException() throws AnException {
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
+            will(throwException(new NullPointerException())).whenCalling().aMethod();
+        }}.proxy();
+
+        proxy.aMethod();
+    }
+
     @Test
     public void originalMethodCalledForNonOverriddenMethod() throws AnException {
         ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{

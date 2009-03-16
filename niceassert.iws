@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/Overrider.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/Overrider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/OverriderInvocationMatcher.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/OverriderInvocationMatcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/OverriderTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/OverriderTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/ActionInvocationHandler.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/ActionInvocationHandler.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="niceassert.iws" />
@@ -73,7 +72,7 @@
       <file leaf-file-name="Overrider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Overrider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="68" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.0">
+            <state line="73" column="22" selection-start="2404" selection-end="2404" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,16 +130,16 @@
       <file leaf-file-name="OverriderTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverriderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
+            <state line="127" column="0" selection-start="5089" selection-end="5301" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OverriderInvocationMatcher.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="OverriderInvocationMatcher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/OverriderInvocationMatcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="68" selection-start="612" selection-end="612" vertical-scroll-proportion="0.22051282">
+            <state line="18" column="68" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,10 +147,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActionInvocationHandler.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ActionInvocationHandler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ActionInvocationHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="21" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+            <state line="20" column="56" selection-start="800" selection-end="800" vertical-scroll-proportion="0.42105263">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -619,15 +618,19 @@
       <recent name="org.niceassert" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.org.niceassert in niceassert">
-    <tempConfiguration default="false" name="org.niceassert in niceassert" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
+  <component name="RunManager" selected="JUnit.OverriderTest">
+    <tempConfiguration default="false" name="OverriderTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
+      <pattern>
+        <option name="PATTERN" value="org.niceassert.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
       <module name="niceassert" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.niceassert" />
-      <option name="MAIN_CLASS_NAME" />
+      <option name="MAIN_CLASS_NAME" value="org.niceassert.OverriderTest" />
       <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -821,7 +824,7 @@
       <item index="0" class="java.lang.String" itemvalue="JUnit.OverrideTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.ArgumentMatchingOverrideTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.ArgumentMatchingOverrideTest.overrideToReturnValue" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.org.niceassert in niceassert" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.OverriderTest" />
     </list>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <module name="" />
@@ -909,7 +912,7 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17804877" sideWeight="0.66205835" order="0" side_tool="false" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17804877" sideWeight="0.75729644" order="0" side_tool="false" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718894" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" />
@@ -918,7 +921,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24857375" sideWeight="0.66205835" order="1" side_tool="false" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13517666" sideWeight="0.5" order="2" side_tool="false" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23195085" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.399348" sideWeight="0.5" order="0" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47158217" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" />
@@ -1052,13 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverriderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/../Classes/classes.jar!/java/lang/reflect/InvocationHandler.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="17" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
@@ -1091,25 +1087,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ActionInvocationHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/test/org/niceassert/OverriderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="21" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="127" column="0" selection-start="5089" selection-end="5301" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/Overrider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="68" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.0">
+        <state line="73" column="22" selection-start="2404" selection-end="2404" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/OverriderInvocationMatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="68" selection-start="612" selection-end="612" vertical-scroll-proportion="0.22051282">
+        <state line="18" column="68" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ActionInvocationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="56" selection-start="800" selection-end="800" vertical-scroll-proportion="0.42105263">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
