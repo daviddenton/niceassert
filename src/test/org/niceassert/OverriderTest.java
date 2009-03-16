@@ -41,6 +41,19 @@ public class OverriderTest {
         assertThat(originalTargetWasCalled.get(), is(false));
     }
 
+
+    @Test
+    public void overrideToReturnValueOnlyOnce() throws AnException {
+        ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
+            will(returnValue(OVERRIDDEN_VALUE)).whenCalling(1).aMethod();
+        }}.proxy();
+
+        assertThat(proxy.aMethod(), is(equalTo(OVERRIDDEN_VALUE)));
+        assertThat(proxy.aMethod(), is(equalTo(ORIGINAL_VALUE)));
+        assertThat(originalTargetWasCalled.get(), is(true));
+    }
+
+
     @Test
     public void overrideToReturnNull() throws AnException {
         ARecordingObject proxy = new Overrider<ARecordingObject>(originalTarget) {{
