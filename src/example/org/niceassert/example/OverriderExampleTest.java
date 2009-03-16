@@ -42,10 +42,11 @@ public class OverriderExampleTest {
     @Test
     public void overrideToMatchMultipleCalls() throws AnException {
         MyObject proxy = new Overrider<MyObject>(new MyObject()) {{
-            will(returnValue(null)).whenCalling().methodWithArgs(ORIGINAL_VALUE);
+            will(returnValue(null)).whenCalling(2).methodWithArgs(ORIGINAL_VALUE);
             will(returnValue(OVERRIDDEN_VALUE)).whenCalling().methodWithArgs(OVERRIDDEN_VALUE);
         }}.proxy();
 
+        assertThat(proxy.methodWithArgs(ORIGINAL_VALUE), is(nullValue()));
         assertThat(proxy.methodWithArgs(ORIGINAL_VALUE), is(nullValue()));
         assertThat(proxy.methodWithArgs(OVERRIDDEN_VALUE), is(equalTo(OVERRIDDEN_VALUE)));
     }
