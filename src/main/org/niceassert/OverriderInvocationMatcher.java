@@ -12,7 +12,7 @@ class OverriderInvocationMatcher {
     private final List<Matcher> parameterMatchers = new ArrayList<Matcher>();
     private final InvocationHandler invocationHandler;
     private InvocationCounter invocationCounter;
-    private Method aMethod;
+    private Method method;
 
     public OverriderInvocationMatcher(InvocationHandler invocationHandler) {
         this.invocationHandler = invocationHandler;
@@ -23,7 +23,7 @@ class OverriderInvocationMatcher {
     }
 
     boolean isMethodCallMatched(Method method, Object[] objects) {
-        if (!method.equals(aMethod)) {
+        if (!method.equals(this.method)) {
             return false;
         }
         for (int i = 0; i < parameterMatchers.size(); i++) {
@@ -35,7 +35,7 @@ class OverriderInvocationMatcher {
 
     void recordInvocation(InvocationCounter counter, Method method, Object[] objects) {
         this.invocationCounter = counter;
-        this.aMethod = method;
+        this.method = method;
         if (parameterMatchers.isEmpty()) {
             for (Object object : objects) {
                 parameterMatchers.add(equalTo(object));
@@ -43,7 +43,7 @@ class OverriderInvocationMatcher {
         }
     }
 
-    Object processOverriddenCall(Method method, Object[] objects) throws Throwable {
+    Object processOverriddenCall(Object[] objects) throws Throwable {
         invocationCounter.count();
         return invocationHandler.invoke(null, method, objects);
     }

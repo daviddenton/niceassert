@@ -25,7 +25,7 @@ public class Overrider<T> {
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
                 for (OverriderInvocationMatcher invocationMatcher : invocationMatchers) {
                     if (invocationMatcher.isMethodCallMatched(method, objects))
-                        return invocationMatcher.processOverriddenCall(method, objects);
+                        return invocationMatcher.processOverriddenCall(objects);
                 }
                 return method.invoke(target, objects);
             }
