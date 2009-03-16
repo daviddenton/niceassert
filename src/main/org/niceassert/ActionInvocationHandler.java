@@ -13,20 +13,24 @@ class ActionInvocationHandler implements InvocationHandler {
     public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
         try {
             Object result = action.execute(objects);
-            validateReturnValueCompatability(method.getReturnType(), result);
-            return result;
-        } catch (Throwable throwable) {
-            if(RuntimeException.class.isAssignableFrom(throwable.getClass())) throw throwable;
-            for (Class exceptionClass : method.getExceptionTypes()) {
-                if (exceptionClass.isAssignableFrom(throwable.getClass())) throw throwable;
+            if (returnValueIsCompatible(method.getReturnType(), result)) {
+                return result;
             }
+            throw new ClassCastException("Can't override method to return incompatible class (expected=" + method.getReturnType() + ", got=" + result + ")");
+        } catch (Throwable throwable) {
+            if(thrownExceptionIsCompatible(method, throwable)) throw throwable;
             throw new ClassCastException("Can't override method " + method.getName() + " to throw incompatible exception " + throwable.getClass());
         }
     }
 
-    private static void validateReturnValueCompatability(Class<?> expected, Object returnValue) {
-        if (returnValue == null) return;
-        if (!expected.isAssignableFrom(returnValue.getClass()))
-            throw new ClassCastException("Can't override method to return incompatible class (expected=" + expected + ", got=" + returnValue + ")");
+    private static boolean thrownExceptionIsCompatible(Method method, Throwable throwable) throws Throwable {
+        for (Class exceptionClass : method.getExceptionTypes()) {
+            if (exceptionClass.isAssignableFrom(throwable.getClass())) return true;
+        }
+        return RuntimeException.class.isAssignableFrom(throwable.getClass());
+    }
+
+    private static boolean returnValueIsCompatible(Class<?> expected, Object returnValue) {
+        return returnValue == null || expected.isAssignableFrom(returnValue.getClass());
     }
 }

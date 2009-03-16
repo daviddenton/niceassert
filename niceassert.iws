@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/org/niceassert/OverriderTest.java" afterPath="$PROJECT_DIR$/src/test/org/niceassert/OverriderTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/niceassert.iws" afterPath="$PROJECT_DIR$/niceassert.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/org/niceassert/ActionInvocationHandler.java" afterPath="$PROJECT_DIR$/src/main/org/niceassert/ActionInvocationHandler.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
@@ -150,7 +150,7 @@
       <file leaf-file-name="ActionInvocationHandler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ActionInvocationHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="56" selection-start="800" selection-end="800" vertical-scroll-proportion="0.42105263">
+            <state line="29" column="53" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.6105263">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -942,7 +942,7 @@
     <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="dirty - refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="dirty - fixed bug for overriding to throw a runtime exception" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -972,6 +972,7 @@
     <MESSAGE value="dirty - tweakto basematcher" />
     <MESSAGE value="dirty - started to add invocation matching counts" />
     <MESSAGE value="dirty - refactor" />
+    <MESSAGE value="dirty - fixed bug for overriding to throw a runtime exception" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1112,7 +1113,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/org/niceassert/ActionInvocationHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="56" selection-start="800" selection-end="800" vertical-scroll-proportion="0.42105263">
+        <state line="29" column="53" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.6105263">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
