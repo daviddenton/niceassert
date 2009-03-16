@@ -6,13 +6,10 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
-import org.hamcrest.core.AllOf;
 import static org.junit.Assert.assertThat;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * An readable assertion API used to check the expected behaviour of a particular method call.
@@ -43,14 +40,6 @@ public class Expectation<T> {
         void setOn(Expectation expectation);
     }
 
-    private class ExceptionAction implements ExpectedAction {
-        private final List<Matcher> matchers = new ArrayList<Matcher>();
-
-        public void setOn(Expectation expectation) {
-            expectation.failureMatcher = new AllOf(matchers);
-        }
-    }
-
     public Expectation<T> to(ExpectedAction action) {
         validateExpectedBehaviour();
         action.setOn(this);
@@ -58,15 +47,7 @@ public class Expectation<T> {
     }
 
     public static <T> ExpectedAction returnValue(final T returnValue) {
-        return returnValueThat(new BaseMatcher<T>() {
-            public boolean matches(Object o) {
-                return o.equals(returnValue);
-            }
-
-            public void describeTo(Description description) {
-                description.appendText(" but got: " + returnValue);
-            }
-        });
+        return returnValueThat(is(equalTo(returnValue)));
     }
 
     public static ExpectedAction returnValueThat(final Matcher matcher) {
