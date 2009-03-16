@@ -3,18 +3,19 @@ package org.niceassert;
 import static org.hamcrest.CoreMatchers.equalTo;
 import org.hamcrest.Matcher;
 
+import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
 class OverriderInvocationMatcher {
     private final List<Matcher> parameterMatchers = new ArrayList<Matcher>();
-    private final ActionInvocationHandler actionInvocationHandler;
+    private final InvocationHandler invocationHandler;
     private InvocationCounter invocationCounter;
     private Method aMethod;
 
-    public OverriderInvocationMatcher(ActionInvocationHandler actionInvocationHandler) {
-        this.actionInvocationHandler = actionInvocationHandler;
+    public OverriderInvocationMatcher(InvocationHandler invocationHandler) {
+        this.invocationHandler = invocationHandler;
     }
 
     void addNextParameterMatcher(Matcher parameterMatcher) {
@@ -44,6 +45,6 @@ class OverriderInvocationMatcher {
 
     Object processOverriddenCall(Method method, Object[] objects) throws Throwable {
         invocationCounter.count();
-        return actionInvocationHandler.invoke(null, method, objects);
+        return invocationHandler.invoke(null, method, objects);
     }
 }
