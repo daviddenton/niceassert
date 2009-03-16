@@ -2,10 +2,11 @@ package org.niceassert;
 
 import net.sf.cglib.proxy.InvocationHandler;
 import org.hamcrest.BaseMatcher;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import static org.junit.Assert.assertThat;
-import static org.niceassert.NiceMatchers.isInstanceOf;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -74,7 +75,7 @@ public class Expectation<T> {
     }
 
     public static ExpectedAction throwException(final Throwable t) {
-        return throwExceptionThat(isInstanceOf(t.getClass()));
+        return throwExceptionThat(is(equalTo(t)));
     }
 
     public static ExpectedAction resultIn(final Matcher matcher) {
