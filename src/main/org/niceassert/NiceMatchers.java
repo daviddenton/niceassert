@@ -16,7 +16,7 @@ public class NiceMatchers {
         return new IsInstanceOf(clazz);
     }
 
-    public static Matcher<Class> isAssignableFrom(final Class clazz) {
+    public static Matcher<Class> assignableFrom(final Class clazz) {
         return new BaseMatcher<Class>() {
             public boolean matches(Object o) {
                 return Class.class == o.getClass() && clazz.isAssignableFrom((Class)o);
@@ -28,7 +28,7 @@ public class NiceMatchers {
         };
     }
 
-    public static Matcher<Date> isBefore(final Date date) {
+    public static Matcher<Date> before(final Date date) {
         return new BaseMatcher<Date>() {
 
             public boolean matches(Object o) {
@@ -41,7 +41,7 @@ public class NiceMatchers {
         };
     }
 
-    public static Matcher<Date> isAfter(final Date date) {
+    public static Matcher<Date> after(final Date date) {
         return new BaseMatcher<Date>() {
 
             public boolean matches(Object o) {
@@ -54,7 +54,7 @@ public class NiceMatchers {
         };
     }
 
-    public static Matcher<Date> isBetween(final Date date1, final Date date2) {
+    public static Matcher<Date> between(final Date date1, final Date date2) {
         if(date1.after(date2)) throw new IllegalArgumentException("Illegal range");
         return new BaseMatcher<Date>() {
 
