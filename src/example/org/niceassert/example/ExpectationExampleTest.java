@@ -6,6 +6,7 @@ import static org.hamcrest.CoreMatchers.is;
 import org.hamcrest.Description;
 import org.junit.Test;
 import static org.niceassert.Expectation.*;
+import static org.niceassert.NiceMatchers.ofTypeWithMessage;
 
 
 public class ExpectationExampleTest {
@@ -26,6 +27,11 @@ public class ExpectationExampleTest {
     @Test
     public void exactExceptionIsThrown() throws AnException {
         expect(new AnExceptionThrowingObject()).to(throwException(AN_EXCEPTION)).whenCalling().aMethod();
+    }
+
+    @Test
+    public void exceptionTypeAndMessageIsThrown() throws AnException {
+        expect(new AnExceptionThrowingObject()).to(throwExceptionThat(is(ofTypeWithMessage(AnException.class, AnException.MESSAGE)))).whenCalling().aMethod();
     }
 
     @Test
@@ -63,6 +69,12 @@ public class ExpectationExampleTest {
     }
 
     public static class AnException extends Throwable {
+        private static final String MESSAGE = "MESSAGE";
+
+        public AnException() {
+            super(MESSAGE);
+        }
+
         public boolean equals(Object obj) {
             return obj.getClass() == this.getClass();
         }

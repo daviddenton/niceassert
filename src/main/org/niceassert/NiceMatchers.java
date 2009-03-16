@@ -1,19 +1,16 @@
 package org.niceassert;
 
 import org.hamcrest.BaseMatcher;
+import static org.hamcrest.CoreMatchers.allOf;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
-import org.hamcrest.core.IsInstanceOf;
+import static org.hamcrest.Matchers.instanceOf;
 
 import java.util.Date;
 
 public class NiceMatchers {
 
     private NiceMatchers() {
-    }
-
-    public static Matcher instanceOf(Class clazz) {
-        return new IsInstanceOf(clazz);
     }
 
     public static Matcher<Class> assignableFrom(final Class clazz) {
@@ -26,6 +23,18 @@ public class NiceMatchers {
                 description.appendText(clazz.getName());
             }
         };
+    }
+
+    public static <T extends Throwable> Matcher ofTypeWithMessage(Class<T> throwableClass, final String message) {
+        return allOf(instanceOf(throwableClass), new BaseMatcher<Throwable>() {
+            public boolean matches(Object o) {
+                return message.equals(((Throwable)o).getMessage());
+            }
+
+            public void describeTo(Description description) {
+                description.appendText(message);
+            }
+        });
     }
 
     public static Matcher<Date> before(final Date date) {

@@ -8,17 +8,13 @@ import static org.niceassert.NiceMatchers.*;
 import java.util.Date;
 
 public class NiceMatchersTest {
+    private static final String MESSAGE = "Message";
 
     @Test
-    public void instanceOfMatch() {
-        assertThat(instanceOf(Object.class).matches(Object.class), is(true));
+    public void exceptionWithMessage() {
+        assertThat(ofTypeWithMessage(Exception.class, MESSAGE).matches(new Exception(MESSAGE)), is(true));
     }
 
-    @Test
-    public void instanceOfNoMatch() {
-        assertThat(instanceOf(String.class).matches(Object.class), is(false));
-    }
-    
     @Test
     public void assignableFromMatch() {
         assertThat(assignableFrom(Object.class).matches(String.class), is(true));
