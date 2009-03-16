@@ -12,7 +12,7 @@ public class NiceMatchers {
     private NiceMatchers() {
     }
 
-    public static Matcher isInstanceOf(Class clazz) {
+    public static Matcher instanceOf(Class clazz) {
         return new IsInstanceOf(clazz);
     }
 

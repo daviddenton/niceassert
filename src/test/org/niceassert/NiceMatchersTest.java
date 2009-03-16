@@ -11,12 +11,12 @@ public class NiceMatchersTest {
 
     @Test
     public void instanceOfMatch() {
-        assertThat(isInstanceOf(Object.class).matches(Object.class), is(true));
+        assertThat(instanceOf(Object.class).matches(Object.class), is(true));
     }
 
     @Test
     public void instanceOfNoMatch() {
-        assertThat(isInstanceOf(String.class).matches(Object.class), is(false));
+        assertThat(instanceOf(String.class).matches(Object.class), is(false));
     }
     
     @Test
