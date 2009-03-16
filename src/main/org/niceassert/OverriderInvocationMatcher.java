@@ -9,12 +9,12 @@ import java.util.List;
 
 class OverriderInvocationMatcher {
     private final List<Matcher> parameterMatchers = new ArrayList<Matcher>();
-    private final Action action;
+    private final ActionInvocationHandler actionInvocationHandler;
     private InvocationCounter invocationCounter;
     private Method aMethod;
 
-    public OverriderInvocationMatcher(Action action) {
-        this.action = action;
+    public OverriderInvocationMatcher(ActionInvocationHandler actionInvocationHandler) {
+        this.actionInvocationHandler = actionInvocationHandler;
     }
 
     void addNextParameterMatcher(Matcher parameterMatcher) {
@@ -44,21 +44,6 @@ class OverriderInvocationMatcher {
 
     Object processOverriddenCall(Method method, Object[] objects) throws Throwable {
         invocationCounter.count();
-        try {
-            Object result = action.execute(objects);
-            validateReturnValueCompatability(aMethod.getReturnType(), result);
-            return result;
-        } catch (Throwable throwable) {
-            for (Class exceptionClass : method.getExceptionTypes()) {
-                if (exceptionClass.isAssignableFrom(throwable.getClass())) throw throwable;
-            }
-            throw new ClassCastException("Can't override method " + aMethod.getName() + " to throw incompatible exception " + throwable.getClass());
-        }
-    }
-
-    private void validateReturnValueCompatability(Class<?> expected, Object returnValue) {
-        if (returnValue == null) return;
-        if (!expected.isAssignableFrom(returnValue.getClass()))
-            throw new ClassCastException("Can't override method to return incompatible class (expected=" + expected + ", got=" + returnValue + ")");
+        return actionInvocationHandler.invoke(null, method, objects);
     }
 }

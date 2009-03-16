@@ -37,7 +37,7 @@ public class Overrider<T> {
     }
 
     public Overrider<T> will(Action action) {
-        invocationMatchers.add(new OverriderInvocationMatcher(action));
+        invocationMatchers.add(new OverriderInvocationMatcher(new ActionInvocationHandler(action)));
         return this;
     }
 
