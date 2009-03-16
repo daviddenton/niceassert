@@ -53,4 +53,17 @@ public class NiceMatchers {
             }
         };
     }
+
+    public static Matcher<Date> isBetween(final Date date1, final Date date2) {
+        return new BaseMatcher<Date>() {
+
+            public boolean matches(Object o) {
+                return !((Date)o).before(date1) && !((Date)o).after(date2);
+            }
+
+            public void describeTo(Description description) {
+                description.appendText("between " + date1.toString() + " and " + date2.toString());
+            }
+        };
+    }
 }

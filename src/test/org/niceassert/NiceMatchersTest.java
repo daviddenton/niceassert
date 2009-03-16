@@ -50,4 +50,16 @@ public class NiceMatchersTest {
         assertThat(isAfter(new Date(1)).matches(new Date(1)), is(false));
         assertThat(isAfter(new Date(2)).matches(new Date(1)), is(false));
     }
+
+    @Test
+    public void isBetweenMatch() {
+        assertThat(isBetween(new Date(1), new Date(2)).matches(new Date(1)), is(true));
+        assertThat(isBetween(new Date(1), new Date(2)).matches(new Date(2)), is(true));
+    }
+
+    @Test
+    public void isBetweenNoMatch() {
+        assertThat(isBetween(new Date(1), new Date(2)).matches(new Date(0)), is(false));
+        assertThat(isBetween(new Date(1), new Date(2)).matches(new Date(3)), is(false));
+    }
 }
