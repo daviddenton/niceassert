@@ -55,6 +55,7 @@ public class NiceMatchers {
     }
 
     public static Matcher<Date> isBetween(final Date date1, final Date date2) {
+        if(date1.after(date2)) throw new IllegalArgumentException("Illegal range");
         return new BaseMatcher<Date>() {
 
             public boolean matches(Object o) {

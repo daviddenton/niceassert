@@ -51,6 +51,11 @@ public class NiceMatchersTest {
         assertThat(isAfter(new Date(2)).matches(new Date(1)), is(false));
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void isBetweenIllegalRange() {
+        isBetween(new Date(2), new Date(1));
+    }
+
     @Test
     public void isBetweenMatch() {
         assertThat(isBetween(new Date(1), new Date(2)).matches(new Date(1)), is(true));
