@@ -9,6 +9,7 @@ import java.util.List;
 
 class OverriderInvocationMatcher {
     private final List<Matcher> parameterMatchers = new ArrayList<Matcher>();
+    private InvocationCounter invocationCounter;
     private Method aMethod;
     private Action action;
 
@@ -23,11 +24,13 @@ class OverriderInvocationMatcher {
         for (int i = 0; i < parameterMatchers.size(); i++) {
             if (!parameterMatchers.get(i).matches(objects[i])) return false;
         }
-        return true;
+
+        return invocationCounter.thereAreInvocationsRemaining();
     }
 
-    void recordInvocation(Method method, Object[] objects) {
-        aMethod = method;
+    void recordInvocation(InvocationCounter counter, Method method, Object[] objects) {
+        this.invocationCounter = counter;
+        this.aMethod = method;
         if (parameterMatchers.isEmpty()) {
             for (Object object : objects) {
                 parameterMatchers.add(equalTo(object));
@@ -40,6 +43,7 @@ class OverriderInvocationMatcher {
     }
 
     Object processOverriddenCall(Method method, Object[] objects) throws Throwable {
+        invocationCounter.count();
         try {
             Object result = action.execute(objects);
             validateReturnValueCompatability(aMethod.getReturnType(), result);

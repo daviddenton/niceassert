@@ -8,6 +8,9 @@ import static org.hamcrest.Matchers.instanceOf;
 
 import java.util.Date;
 
+/**
+ * A collection of useful Hamcrest matchers.
+ */
 public class NiceMatchers {
 
     private NiceMatchers() {

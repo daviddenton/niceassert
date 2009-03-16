@@ -52,16 +52,27 @@ public class Overrider<T> {
         return null;
     }
 
-    public T whenCalling() {
+
+    public T whenCalling(final int calls) {
+        return whenCalling(new SimpleInvocationCounter(calls));
+    }
+
+    private T whenCalling(final InvocationCounter counter) {
         return (T) ConcreteClassProxyFactory.INSTANCE.proxyFor(new InvocationHandler() {
             private boolean set;
 
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-                if (!set) currentMatcher().recordInvocation(method, objects);
+                if (!set) {
+                    currentMatcher().recordInvocation(counter, method, objects);
+                }
                 set = true;
                 return null;
             }
         }, clazz);
+    }
+
+    public T whenCalling() {
+        return whenCalling(new InfiniteInvocationCounter());
     }
 
     public static Action returnValue(final Object returnValue) {
