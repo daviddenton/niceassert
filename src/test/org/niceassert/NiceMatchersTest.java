@@ -11,8 +11,23 @@ public class NiceMatchersTest {
     private static final String MESSAGE = "Message";
 
     @Test
-    public void exceptionWithMessage() {
+    public void ofTypeWithMessageMatch() {
         assertThat(ofTypeWithMessage(Exception.class, MESSAGE).matches(new Exception(MESSAGE)), is(true));
+    }
+
+    @Test
+    public void ofTypeWithMessageNoMatch() {
+        assertThat(ofTypeWithMessage(Exception.class, "ANOTHER").matches(new Exception(MESSAGE)), is(false));
+    }
+
+    @Test
+    public void instanceOfMatch() {
+        assertThat(instanceOf(Object.class).matches(String.class), is(true));
+    }
+
+    @Test
+    public void instanceOfNoMatch() {
+        assertThat(instanceOf(String.class).matches(Integer.class), is(false));
     }
 
     @Test
@@ -24,7 +39,7 @@ public class NiceMatchersTest {
     public void assignableFromNoMatch() {
         assertThat(assignableFrom(String.class).matches(Integer.class), is(false));
     }
-    
+
     @Test
     public void beforeMatch() {
         assertThat(before(new Date(1)).matches(new Date(0)), is(true));
@@ -47,7 +62,7 @@ public class NiceMatchersTest {
         assertThat(after(new Date(2)).matches(new Date(1)), is(false));
     }
 
-    @Test (expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void betweenIllegalRange() {
         between(new Date(2), new Date(1));
     }

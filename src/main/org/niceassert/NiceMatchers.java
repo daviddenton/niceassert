@@ -4,7 +4,6 @@ import org.hamcrest.BaseMatcher;
 import static org.hamcrest.CoreMatchers.allOf;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
-import static org.hamcrest.Matchers.instanceOf;
 
 import java.util.Date;
 
@@ -14,6 +13,18 @@ import java.util.Date;
 public class NiceMatchers {
 
     private NiceMatchers() {
+    }
+
+    public static Matcher<Class> instanceOf(final Class clazz) {
+        return new BaseMatcher<Class>() {
+            public boolean matches(Object o) {
+                return o.getClass().equals(clazz);
+            }
+
+            public void describeTo(Description description) {
+                description.appendText(clazz.getName());
+            }
+        };
     }
 
     public static Matcher<Class> assignableFrom(final Class clazz) {
