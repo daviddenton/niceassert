@@ -22,12 +22,12 @@ public class NiceMatchersTest {
 
     @Test
     public void instanceOfMatch() {
-        assertThat(instanceOf(Object.class).matches(String.class), is(true));
+        assertThat(instanceOf(String.class).matches(""), is(true));
     }
 
     @Test
     public void instanceOfNoMatch() {
-        assertThat(instanceOf(String.class).matches(Integer.class), is(false));
+        assertThat(instanceOf(String.class).matches(new Integer(1)), is(false));
     }
 
     @Test
