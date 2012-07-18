@@ -1,3 +1,13 @@
+
+The Niceassert library defines a few useful Java tools designed to aid test readability by reducing the code overhead of various common testing patterns. It works well alongside existing widely-used testing frameworks (especially JUnit4/JMock2 with which it shares support library requirements).
+
+*Features:*
+
+ * [Expectations] - a concise way to express expected behaviour of a method call    
+ * [Overriding] - partially mock the behaviour of an object
+ * Matchers - a collection of various useful Hamcrest Matchers
+
+
 Problem
 JUnit 4 introduced the concept of being able to add an assert that a given exception has been thrown during the course of a test, as a replacement for the repetition of the standard try-test-fail-catch-pass loop seen below:
 
