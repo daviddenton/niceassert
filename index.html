@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Niceassert : Improving the readability of test code" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Niceassert</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/daviddenton/niceassert">View on GitHub</a>
+
+          <h1 id="project_title">Niceassert</h1>
+          <h2 id="project_tagline">Improving the readability of test code</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/daviddenton/niceassert/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/daviddenton/niceassert/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>The Niceassert library defines a few useful Java tools designed to aid test readability by reducing the code overhead of various common testing patterns. It works well alongside existing widely-used testing frameworks (especially JUnit4/JMock2 with which it shares support library requirements).</p>
+
+<h2>Features:</h2>
+
+<ul>
+<li>Expectations - a concise way to express expected behaviour of a method call<br>
+</li>
+<li>Overriding - partially mock the behaviour of an object</li>
+<li>Matchers - a collection of various useful Hamcrest Matchers</li>
+</ul><h3>Problem</h3>
+
+<p>JUnit 4 introduced the concept of being able to add an assert that a given exception has been thrown during the course of a test, as a replacement for the repetition of the standard try-test-fail-catch-pass loop seen below:</p>
+
+<div class="highlight"><pre><span class="c1">// JUnit 3</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testExceptionalThing</span><span class="o">()</span> <span class="o">{</span> 
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="k">new</span> <span class="nf">ObjectUnderTest</span><span class="o">().</span><span class="na">doSomethingThatCausesAnException</span><span class="o">();</span>
+        <span class="n">fail</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">AnExpectedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// no assertion here guv!</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// JUnit 4</span>
+<span class="nd">@Test</span> <span class="o">(</span><span class="n">expected</span> <span class="o">=</span> <span class="n">AnExpectedException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">exceptionalThing</span><span class="o">()</span> <span class="o">{</span> 
+    <span class="k">new</span> <span class="nf">ObjectUnderTest</span><span class="o">().</span><span class="na">doSomethingThatCausesAnException</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>However, there is a trade-off for the reduction in verbosity - you lose the ability to perform any additional assertions on the thrown exception.</p>
+
+<h3>Solution</h3>
+
+<p>Niceassert uses a more natural language structure which allows you to combine the density of the JUnit4 case with the ability to assert on the result of any method call (using the awesome Hamcrest library). For consistency, you can also use it perform assertions on the result value of a call or to invoke a custom Matcher. The setup assertion is performed "inline" by the call at the end of the structure and a standard AssertionError raised if it is not matched:</p>
+
+<div class="highlight"><pre><span class="n">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">AReturningObject</span><span class="o">()).</span><span class="na">to</span><span class="o">(</span><span class="n">throwException</span><span class="o">(</span><span class="n">AN_EXCEPTION</span><span class="o">)).</span><span class="na">whenCalling</span><span class="o">().</span><span class="na">aMethod</span><span class="o">(</span><span class="s">"INVALID ARGUMENT"</span><span class="o">);</span>
+<span class="c1">// or:</span>
+<span class="n">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">AThrowingObject</span><span class="o">()).</span><span class="na">to</span><span class="o">(</span><span class="n">returnValue</span><span class="o">(</span><span class="n">RESULT</span><span class="o">)).</span><span class="na">whenCalling</span><span class="o">().</span><span class="na">aMethod</span><span class="o">(</span><span class="s">"ARGUMENT"</span><span class="o">);</span>
+<span class="c1">// or:</span>
+<span class="n">expect</span><span class="o">(</span><span class="k">new</span> <span class="n">AWorldUpdatingObject</span><span class="o">()).</span><span class="na">to</span><span class="o">(</span><span class="n">resultIn</span><span class="o">(</span><span class="k">new</span> <span class="n">CustomMatcherToCheckStateOfTheWorld</span><span class="o">())).</span><span class="na">whenCalling</span><span class="o">().</span><span class="na">aMethod</span><span class="o">(</span><span class="s">"ARGUMENT"</span><span class="o">);</span>
+</pre></div>
+
+<p>For example code, please see the examples in the source tree.</p>
+
+<h3>Problem</h3>
+
+<p>In order to assert or recreate a particular behaviour, it is often required (although not necessarily desirable) to override methods in a particular concrete class, which results in test code that looks similar to:</p>
+
+<div class="highlight"><pre><span class="n">Object</span> <span class="n">objectToOverride</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"KNOWN RESULT"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">};</span>
+
+<span class="n">assertThat</span><span class="o">(</span><span class="n">objectToOverride</span><span class="o">.</span><span class="na">toString</span><span class="o">(),</span><span class="n">is</span><span class="o">(</span><span class="n">equalTo</span><span class="o">(</span><span class="s">"KNOWN RESULT"</span><span class="o">)));</span>
+</pre></div>
+
+<p>In the case that more than one method is overridden the readability of the test code is badly affected. In the case that you are working with source code that pre-dates/doesn't use the "Override" annotation, removing the method in the overridden class may even leave the overridden method orphaned.</p>
+
+<h3>Solution</h3>
+
+<p>Niceassert provides not just a mechanism to implement the same thing in a compact format, but also to be able to use Hamcrest parameter matching in which the proxy will fall through to the delegate implementation if the invocation doesn't match.</p>
+
+<p>There are 2 methods available to override behaviour and obtain access to the proxy. The first uses a JMock2-style setup block:</p>
+
+<div class="highlight"><pre><span class="n">AnObject</span> <span class="n">proxy</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Override</span><span class="o">&lt;</span><span class="n">AnObject</span><span class="o">&gt;(</span><span class="n">target</span><span class="o">)</span> <span class="o">{{</span>
+    <span class="n">will</span><span class="o">(</span><span class="n">returnValue</span><span class="o">(</span><span class="s">"a different value"</span><span class="o">)).</span><span class="na">whenCalling</span><span class="o">().</span><span class="na">aMethod</span><span class="o">(</span><span class="s">"ARGUMENT"</span><span class="o">);</span>
+    <span class="n">will</span><span class="o">(</span><span class="k">throw</span><span class="o">(</span><span class="k">new</span> <span class="n">RuntimeException</span><span class="o">())).</span><span class="na">whenCalling</span><span class="o">().</span><span class="na">aMethod</span><span class="o">(</span><span class="s">"ARGUMENT"</span><span class="o">);</span>
+<span class="o">}}.</span><span class="na">proxy</span><span class="o">();</span>
+</pre></div>
+
+<p>The other method is more compact, but requires an initial "wrapping" mechanism and only supports exact argument matching (ie. no Hamcrest matchers). Some may find it a little less readable in trade off for the compactness:</p>
+
+<div class="highlight"><pre><span class="n">Overrider</span><span class="o">&lt;</span><span class="n">AnObject</span><span class="o">&gt;</span> <span class="n">overrider</span> <span class="o">=</span> <span class="n">Overrider</span><span class="o">.</span><span class="na">wrapForOverride</span><span class="o">(</span><span class="n">originalTarget</span><span class="o">);</span>
+<span class="n">overrider</span><span class="o">.</span><span class="na">will</span><span class="o">(</span><span class="n">returnValue</span><span class="o">(</span><span class="n">OVERRIDDEN_VALUE</span><span class="o">)).</span><span class="na">whenCalling</span><span class="o">().</span><span class="na">aMethod</span><span class="o">(</span><span class="s">"ARGUMENT"</span><span class="o">));</span>
+<span class="n">overrider</span><span class="o">.</span><span class="na">will</span><span class="o">(</span><span class="k">throw</span><span class="o">(</span><span class="k">new</span> <span class="n">RuntimeException</span><span class="o">())).</span><span class="na">whenCalling</span><span class="o">().</span><span class="na">aMethod</span><span class="o">(</span><span class="s">"INVALID ARGUMENT"</span><span class="o">);</span>
+<span class="n">AnObject</span> <span class="n">proxy</span> <span class="o">=</span> <span class="n">overrider</span><span class="o">.</span><span class="na">proxy</span><span class="o">();</span>
+</pre></div>
+
+<p>Regardless of how the proxy is created, you can then just call it in place of the original target:</p>
+
+<div class="highlight"><pre><span class="n">proxy</span><span class="o">.</span><span class="na">methodToOverride</span><span class="o">(</span><span class="s">"DIFFERENT ARGUMENT"</span><span class="o">);</span> <span class="c1">// original target is called</span>
+<span class="n">proxy</span><span class="o">.</span><span class="na">methodToOverride</span><span class="o">(</span><span class="s">"ARGUMENT"</span><span class="o">);</span>           <span class="c1">// proxy is called</span>
+</pre></div>
+
+<p>For example code, please see the examples in the source tree.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Niceassert maintained by <a href="https://github.com/daviddenton">daviddenton</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
